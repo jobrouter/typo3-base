@@ -1,0 +1,12 @@
+.. This is '_includes.txt'. It is included at the very top of each and
+   every ReST source file in THIS documentation project (= manual).
+
+.. role:: php(code)
+   :language: php
+.. role:: yaml(code)
+   :language: yaml
+
+
+.. default-role:: code
+.. highlight:: php
+   :linenothreshold: 5

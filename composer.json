@@ -1,0 +1,60 @@
+{
+	"name": "brotkrueml/typo3-jobrouter-base",
+	"type": "typo3-cms-extension",
+	"description": "Base library for the TYPO3 JobRouter® extensions",
+	"license": "GPL-2.0-or-later",
+	"keywords": [
+		"TYPO3 CMS",
+		"TYPO3 extension",
+		"JobRouter"
+	],
+	"authors": [
+		{
+			"name": "Chris Müller",
+			"role": "Developer"
+		}
+	],
+	"support": {
+		"docs": "https://typo3-jobrouter.readthedocs.io/projects/base/",
+		"issues": "https://github.com/brotkrueml/typo3-jobrouter-base/issues",
+		"source": "https://github.com/brotkrueml/typo3-jobrouter-base"
+	},
+	"require": {
+		"php": ">=7.2",
+		"typo3/cms-core": "^10.4",
+		"typo3/cms-extbase": "^10.4"
+	},
+	"require-dev": {
+		"friendsofphp/php-cs-fixer": "^2.16",
+		"php-coveralls/php-coveralls": "^2.2",
+		"phpunit/phpunit": "^8.5 || ^9.3"
+	},
+	"autoload": {
+		"psr-4": {
+			"Brotkrueml\\JobRouterBase\\": "Classes"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"Brotkrueml\\JobRouterBase\\Tests\\": "Tests"
+		}
+	},
+	"config": {
+		"sort-packages": true,
+		"vendor-dir": ".Build/vendor",
+		"bin-dir": ".Build/bin"
+	},
+	"extra": {
+		"branch-alias": {
+			"dev-master": "0.1.x-dev"
+		},
+		"typo3/cms": {
+			"extension-key": "jobrouter_base",
+			"cms-package-dir": "{$vendor-dir}/typo3/cms",
+			"web-dir": ".Build/web"
+		}
+	},
+	"scripts": {
+		"fix-cs": ".Build/bin/php-cs-fixer fix"
+	}
+}

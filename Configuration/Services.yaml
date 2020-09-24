@@ -1,0 +1,32 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  Brotkrueml\JobRouterBase\:
+    resource: '../Classes/*'
+
+  Brotkrueml\JobRouterBase\Domain\VariableResolver\JobRouterLanguageVariableResolver:
+    tags:
+      - name: event.listener
+        identifier: 'jobrouter-base/jobrouter-language-variable-resolver'
+        event: Brotkrueml\JobRouterBase\Event\ResolveFinisherVariableEvent
+
+  Brotkrueml\JobRouterBase\Domain\VariableResolver\LanguageVariableResolver:
+    tags:
+      - name: event.listener
+        identifier: 'jobrouter-base/language-variable-resolver'
+        event: Brotkrueml\JobRouterBase\Event\ResolveFinisherVariableEvent
+
+  Brotkrueml\JobRouterBase\Domain\VariableResolver\LocalisedLabelVariableResolver:
+    tags:
+      - name: event.listener
+        identifier: 'jobrouter-base/localised-label-variable-resolver'
+        event: Brotkrueml\JobRouterBase\Event\ResolveFinisherVariableEvent
+
+  Brotkrueml\JobRouterBase\Domain\VariableResolver\TransferIdentifierVariableResolver:
+    tags:
+      - name: event.listener
+        identifier: 'jobrouter-base/transfer-identifier-variable-resolver'
+        event: Brotkrueml\JobRouterBase\Event\ResolveFinisherVariableEvent
