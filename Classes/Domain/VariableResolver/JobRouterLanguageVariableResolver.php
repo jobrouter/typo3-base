@@ -47,7 +47,7 @@ final class JobRouterLanguageVariableResolver
     {
         $value = $event->getValue();
 
-        if (\strpos($value, self::VARIABLE_TO_RESOLVE) === false) {
+        if (!\str_contains($value, self::VARIABLE_TO_RESOLVE)) {
             return;
         }
 
