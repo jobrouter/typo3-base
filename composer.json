@@ -23,7 +23,8 @@
 		"php": ">=7.2",
 		"symfony/polyfill-php80": "^1.15",
 		"typo3/cms-core": "^10.4",
-		"typo3/cms-extbase": "^10.4"
+		"typo3/cms-extbase": "^10.4",
+		"typo3/cms-form": "^10.4"
 	},
 	"require-dev": {
 		"friendsofphp/php-cs-fixer": "^2.16",
