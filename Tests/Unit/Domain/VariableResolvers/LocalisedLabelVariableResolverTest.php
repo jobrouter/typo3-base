@@ -8,9 +8,9 @@ declare(strict_types=1);
  * LICENSE.txt file that was distributed with this source code.
  */
 
-namespace Brotkrueml\JobRouterBase\Tests\Unit\Domain\VariableResolver;
+namespace Brotkrueml\JobRouterBase\Tests\Unit\Domain\VariableResolvers;
 
-use Brotkrueml\JobRouterBase\Domain\VariableResolver\LocalisedLabelVariableResolver;
+use Brotkrueml\JobRouterBase\Domain\VariableResolvers\LocalisedLabelVariableResolver;
 use Brotkrueml\JobRouterBase\Enumeration\FieldTypeEnumeration;
 use Brotkrueml\JobRouterBase\Event\ResolveFinisherVariableEvent;
 use Brotkrueml\JobRouterBase\Exception\VariableResolverException;

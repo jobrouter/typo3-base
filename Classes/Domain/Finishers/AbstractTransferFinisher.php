@@ -10,7 +10,7 @@ declare(strict_types=1);
 
 namespace Brotkrueml\JobRouterBase\Domain\Finishers;
 
-use Brotkrueml\JobRouterBase\Domain\VariableResolver\VariableResolver;
+use Brotkrueml\JobRouterBase\Domain\VariableResolvers\VariableResolver;
 use Psr\Http\Message\ServerRequestInterface;
 use TYPO3\CMS\Form\Domain\Finishers\AbstractFinisher;
 
