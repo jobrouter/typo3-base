@@ -11,6 +11,7 @@ which links processes, data and documents. The TYPO3 extension `JobRouter
 Base <https://github.com/brotkrueml/typo3-jobrouter-base>`_ acts as a base
 library for the TYPO3 JobRouter extensions:
 
+* `JobRouter Data <data:introduction>`_
 * `JobRouter Process <process:introduction>`_
 
 .. admonition:: Work In Progress
