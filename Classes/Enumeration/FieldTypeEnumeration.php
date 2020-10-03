@@ -14,4 +14,7 @@ final class FieldTypeEnumeration
 {
     public const TEXT = 1;
     public const INTEGER = 2;
+    public const DECIMAL = 3;
+    public const DATE = 4;
+    public const DATETIME = 5;
 }
