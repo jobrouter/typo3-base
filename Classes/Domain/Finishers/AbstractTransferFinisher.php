@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace Brotkrueml\JobRouterBase\Domain\Finishers;
 
+use Brotkrueml\JobRouterBase\Domain\Transfer\IdentifierGenerator;
 use Brotkrueml\JobRouterBase\Domain\VariableResolvers\VariableResolver;
 use Psr\Http\Message\ServerRequestInterface;
 use TYPO3\CMS\Form\Domain\Finishers\AbstractFinisher;
@@ -22,11 +23,19 @@ abstract class AbstractTransferFinisher extends AbstractFinisher
     /** @var VariableResolver */
     protected $variableResolver;
 
+    /** @var IdentifierGenerator */
+    private $identifierGenerator;
+
     protected $transferIdentifier = '';
 
     public function injectVariableResolver(VariableResolver $variableResolver)
     {
         $this->variableResolver = $variableResolver;
+    }
+
+    public function injectIdentifierGenerator(IdentifierGenerator $identifierGenerator)
+    {
+        $this->identifierGenerator = $identifierGenerator;
     }
 
     protected function executeInternal()
@@ -48,14 +57,7 @@ abstract class AbstractTransferFinisher extends AbstractFinisher
 
     protected function buildTransferIdentifier(): void
     {
-        $this->transferIdentifier = \implode(
-            '_',
-            [
-                'form',
-                $this->getFormIdentifier(),
-                \substr(\md5(\uniqid('', true)), 0, 13),
-            ]
-        );
+        $this->transferIdentifier = $this->identifierGenerator->build('form_' . $this->getFormIdentifier());
     }
 
     protected function initialiseVariableResolver(): void

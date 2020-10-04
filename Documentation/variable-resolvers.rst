@@ -63,6 +63,10 @@ is the unique key.
 
 Use the :yaml:`{__transferIdentifier}` variable to add the transfer identifier.
 
+.. note::
+   The transfer identifier is the same for every form finisher in a form
+   instance.
+
 
 Localisation labels
 -------------------
