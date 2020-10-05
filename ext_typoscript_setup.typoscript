@@ -1,0 +1,7 @@
+module.tx_dashboard {
+    view {
+        templateRootPaths.1601887445 = EXT:jobrouter_base/Resources/Private/Templates/
+        partialRootPaths.1601887445 = EXT:jobrouter_base/Resources/Private/Partials/
+        layoutRootPaths.1601887445 = EXT:jobrouter_base/Resources/Private/Layouts/
+    }
+}

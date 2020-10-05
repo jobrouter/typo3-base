@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="EXT:jobrouter_base/Resources/Private/Language/Dashboard.xlf" date="2020-10-05T08:46:07Z" product-name="jobrouter_base">
+		<header/>
+		<body>
+			<trans-unit id="lastRun" resname="lastRun">
+				<source><![CDATA[Last run]]></source>
+			</trans-unit>
+			<trans-unit id="lastRun.noInformation" resname="lastRun.noInformation">
+				<source><![CDATA[No information available, perhaps never been run?]]></source>
+			</trans-unit>
+			<trans-unit id="status.failed" resname="status.failed">
+				<source><![CDATA[Failed]]></source>
+			</trans-unit>
+			<trans-unit id="status.pending" resname="status.pending">
+				<source><![CDATA[Pending]]></source>
+			</trans-unit>
+			<trans-unit id="status.successful" resname="status.successful">
+				<source><![CDATA[Successful]]></source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

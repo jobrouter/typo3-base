@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="EXT:jobrouter_base/Resources/Private/Language/General.xlf" date="2020-10-05T08:54:35Z" product-name="jobrouter_base">
+		<header/>
+		<body>
+			<trans-unit id="dateFormat" resname="dateFormat">
+				<source><![CDATA[Y-m-d]]></source>
+			</trans-unit>
+			<trans-unit id="timeFormat" resname="timeFormat">
+				<source><![CDATA[H:i]]></source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
