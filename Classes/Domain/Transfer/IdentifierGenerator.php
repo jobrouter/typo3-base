@@ -15,7 +15,7 @@ use TYPO3\CMS\Core\SingletonInterface;
 /**
  * @internal
  */
-final class IdentifierGenerator implements SingletonInterface
+class IdentifierGenerator implements SingletonInterface
 {
     private $transferIdentifiers = [];
 
