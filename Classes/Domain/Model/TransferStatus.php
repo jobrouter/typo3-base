@@ -31,7 +31,7 @@ final class TransferStatus
     private $successfulCount = 0;
 
     /**
-     * @var \DateTimeImmutable
+     * @var \DateTimeInterface
      */
     private $lastRun;
 
@@ -65,12 +65,12 @@ final class TransferStatus
         return $this->successfulCount;
     }
 
-    public function getLastRun(): ?\DateTimeImmutable
+    public function getLastRun(): ?\DateTimeInterface
     {
         return $this->lastRun;
     }
 
-    public function setLastRun(\DateTimeImmutable $lastRun): void
+    public function setLastRun(\DateTimeInterface $lastRun): void
     {
         $this->lastRun = $lastRun;
     }
