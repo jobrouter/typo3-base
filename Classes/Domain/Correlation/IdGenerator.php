@@ -9,21 +9,21 @@ declare(strict_types=1);
  * LICENSE.txt file that was distributed with this source code.
  */
 
-namespace Brotkrueml\JobRouterBase\Domain\Transfer;
+namespace Brotkrueml\JobRouterBase\Domain\Correlation;
 
 use TYPO3\CMS\Core\SingletonInterface;
 
 /**
  * @internal
  */
-class IdentifierGenerator implements SingletonInterface
+class IdGenerator implements SingletonInterface
 {
-    private $transferIdentifiers = [];
+    private $correlationIds = [];
 
     public function build(string $key): string
     {
-        if (!isset($this->transferIdentifiers[$key])) {
-            $this->transferIdentifiers[$key] = \implode(
+        if (!isset($this->correlationIds[$key])) {
+            $this->correlationIds[$key] = \implode(
                 '_',
                 [
                     $key,
@@ -32,6 +32,6 @@ class IdentifierGenerator implements SingletonInterface
             );
         }
 
-        return $this->transferIdentifiers[$key];
+        return $this->correlationIds[$key];
     }
 }

@@ -41,7 +41,7 @@ class ResolveFinisherVariableEventTest extends TestCase
 
         self::assertSame(42, $subject->getFieldType());
         self::assertSame('some-value', $subject->getValue());
-        self::assertSame('some-identifier', $subject->getTransferIdentifier());
+        self::assertSame('some-identifier', $subject->getCorrelationId());
         self::assertSame(['formName' => 'formValue'], $subject->getFormValues());
         self::assertSame($this->serverRequestStub, $subject->getRequest());
     }

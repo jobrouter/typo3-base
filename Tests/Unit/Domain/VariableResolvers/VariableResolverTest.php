@@ -36,7 +36,7 @@ class VariableResolverTest extends TestCase
         $this->requestStub = $this->createStub(ServerRequestInterface::class);
         $this->eventDispatcherMock = $this->createMock(EventDispatcherInterface::class);
         $this->subject = new VariableResolver($this->eventDispatcherMock);
-        $this->subject->setTransferIdentifier('some identifier');
+        $this->subject->setCorrelationId('some identifier');
         $this->subject->setFormValues(['foo' => 'bar']);
         $this->subject->setRequest($this->requestStub);
     }

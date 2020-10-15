@@ -11,7 +11,7 @@ declare(strict_types=1);
 
 namespace Brotkrueml\JobRouterBase\Tests\Unit\Domain\VariableResolvers;
 
-use Brotkrueml\JobRouterBase\Domain\VariableResolvers\TransferIdentifierVariableResolver;
+use Brotkrueml\JobRouterBase\Domain\VariableResolvers\CorrelationIdVariableResolver;
 use Brotkrueml\JobRouterBase\Enumeration\FieldTypeEnumeration;
 use Brotkrueml\JobRouterBase\Event\ResolveFinisherVariableEvent;
 use Brotkrueml\JobRouterBase\Exception\VariableResolverException;
@@ -19,9 +19,9 @@ use PHPUnit\Framework\MockObject\Stub;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ServerRequestInterface;
 
-class TransferIdentifierVariableResolverTest extends TestCase
+class CorrelationIdVariableResolverTest extends TestCase
 {
-    /** @var TransferIdentifierVariableResolver */
+    /** @var CorrelationIdVariableResolver */
     private $subject;
 
     /** @var Stub|ServerRequestInterface */
@@ -30,19 +30,19 @@ class TransferIdentifierVariableResolverTest extends TestCase
     protected function setUp(): void
     {
         $this->serverRequestStub = $this->createStub(ServerRequestInterface::class);
-        $this->subject = new TransferIdentifierVariableResolver();
+        $this->subject = new CorrelationIdVariableResolver();
     }
 
     /**
      * @test
      * @dataProvider dataProviderForResolveVariables
      */
-    public function resolveVariableCorrectly(string $value, string $transferIdentifier, string $expected): void
+    public function resolveVariableCorrectly(string $value, string $correlationId, string $expected): void
     {
         $event = new ResolveFinisherVariableEvent(
             FieldTypeEnumeration::TEXT,
             $value,
-            $transferIdentifier,
+            $correlationId,
             [],
             $this->serverRequestStub
         );
@@ -55,13 +55,13 @@ class TransferIdentifierVariableResolverTest extends TestCase
     public function dataProviderForResolveVariables(): \Generator
     {
         yield 'value with variable as only text' => [
-            '{__transferIdentifier}',
+            '{__correlationId}',
             'some-identifier',
             'some-identifier',
         ];
 
         yield 'value as text with variable among other text' => [
-            'foo {__transferIdentifier} bar',
+            'foo {__correlationId} bar',
             'some-identifier',
             'foo some-identifier bar',
         ];
@@ -73,9 +73,9 @@ class TransferIdentifierVariableResolverTest extends TestCase
         ];
 
         yield 'value as text with another variable' => [
-            '{__transferIdentifier1}',
+            '{__correlationId1}',
             'some-identifier',
-            '{__transferIdentifier1}',
+            '{__correlationId1}',
         ];
     }
 
@@ -86,11 +86,11 @@ class TransferIdentifierVariableResolverTest extends TestCase
     {
         $this->expectException(VariableResolverException::class);
         $this->expectExceptionCode(1582654966);
-        $this->expectExceptionMessage('The "{__transferIdentifier}" variable can only be used in Text fields ("1"), type "2" used');
+        $this->expectExceptionMessage('The "{__correlationId}" variable can only be used in Text fields ("1"), type "2" used');
 
         $event = new ResolveFinisherVariableEvent(
             FieldTypeEnumeration::INTEGER,
-            '{__transferIdentifier}',
+            '{__correlationId}',
             'some-identifier',
             [],
             $this->serverRequestStub

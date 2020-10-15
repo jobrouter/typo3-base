@@ -22,7 +22,7 @@ final class ResolveFinisherVariableEvent
     private $value;
 
     /** @var string */
-    private $transferIdentifier;
+    private $correlationId;
 
     /** @var array<string,string> */
     private $formValues;
@@ -33,13 +33,13 @@ final class ResolveFinisherVariableEvent
     public function __construct(
         int $fieldType,
         $value,
-        string $transferIdentifier,
+        string $correlationId,
         array $formValues,
         ServerRequestInterface $request
     ) {
         $this->fieldType = $fieldType;
         $this->value = $value;
-        $this->transferIdentifier = $transferIdentifier;
+        $this->correlationId = $correlationId;
         $this->formValues = $formValues;
         $this->request = $request;
     }
@@ -59,9 +59,9 @@ final class ResolveFinisherVariableEvent
         $this->value = $value;
     }
 
-    public function getTransferIdentifier(): string
+    public function getCorrelationId(): string
     {
-        return $this->transferIdentifier;
+        return $this->correlationId;
     }
 
     public function getFormValues(): array

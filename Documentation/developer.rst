@@ -45,9 +45,9 @@ Get the current value of the field. One or more variables can be defined inside.
 
 Set the new value after resolving one or more variables.
 
-.. option:: getTransferIdentifier(): string
+.. option:: getCorrelationId(): string
 
-Get the current transfer identifier.
+Get the current correlation ID.
 
 .. option:: getFormValues(): array
 

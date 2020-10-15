@@ -24,7 +24,7 @@ class VariableResolver
     private $eventDispatcher;
 
     /** @var string */
-    private $transferIdentifier;
+    private $correlationId;
 
     /** @var array */
     private $formValues;
@@ -37,9 +37,9 @@ class VariableResolver
         $this->eventDispatcher = $eventDispatcher;
     }
 
-    public function setTransferIdentifier(string $transferIdentifier): void
+    public function setCorrelationId(string $correlationId): void
     {
-        $this->transferIdentifier = $transferIdentifier;
+        $this->correlationId = $correlationId;
     }
 
     public function setFormValues(array $formValues): void
@@ -61,7 +61,7 @@ class VariableResolver
         $event = new ResolveFinisherVariableEvent(
             $fieldType,
             $value,
-            $this->transferIdentifier,
+            $this->correlationId,
             $this->formValues,
             $this->request
         );

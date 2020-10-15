@@ -18,16 +18,16 @@ use Brotkrueml\JobRouterBase\Exception\VariableResolverException;
 /**
  * @internal
  */
-final class TransferIdentifierVariableResolver
+final class CorrelationIdVariableResolver
 {
-    private const VARIABLE_TO_RESOLVE = '{__transferIdentifier}';
+    private const VARIABLE_TO_RESOLVE = '{__correlationId}';
 
     public function __invoke(ResolveFinisherVariableEvent $event): void
     {
         $this->checkValidFieldTypes($event->getFieldType());
 
         $event->setValue(
-            \str_replace(self::VARIABLE_TO_RESOLVE, $event->getTransferIdentifier(), $event->getValue())
+            \str_replace(self::VARIABLE_TO_RESOLVE, $event->getCorrelationId(), $event->getValue())
         );
     }
 

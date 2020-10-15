@@ -11,7 +11,7 @@ declare(strict_types=1);
 
 namespace Brotkrueml\JobRouterBase\Domain\Finishers;
 
-use Brotkrueml\JobRouterBase\Domain\Transfer\IdentifierGenerator;
+use Brotkrueml\JobRouterBase\Domain\Correlation\IdGenerator;
 use Brotkrueml\JobRouterBase\Domain\VariableResolvers\VariableResolver;
 use Psr\Http\Message\ServerRequestInterface;
 use TYPO3\CMS\Form\Domain\Finishers\AbstractFinisher;
@@ -24,24 +24,24 @@ abstract class AbstractTransferFinisher extends AbstractFinisher
     /** @var VariableResolver */
     protected $variableResolver;
 
-    /** @var IdentifierGenerator */
-    private $identifierGenerator;
+    /** @var IdGenerator */
+    private $correlationIdGenerator;
 
-    protected $transferIdentifier = '';
+    protected $correlationId = '';
 
     public function injectVariableResolver(VariableResolver $variableResolver)
     {
         $this->variableResolver = $variableResolver;
     }
 
-    public function injectIdentifierGenerator(IdentifierGenerator $identifierGenerator)
+    public function injectIdGenerator(IdGenerator $correlationIdGenerator)
     {
-        $this->identifierGenerator = $identifierGenerator;
+        $this->correlationIdGenerator = $correlationIdGenerator;
     }
 
     protected function executeInternal()
     {
-        $this->buildTransferIdentifier();
+        $this->buildCorrelationId();
         $this->initialiseVariableResolver();
 
         if (isset($this->options['handle'])) {
@@ -56,14 +56,14 @@ abstract class AbstractTransferFinisher extends AbstractFinisher
         }
     }
 
-    protected function buildTransferIdentifier(): void
+    protected function buildCorrelationId(): void
     {
-        $this->transferIdentifier = $this->identifierGenerator->build('form_' . $this->getFormIdentifier());
+        $this->correlationId = $this->correlationIdGenerator->build('form_' . $this->getFormIdentifier());
     }
 
     protected function initialiseVariableResolver(): void
     {
-        $this->variableResolver->setTransferIdentifier($this->transferIdentifier);
+        $this->variableResolver->setCorrelationId($this->correlationId);
         $this->variableResolver->setFormValues($this->finisherContext->getFormValues());
         $this->variableResolver->setRequest($this->getServerRequest());
     }

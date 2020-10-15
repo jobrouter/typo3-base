@@ -25,8 +25,8 @@ services:
         identifier: 'jobrouter-base/localised-label-variable-resolver'
         event: Brotkrueml\JobRouterBase\Event\ResolveFinisherVariableEvent
 
-  Brotkrueml\JobRouterBase\Domain\VariableResolvers\TransferIdentifierVariableResolver:
+  Brotkrueml\JobRouterBase\Domain\VariableResolvers\CorrelationIdVariableResolver:
     tags:
       - name: event.listener
-        identifier: 'jobrouter-base/transfer-identifier-variable-resolver'
+        identifier: 'jobrouter-base/correlation-id-variable-resolver'
         event: Brotkrueml\JobRouterBase\Event\ResolveFinisherVariableEvent
