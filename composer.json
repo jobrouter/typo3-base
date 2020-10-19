@@ -33,6 +33,10 @@
 		"typo3/cms-form": "^10.4",
 		"typo3/coding-standards": "^0.2"
 	},
+	"suggest": {
+		"brotkrueml/typo3-jobrouter-data": "Synchronise and transmit to JobData tables",
+		"brotkrueml/typo3-jobrouter-process": "Start incidents in JobRouter®"
+	},
 	"autoload": {
 		"psr-4": {
 			"Brotkrueml\\JobRouterBase\\": "Classes"
