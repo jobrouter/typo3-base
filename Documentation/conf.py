@@ -21,13 +21,13 @@ import sphinx_typo3_theme
 # -- Project information -----------------------------------------------------
 
 project = u'TYPO3 JobRouter Base'
-copyright = u'2020, Chris Müller'
+copyright = u'2020-2021, Chris Müller'
 author = u'Chris Müller'
 
 # The short X.Y version
 version = u'0.1'
 # The full version, including alpha/beta/rc tags
-release = u'0.1.0'
+release = u'0.1.1-dev'
 
 
 # -- General configuration ---------------------------------------------------
