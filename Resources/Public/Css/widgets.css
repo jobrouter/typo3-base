@@ -22,11 +22,11 @@
 }
 
 .widget-transfer-status__icon--failed {
-    fill: #a4276a;
+    fill: #c83c3c;
 }
 
 .widget-transfer-status__icon--pending {
-    fill: #ff8700;
+    fill: #e8a33d;
 }
 
 .widget-transfer-status__icon--successful {
