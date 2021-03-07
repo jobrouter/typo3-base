@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="EXT:jobrouter_base/Resources/Private/Language/Dashboard.xlf" date="2021-03-06T17:08:21Z" product-name="jobrouter_base">
+	<file source-language="en" datatype="plaintext" original="EXT:jobrouter_base/Resources/Private/Language/Dashboard.xlf" date="2021-03-07T17:11:53Z" product-name="jobrouter_base">
 		<header/>
 		<body>
 			<trans-unit id="correlationId" resname="correlationId">
@@ -17,6 +17,9 @@
 			</trans-unit>
 			<trans-unit id="message" resname="message">
 				<source><![CDATA[Message]]></source>
+			</trans-unit>
+			<trans-unit id="noErrors" resname="noErrors">
+				<source><![CDATA[Good, no errors found.]]></source>
 			</trans-unit>
 			<trans-unit id="status.failed" resname="status.failed">
 				<source><![CDATA[Failed]]></source>

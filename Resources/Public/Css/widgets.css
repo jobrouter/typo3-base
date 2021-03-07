@@ -1,3 +1,13 @@
+.widget-transfer-report__no-error {
+    display: flex;
+    align-items: center;
+}
+
+.widget-transfer-report__no-error-icon {
+    fill: #4c7e3a;
+    padding-right: 1rem;
+}
+
 .widget-transfer-status {
     display: flex;
     align-items: center;
