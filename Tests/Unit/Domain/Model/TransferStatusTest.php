@@ -34,13 +34,14 @@ class TransferStatusTest extends TestCase
         self::assertSame(0, $this->subject->getFailedCount());
         self::assertSame(0, $this->subject->getPendingCount());
         self::assertSame(0, $this->subject->getSuccessfulCount());
+        self::assertSame(0, $this->subject->getNumberOfDays());
         self::assertNull($this->subject->getLastRun());
     }
 
     /**
      * @test
      */
-    public function setAndGetFailedCountImplementedCorrectly(): void
+    public function setAndGetFailedCount(): void
     {
         $this->subject->setFailedCount(42);
 
@@ -50,7 +51,7 @@ class TransferStatusTest extends TestCase
     /**
      * @test
      */
-    public function setAndGetPendingCountImplementedCorrectly(): void
+    public function setAndGetPendingCount(): void
     {
         $this->subject->setPendingCount(23);
 
@@ -60,7 +61,7 @@ class TransferStatusTest extends TestCase
     /**
      * @test
      */
-    public function setAndGetSuccessfulCountImplementedCorrectly(): void
+    public function setAndGetSuccessfulCount(): void
     {
         $this->subject->setSuccessfulCount(12);
 
@@ -70,7 +71,17 @@ class TransferStatusTest extends TestCase
     /**
      * @test
      */
-    public function setAndGetLastRunImplementedCorrectly(): void
+    public function setAndGetNumberOfDays(): void
+    {
+        $this->subject->setNumberOfDays(123);
+
+        self::assertSame(123, $this->subject->getNumberOfDays());
+    }
+
+    /**
+     * @test
+     */
+    public function setAndGetLastRun(): void
     {
         $date = new \DateTimeImmutable('2020-09-01 16:00:00');
         $this->subject->setLastRun($date);

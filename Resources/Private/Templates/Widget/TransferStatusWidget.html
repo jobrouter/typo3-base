@@ -4,6 +4,17 @@
     data-namespace-typo3-fluid="true"
 >
 <f:layout name="Widget/Widget"/>
+
+<f:section name="title">
+    <f:translate key="{configuration.title}"/>
+    <f:if condition="{status.numberOfDays}">
+        <f:if condition="{status.numberOfDays} == 1">
+            <f:then>(<f:translate key="LLL:EXT:jobrouter_base/Resources/Private/Language/Dashboard.xlf:lastXDay" arguments="{0: status.numberOfDays}"/>)</f:then>
+            <f:else>(<f:translate key="LLL:EXT:jobrouter_base/Resources/Private/Language/Dashboard.xlf:lastXDays" arguments="{0: status.numberOfDays}"/>)</f:else>
+        </f:if>
+    </f:if>
+</f:section>
+
 <f:section name="main">
     <f:variable name="worstStatus" value="successful"/>
     <f:if condition="{status.pendingCount}"><f:variable name="worstStatus" value="pending"/></f:if>

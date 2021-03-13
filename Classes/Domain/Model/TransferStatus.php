@@ -32,6 +32,11 @@ final class TransferStatus
     private $successfulCount = 0;
 
     /**
+     * @var int
+     */
+    private $numberOfDays = 0;
+
+    /**
      * @var \DateTimeInterface
      */
     private $lastRun;
@@ -74,5 +79,15 @@ final class TransferStatus
     public function setLastRun(\DateTimeInterface $lastRun): void
     {
         $this->lastRun = $lastRun;
+    }
+
+    public function setNumberOfDays(int $numberOfDays): void
+    {
+        $this->numberOfDays = $numberOfDays;
+    }
+
+    public function getNumberOfDays(): int
+    {
+        return $this->numberOfDays;
     }
 }
