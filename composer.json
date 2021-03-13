@@ -31,7 +31,7 @@
 		"typo3/cms-dashboard": "*",
 		"typo3/cms-extbase": "*",
 		"typo3/cms-form": "*",
-		"typo3/coding-standards": "^0.2"
+		"typo3/coding-standards": "^0.3"
 	},
 	"suggest": {
 		"brotkrueml/typo3-jobrouter-data": "Synchronise and transmit to JobData tables",
