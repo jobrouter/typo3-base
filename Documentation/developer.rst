@@ -107,8 +107,8 @@ As an example we want to resolve a variable to a cookie value.
 
    .. important::
 
-      Variables have to start with `{__`. Otherwise the variable resolvers are not
-      called for this value.
+      Variables have to start with `{__`. Otherwise the variable resolver is not
+      called for a value.
 
 
 #. Register your event listener in :file:`Configuration/Services.yaml`

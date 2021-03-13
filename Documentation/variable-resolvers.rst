@@ -68,6 +68,11 @@ Use the :yaml:`{__correlationId}` variable to add the correlation ID.
    The correlation ID is the same for every JobRouter form finisher in a form
    instance.
 
+.. tip::
+   The correlation id can be used to set the initiator for a process instance
+   start (if the initiator is not used to assign a step to a JobRouter® user).
+   This way the correlation id is easy to spot in the step overview.
+
 
 Localisation labels
 -------------------
@@ -80,7 +85,7 @@ the path to the translation file and the according key, e.g.
 If the label is not found and therefore cannot be translated the value is
 untouched.
 
-You can use multiple localisation labels in one value.
+You can use multiple localisation labels in one form value.
 
 Language information
 --------------------
@@ -121,7 +126,7 @@ The language information defined in the Site Configuration can be used, namely:
 {__language.typo3Language}
    `default` for English, otherwise one of TYPO3's internal language keys.
 
-Multiple language variables can be used in one value.
+Multiple language variables can be used in one form value.
 
 
 JobRouter language information
