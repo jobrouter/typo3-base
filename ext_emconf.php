@@ -13,8 +13,8 @@ $EM_CONF[$_EXTKEY] = [
         ],
         'conflicts' => [],
         'suggests' => [
-            'jobrouter_data' => '0.12.0-0.12.99',
-            'jobrouter_process' => '0.5.0-1.99.99',
+            'jobrouter_data' => '',
+            'jobrouter_process' => '',
         ],
     ],
     'autoload' => [
