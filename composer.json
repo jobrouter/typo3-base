@@ -1,7 +1,7 @@
 {
 	"name": "brotkrueml/typo3-jobrouter-base",
 	"type": "typo3-cms-extension",
-	"description": "Base library for the TYPO3 JobRouter® extensions",
+	"description": "Base extension for the TYPO3 JobRouter® extensions",
 	"license": "GPL-2.0-or-later",
 	"keywords": [
 		"TYPO3 CMS",
