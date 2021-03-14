@@ -18,6 +18,9 @@ use TYPO3\CMS\Dashboard\Widgets\WidgetConfigurationInterface;
 use TYPO3\CMS\Dashboard\Widgets\WidgetInterface;
 use TYPO3\CMS\Fluid\View\StandaloneView;
 
+/**
+ * @internal Only for usage in the TYPO3 JobRouter extensions!
+ */
 final class TransferReportWidget implements WidgetInterface, AdditionalCssInterface
 {
     /**

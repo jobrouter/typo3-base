@@ -14,7 +14,7 @@ namespace Brotkrueml\JobRouterBase\Domain\Correlation;
 use TYPO3\CMS\Core\SingletonInterface;
 
 /**
- * @internal
+ * @internal Only for usage in the TYPO3 JobRouter extensions!
  */
 class IdGenerator implements SingletonInterface
 {

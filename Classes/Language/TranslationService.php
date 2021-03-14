@@ -14,7 +14,7 @@ namespace Brotkrueml\JobRouterBase\Language;
 use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
 
 /**
- * @internal
+ * @internal Only for usage in the TYPO3 JobRouter extensions!
  */
 class TranslationService
 {

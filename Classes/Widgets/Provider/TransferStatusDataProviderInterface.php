@@ -13,6 +13,9 @@ namespace Brotkrueml\JobRouterBase\Widgets\Provider;
 
 use Brotkrueml\JobRouterBase\Domain\Model\TransferStatus;
 
+/**
+ * @internal Only for usage in the TYPO3 JobRouter extensions!
+ */
 interface TransferStatusDataProviderInterface
 {
     public function getStatus(): TransferStatus;

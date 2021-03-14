@@ -11,6 +11,9 @@ declare(strict_types=1);
 
 namespace Brotkrueml\JobRouterBase\Domain\Model;
 
+/**
+ * @internal Only for usage in the TYPO3 JobRouter extensions!
+ */
 final class TransferReportItem
 {
     /**
