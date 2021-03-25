@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<xliff version="1.0">
+<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
 	<file source-language="en" datatype="plaintext" original="EXT:jobrouter_base/Resources/Private/Language/Dashboard.xlf" date="2021-03-13T15:41:17Z" product-name="jobrouter_base">
-		<header/>
 		<body>
 			<trans-unit id="correlationId" resname="correlationId">
 				<source><![CDATA[Correlation Id]]></source>
