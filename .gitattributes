@@ -8,5 +8,6 @@
 /.readthedocs.yml export-ignore
 /CHANGELOG.md export-ignore
 /Documentation export-ignore
+/Makefile export-ignore
 /README.md export-ignore
 /Tests export-ignore
