@@ -2,29 +2,25 @@
 	"name": "brotkrueml/typo3-jobrouter-base",
 	"type": "typo3-cms-extension",
 	"description": "Base extension for the TYPO3 JobRouter® extensions",
-	"license": "GPL-2.0-or-later",
 	"keywords": [
 		"TYPO3 CMS",
 		"TYPO3 extension",
 		"JobRouter"
 	],
+	"license": "GPL-2.0-or-later",
 	"authors": [
 		{
 			"name": "Chris Müller",
 			"role": "Developer"
 		}
 	],
-	"support": {
-		"docs": "https://typo3-jobrouter.readthedocs.io/projects/base/",
-		"issues": "https://github.com/brotkrueml/typo3-jobrouter-base/issues",
-		"source": "https://github.com/brotkrueml/typo3-jobrouter-base"
-	},
 	"require": {
 		"php": ">=7.2",
 		"symfony/polyfill-php80": "^1.15",
 		"typo3/cms-core": "^10.4.11"
 	},
 	"require-dev": {
+		"ergebnis/composer-normalize": "^2.15",
 		"friendsofphp/php-cs-fixer": "^2.18",
 		"php-coveralls/php-coveralls": "^2.4",
 		"phpunit/phpunit": "^8.5 || ^9.5",
@@ -37,6 +33,21 @@
 		"brotkrueml/typo3-jobrouter-data": "Synchronise and transmit to JobData tables",
 		"brotkrueml/typo3-jobrouter-process": "Start incidents in JobRouter®"
 	},
+	"config": {
+		"bin-dir": ".Build/bin",
+		"sort-packages": true,
+		"vendor-dir": ".Build/vendor"
+	},
+	"extra": {
+		"branch-alias": {
+			"dev-master": "1.0.x-dev"
+		},
+		"typo3/cms": {
+			"cms-package-dir": "{$vendor-dir}/typo3/cms",
+			"extension-key": "jobrouter_base",
+			"web-dir": ".Build/web"
+		}
+	},
 	"autoload": {
 		"psr-4": {
 			"Brotkrueml\\JobRouterBase\\": "Classes"
@@ -47,19 +58,9 @@
 			"Brotkrueml\\JobRouterBase\\Tests\\": "Tests"
 		}
 	},
-	"config": {
-		"sort-packages": true,
-		"vendor-dir": ".Build/vendor",
-		"bin-dir": ".Build/bin"
-	},
-	"extra": {
-		"branch-alias": {
-			"dev-master": "1.0.x-dev"
-		},
-		"typo3/cms": {
-			"extension-key": "jobrouter_base",
-			"cms-package-dir": "{$vendor-dir}/typo3/cms",
-			"web-dir": ".Build/web"
-		}
+	"support": {
+		"issues": "https://github.com/brotkrueml/typo3-jobrouter-base/issues",
+		"source": "https://github.com/brotkrueml/typo3-jobrouter-base",
+		"docs": "https://typo3-jobrouter.readthedocs.io/projects/base/"
 	}
 }
