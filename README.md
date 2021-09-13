@@ -12,4 +12,6 @@ This TYPO3 extension acts as a base library for:
   * [JobRouter Process](https://github.com/brotkrueml/typo3-jobrouter-process)
 
 [Documentation](https://typo3-jobrouter.readthedocs.io/projects/base/) |
-[Changelog](https://github.com/brotkrueml/typo3-jobrouter-base/blob/master/CHANGELOG.md)
+[Translation](https://crowdin.com/project/typo3-extension-jobrouterbase) |
+[Changelog](https://github.com/brotkrueml/typo3-jobrouter-base/blob/master/CHANGELOG.md) |
+[Extension in TER](https://extensions.typo3.org/extension/jobrouter_base/)
