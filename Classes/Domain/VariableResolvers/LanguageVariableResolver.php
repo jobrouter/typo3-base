@@ -58,7 +58,7 @@ final class LanguageVariableResolver
             }
 
             $methodToCall = 'get' . \ucfirst($match);
-            $value = \str_replace($matches[0][$index], $language->$methodToCall(), $value);
+            $value = \str_replace($matches[0][$index], (string)$language->$methodToCall(), $value);
         }
 
         $event->setValue($value);
