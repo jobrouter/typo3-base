@@ -38,11 +38,19 @@ final class TransferReportWidget implements WidgetInterface, AdditionalCssInterf
      */
     private $view;
 
-    public function __construct(WidgetConfigurationInterface $configuration, ListDataProviderInterface $dataProvider, StandaloneView $view)
+    private array $options;
+
+    public function __construct(
+        WidgetConfigurationInterface $configuration,
+        ListDataProviderInterface $dataProvider,
+        StandaloneView $view,
+        array $options
+    )
     {
         $this->configuration = $configuration;
         $this->dataProvider = $dataProvider;
         $this->view = $view;
+        $this->options = $options;
     }
 
     public function renderWidgetContent(): string
@@ -62,5 +70,10 @@ final class TransferReportWidget implements WidgetInterface, AdditionalCssInterf
         return [
             \sprintf('EXT:%s/Resources/Public/Css/widgets.css', Extension::KEY),
         ];
+    }
+
+    public function getOptions(): array
+    {
+        return $this->options;
     }
 }

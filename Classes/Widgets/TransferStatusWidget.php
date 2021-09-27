@@ -38,14 +38,18 @@ class TransferStatusWidget implements WidgetInterface, AdditionalCssInterface
      */
     private $dataProvider;
 
+    private array $options;
+
     public function __construct(
         WidgetConfigurationInterface $configuration,
         TransferStatusDataProviderInterface $dataProvider,
-        StandaloneView $view
+        StandaloneView $view,
+        array $options = []
     ) {
         $this->configuration = $configuration;
         $this->dataProvider = $dataProvider;
         $this->view = $view;
+        $this->options = $options;
     }
 
     public function renderWidgetContent(): string
@@ -64,5 +68,10 @@ class TransferStatusWidget implements WidgetInterface, AdditionalCssInterface
         return [
             \sprintf('EXT:%s/Resources/Public/Css/widgets.css', Extension::KEY)
         ];
+    }
+
+    public function getOptions(): array
+    {
+        return $this->options;
     }
 }
