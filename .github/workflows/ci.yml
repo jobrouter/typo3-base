@@ -60,8 +60,8 @@ jobs:
       - name: Run unit tests
         run: |
           .Build/bin/phpunit -c Tests/phpunit.xml.dist
-  code-coverage:
-    name: Code Coverage
+  code-quality:
+    name: Code Quality
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -71,9 +71,9 @@ jobs:
       - name: Setup PHP version
         uses: shivammathur/setup-php@v2
         with:
-          php-version: 7.2
+          php-version: 7.4
           coverage: xdebug
-          extensions: fileinfo gd intl json mbstring mysqli openssl pcre pdo session sodium xml zip zlib
+          extensions: mbstring
       - name: Get Composer Cache Directory
         id: composer-cache
         run: |
@@ -90,7 +90,10 @@ jobs:
       - name: Normalize composer.json
         run: |
           composer normalize --dry-run
-      - name: Run unit tests
+      - name: Check coding standards
+        run: |
+          .Build/bin/ecs check --no-progress-bar
+      - name: Generate code coverage
         run: |
           .Build/bin/phpunit -c Tests/phpunit.xml.dist --log-junit .Build/logs/phpunit.xml --coverage-text --coverage-clover .Build/logs/clover.xml
       - name: Send code coverage report to coveralls.io
