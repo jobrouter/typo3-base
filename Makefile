@@ -1,5 +1,13 @@
 .PHONY: qa
-qa: cs unit-tests yaml-lint
+qa: cs unit-tests yaml-lint changelog
+
+# See: https://github.com/crossnox/m2r2
+.PHONY: changelog
+changelog:
+	m2r2 CHANGELOG.md && \
+	echo ".. _changelog:" | cat - CHANGELOG.rst > /tmp/CHANGELOG.rst && \
+	mv /tmp/CHANGELOG.rst Documentation/changelog.rst && \
+	rm CHANGELOG.rst
 
 .PHONY: cs
 cs: vendor

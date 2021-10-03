@@ -37,4 +37,5 @@ Contents
    installation
    variable-resolvers
    developer
+   changelog
    copyright
