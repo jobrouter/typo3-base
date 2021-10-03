@@ -23,17 +23,21 @@ use TYPO3\CMS\Core\Site\Entity\SiteLanguage;
 
 class JobRouterLanguageVariableResolverTest extends TestCase
 {
-    /** @var JobRouterLanguageVariableResolver */
+    /**
+     * @var JobRouterLanguageVariableResolver
+     */
     private $subject;
 
-    /** @var Stub|ServerRequestInterface */
+    /**
+     * @var Stub|ServerRequestInterface
+     */
     private $serverRequestStub;
 
     protected function setUp(): void
     {
         $this->subject = new JobRouterLanguageVariableResolver();
 
-        /** @var $baseStub Stub|UriInterface */
+        /** @var Stub|UriInterface $baseStub */
         $baseStub = $this->createStub(UriInterface::class);
         $baseStub
             ->method('__toString')
@@ -45,9 +49,7 @@ class JobRouterLanguageVariableResolverTest extends TestCase
     /**
      * @test
      * @dataProvider dataProvider
-     * @param string $value
      * @param $isoCode
-     * @param string $expected
      */
     public function jobRouterLanguageVariableIsResolvedCorrectly(string $value, $isoCode, string $expected): void
     {
@@ -55,7 +57,9 @@ class JobRouterLanguageVariableResolverTest extends TestCase
             1,
             '',
             $this->createStub(UriInterface::class),
-            ['iso-639-1' => $isoCode]
+            [
+                'iso-639-1' => $isoCode,
+            ]
         );
 
         $this->serverRequestStub

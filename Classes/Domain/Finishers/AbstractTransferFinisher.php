@@ -21,10 +21,14 @@ use TYPO3\CMS\Form\Domain\Finishers\AbstractFinisher;
  */
 abstract class AbstractTransferFinisher extends AbstractFinisher
 {
-    /** @var VariableResolver */
+    /**
+     * @var VariableResolver
+     */
     protected $variableResolver;
 
-    /** @var IdGenerator */
+    /**
+     * @var IdGenerator
+     */
     private $correlationIdGenerator;
 
     protected $correlationId = '';

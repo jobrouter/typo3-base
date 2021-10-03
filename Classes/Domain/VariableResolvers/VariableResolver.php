@@ -20,16 +20,24 @@ use Psr\Http\Message\ServerRequestInterface;
  */
 class VariableResolver
 {
-    /** @var EventDispatcherInterface */
+    /**
+     * @var EventDispatcherInterface
+     */
     private $eventDispatcher;
 
-    /** @var string */
+    /**
+     * @var string
+     */
     private $correlationId;
 
-    /** @var array */
+    /**
+     * @var array
+     */
     private $formValues;
 
-    /** @var ServerRequestInterface */
+    /**
+     * @var ServerRequestInterface
+     */
     private $request;
 
     public function __construct(EventDispatcherInterface $eventDispatcher)
@@ -54,7 +62,7 @@ class VariableResolver
 
     public function resolve(int $fieldType, $value): string
     {
-        if (!\str_contains($value, '{__')) {
+        if (! \str_contains($value, '{__')) {
             return $value;
         }
 

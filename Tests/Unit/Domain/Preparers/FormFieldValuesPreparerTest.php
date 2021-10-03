@@ -17,7 +17,9 @@ use TYPO3\CMS\Form\Domain\Model\FormElements\GenericFormElement;
 
 class FormFieldValuesPreparerTest extends TestCase
 {
-    /** @var FormFieldValuesPreparer */
+    /**
+     * @var FormFieldValuesPreparer
+     */
     private $subject;
 
     protected function setUp(): void
@@ -47,7 +49,7 @@ class FormFieldValuesPreparerTest extends TestCase
             'expected' => [
                 '{foo}' => '',
                 '{bar}' => '',
-            ]
+            ],
         ];
 
         yield 'Some form values given returns correct prepared field values' => [
@@ -61,7 +63,7 @@ class FormFieldValuesPreparerTest extends TestCase
             'expected' => [
                 '{foo}' => '',
                 '{bar}' => 'some bar',
-            ]
+            ],
         ];
 
         yield 'All form values given returns correct prepared field values' => [
@@ -76,7 +78,7 @@ class FormFieldValuesPreparerTest extends TestCase
             'expected' => [
                 '{foo}' => 'some foo',
                 '{bar}' => 'some bar',
-            ]
+            ],
         ];
 
         yield 'Form value with array (multiple values) returns correct prepared field values' => [
@@ -88,7 +90,7 @@ class FormFieldValuesPreparerTest extends TestCase
             ],
             'expected' => [
                 '{foo}' => 'qux,"""qoo"""',
-            ]
+            ],
         ];
     }
 }

@@ -22,13 +22,19 @@ use Psr\Http\Message\ServerRequestInterface;
 
 class VariableResolverTest extends TestCase
 {
-    /** @var Stub|ServerRequestInterface */
+    /**
+     * @var Stub|ServerRequestInterface
+     */
     private $requestStub;
 
-    /** @var MockObject|EventDispatcherInterface */
+    /**
+     * @var MockObject|EventDispatcherInterface
+     */
     private $eventDispatcherMock;
 
-    /** @var VariableResolver */
+    /**
+     * @var VariableResolver
+     */
     private $subject;
 
     protected function setUp(): void
@@ -37,7 +43,9 @@ class VariableResolverTest extends TestCase
         $this->eventDispatcherMock = $this->createMock(EventDispatcherInterface::class);
         $this->subject = new VariableResolver($this->eventDispatcherMock);
         $this->subject->setCorrelationId('some identifier');
-        $this->subject->setFormValues(['foo' => 'bar']);
+        $this->subject->setFormValues([
+            'foo' => 'bar',
+        ]);
         $this->subject->setRequest($this->requestStub);
     }
 
@@ -64,7 +72,9 @@ class VariableResolverTest extends TestCase
             FieldTypeEnumeration::TEXT,
             'resolved value',
             'some identifier',
-            ['foo' => 'bar'],
+            [
+                'foo' => 'bar',
+            ],
             $this->requestStub
         );
 

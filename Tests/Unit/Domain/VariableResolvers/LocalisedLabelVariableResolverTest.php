@@ -23,13 +23,19 @@ use Psr\Http\Message\ServerRequestInterface;
 
 class LocalisedLabelVariableResolverTest extends TestCase
 {
-    /** @var LocalisedLabelVariableResolver */
+    /**
+     * @var LocalisedLabelVariableResolver
+     */
     private $subject;
 
-    /** @var MockObject|TranslationService */
+    /**
+     * @var MockObject|TranslationService
+     */
     private $translationServiceMock;
 
-    /** @var Stub|ServerRequestInterface */
+    /**
+     * @var Stub|ServerRequestInterface
+     */
     private $serverRequestStub;
 
     protected function setUp(): void
@@ -71,12 +77,12 @@ class LocalisedLabelVariableResolverTest extends TestCase
         $translationMap = [
             [
                 'LLL:EXT:some_ext/Resources/Private/Language/locallang.xlf:some.label',
-                'localised some label'
+                'localised some label',
             ],
             [
                 'LLL:EXT:some_ext/Resources/Private/Language/locallang.xlf:another.label',
-                'localised another label'
-            ]
+                'localised another label',
+            ],
         ];
 
         $this->translationServiceMock

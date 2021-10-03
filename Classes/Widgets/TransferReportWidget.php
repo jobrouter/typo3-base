@@ -45,8 +45,7 @@ final class TransferReportWidget implements WidgetInterface, AdditionalCssInterf
         ListDataProviderInterface $dataProvider,
         StandaloneView $view,
         array $options
-    )
-    {
+    ) {
         $this->configuration = $configuration;
         $this->dataProvider = $dataProvider;
         $this->view = $view;

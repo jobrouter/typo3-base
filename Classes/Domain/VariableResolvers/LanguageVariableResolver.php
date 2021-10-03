@@ -37,7 +37,7 @@ final class LanguageVariableResolver
     {
         $value = $event->getValue();
 
-        if (!\str_contains($value, '{__language.')) {
+        if (! \str_contains($value, '{__language.')) {
             return;
         }
 
@@ -48,17 +48,17 @@ final class LanguageVariableResolver
             return;
         }
 
-        if (!\preg_match_all('/{__language\.(\w+)}/', $value, $matches)) {
+        if (! \preg_match_all('/{__language\.(\w+)}/', $value, $matches)) {
             return;
         }
 
         foreach ($matches[1] as $index => $match) {
-            if (!\in_array($match, $this->validLanguageVariables)) {
+            if (! \in_array($match, $this->validLanguageVariables, true)) {
                 continue;
             }
 
             $methodToCall = 'get' . \ucfirst($match);
-            $value = \str_replace($matches[0][$index], (string)$language->$methodToCall(), $value);
+            $value = \str_replace($matches[0][$index], (string)$language->{$methodToCall}(), $value);
         }
 
         $event->setValue($value);
@@ -66,7 +66,7 @@ final class LanguageVariableResolver
 
     private function checkValidFieldTypes(ResolveFinisherVariableEvent $event): void
     {
-        if (FieldTypeEnumeration::TEXT === $event->getFieldType()) {
+        if ($event->getFieldType() === FieldTypeEnumeration::TEXT) {
             return;
         }
 

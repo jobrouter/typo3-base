@@ -23,17 +23,21 @@ use TYPO3\CMS\Core\Site\Entity\SiteLanguage;
 
 class LanguageVariableResolverTest extends TestCase
 {
-    /** @var LanguageVariableResolver */
+    /**
+     * @var LanguageVariableResolver
+     */
     private $subject;
 
-    /** @var Stub|ServerRequestInterface */
+    /**
+     * @var Stub|ServerRequestInterface
+     */
     private $serverRequestStub;
 
     protected function setUp(): void
     {
         $this->subject = new LanguageVariableResolver();
 
-        /** @var $baseStub Stub|UriInterface */
+        /** @var Stub|UriInterface $baseStub */
         $baseStub = $this->createStub(UriInterface::class);
         $baseStub
             ->method('__toString')

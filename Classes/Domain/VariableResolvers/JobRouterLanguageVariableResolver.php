@@ -48,7 +48,7 @@ final class JobRouterLanguageVariableResolver
     {
         $value = $event->getValue();
 
-        if (!\str_contains($value, self::VARIABLE_TO_RESOLVE)) {
+        if (! \str_contains($value, self::VARIABLE_TO_RESOLVE)) {
             return;
         }
 
@@ -64,7 +64,7 @@ final class JobRouterLanguageVariableResolver
 
     private function checkValidFieldTypes(ResolveFinisherVariableEvent $event): void
     {
-        if (FieldTypeEnumeration::TEXT === $event->getFieldType()) {
+        if ($event->getFieldType() === FieldTypeEnumeration::TEXT) {
             return;
         }
 

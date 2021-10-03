@@ -21,7 +21,9 @@ use Brotkrueml\JobRouterBase\Language\TranslationService;
  */
 final class LocalisedLabelVariableResolver
 {
-    /** @var TranslationService */
+    /**
+     * @var TranslationService
+     */
     private $translationService;
 
     public function __construct(TranslationService $translationService)
@@ -33,13 +35,13 @@ final class LocalisedLabelVariableResolver
     {
         $value = $event->getValue();
 
-        if (!\str_contains($value, '{__LLL:')) {
+        if (! \str_contains($value, '{__LLL:')) {
             return;
         }
 
         $this->checkValidFieldTypes($event);
 
-        if (!\preg_match_all('/{__(LLL:.+?)}/', $value, $matches)) {
+        if (! \preg_match_all('/{__(LLL:.+?)}/', $value, $matches)) {
             return;
         }
 
@@ -56,7 +58,7 @@ final class LocalisedLabelVariableResolver
 
     private function checkValidFieldTypes(ResolveFinisherVariableEvent $event): void
     {
-        if (FieldTypeEnumeration::TEXT === $event->getFieldType()) {
+        if ($event->getFieldType() === FieldTypeEnumeration::TEXT) {
             return;
         }
 

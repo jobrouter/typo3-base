@@ -15,19 +15,29 @@ use Psr\Http\Message\ServerRequestInterface;
 
 final class ResolveFinisherVariableEvent
 {
-    /** @var int */
+    /**
+     * @var int
+     */
     private $fieldType;
 
-    /** @var string|int */
+    /**
+     * @var string|int
+     */
     private $value;
 
-    /** @var string */
+    /**
+     * @var string
+     */
     private $correlationId;
 
-    /** @var array<string,string> */
+    /**
+     * @var array<string,string>
+     */
     private $formValues;
 
-    /** @var ServerRequestInterface */
+    /**
+     * @var ServerRequestInterface
+     */
     private $request;
 
     public function __construct(

@@ -33,7 +33,7 @@ final class CorrelationIdVariableResolver
 
     private function checkValidFieldTypes(int $fieldType): void
     {
-        if (FieldTypeEnumeration::TEXT === $fieldType) {
+        if ($fieldType === FieldTypeEnumeration::TEXT) {
             return;
         }
 

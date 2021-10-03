@@ -18,7 +18,9 @@ use Psr\Http\Message\ServerRequestInterface;
 
 class ResolveFinisherVariableEventTest extends TestCase
 {
-    /** @var Stub|ServerRequestInterface */
+    /**
+     * @var Stub|ServerRequestInterface
+     */
     private $serverRequestStub;
 
     protected function setUp(): void
@@ -35,14 +37,18 @@ class ResolveFinisherVariableEventTest extends TestCase
             42,
             'some-value',
             'some-identifier',
-            ['formName' => 'formValue'],
+            [
+                'formName' => 'formValue',
+            ],
             $this->serverRequestStub
         );
 
         self::assertSame(42, $subject->getFieldType());
         self::assertSame('some-value', $subject->getValue());
         self::assertSame('some-identifier', $subject->getCorrelationId());
-        self::assertSame(['formName' => 'formValue'], $subject->getFormValues());
+        self::assertSame([
+            'formName' => 'formValue',
+        ], $subject->getFormValues());
         self::assertSame($this->serverRequestStub, $subject->getRequest());
     }
 

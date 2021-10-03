@@ -22,7 +22,7 @@ class IdGenerator implements SingletonInterface
 
     public function build(string $key): string
     {
-        if (!isset($this->correlationIds[$key])) {
+        if (! isset($this->correlationIds[$key])) {
             $this->correlationIds[$key] = \implode(
                 '_',
                 [

@@ -57,7 +57,7 @@ class TransferStatusWidget implements WidgetInterface, AdditionalCssInterface
         $this->view->setTemplate('Widget/TransferStatusWidget');
         $this->view->assignMultiple([
             'status' => $this->dataProvider->getStatus(),
-            'configuration' => $this->configuration
+            'configuration' => $this->configuration,
         ]);
 
         return $this->view->render();
@@ -66,7 +66,7 @@ class TransferStatusWidget implements WidgetInterface, AdditionalCssInterface
     public function getCssFiles(): array
     {
         return [
-            \sprintf('EXT:%s/Resources/Public/Css/widgets.css', Extension::KEY)
+            \sprintf('EXT:%s/Resources/Public/Css/widgets.css', Extension::KEY),
         ];
     }
 
