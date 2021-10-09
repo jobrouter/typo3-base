@@ -15,7 +15,7 @@ Added
 ^^^^^
 
 
-* Compatibility with TYPO3 v11
+* Compatibility with TYPO3 v11 LTS
 
 `1.0.0 <https://github.com/brotkrueml/typo3-jobrouter-base/compare/v0.1.2...v1.0.0>`_ - 2021-03-14
 ------------------------------------------------------------------------------------------------------
