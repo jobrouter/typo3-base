@@ -31,6 +31,9 @@ abstract class AbstractTransferFinisher extends AbstractFinisher
      */
     private $correlationIdGenerator;
 
+    /**
+     * @var string
+     */
     protected $correlationId = '';
 
     public function injectVariableResolver(VariableResolver $variableResolver)
@@ -48,11 +51,7 @@ abstract class AbstractTransferFinisher extends AbstractFinisher
         $this->buildCorrelationId();
         $this->initialiseVariableResolver();
 
-        if (isset($this->options['handle'])) {
-            $options = [$this->options];
-        } else {
-            $options = $this->options;
-        }
+        $options = isset($this->options['handle']) ? [$this->options] : $this->options;
 
         foreach ($options as $option) {
             $this->options = $option;

@@ -20,6 +20,9 @@ use Brotkrueml\JobRouterBase\Exception\VariableResolverException;
  */
 final class LanguageVariableResolver
 {
+    /**
+     * @var string[]
+     */
     private $validLanguageVariables = [
         'base',
         'direction',

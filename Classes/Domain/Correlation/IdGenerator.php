@@ -18,6 +18,9 @@ use TYPO3\CMS\Core\SingletonInterface;
  */
 class IdGenerator implements SingletonInterface
 {
+    /**
+     * @var string[]
+     */
     private $correlationIds = [];
 
     public function build(string $key): string

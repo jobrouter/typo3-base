@@ -37,7 +37,7 @@ final class TransferStatus
     private $numberOfDays = 0;
 
     /**
-     * @var \DateTimeInterface
+     * @var \DateTimeInterface|null
      */
     private $lastRun;
 

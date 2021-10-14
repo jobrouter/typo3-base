@@ -40,6 +40,9 @@ final class ResolveFinisherVariableEvent
      */
     private $request;
 
+    /**
+     * @param array<string, string> $formValues
+     */
     public function __construct(
         int $fieldType,
         $value,
@@ -59,12 +62,15 @@ final class ResolveFinisherVariableEvent
         return $this->fieldType;
     }
 
+    /**
+     * @return int|string
+     */
     public function getValue()
     {
         return $this->value;
     }
 
-    public function setValue($value)
+    public function setValue($value): void
     {
         $this->value = $value;
     }
@@ -74,6 +80,9 @@ final class ResolveFinisherVariableEvent
         return $this->correlationId;
     }
 
+    /**
+     * @return array<string, string>
+     */
     public function getFormValues(): array
     {
         return $this->formValues;

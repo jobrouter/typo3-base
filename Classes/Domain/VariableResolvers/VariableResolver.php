@@ -50,6 +50,9 @@ class VariableResolver
         $this->correlationId = $correlationId;
     }
 
+    /**
+     * @param mixed[] $formValues
+     */
     public function setFormValues(array $formValues): void
     {
         $this->formValues = $formValues;

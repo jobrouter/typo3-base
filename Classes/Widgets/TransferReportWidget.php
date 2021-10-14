@@ -40,6 +40,9 @@ final class TransferReportWidget implements WidgetInterface, AdditionalCssInterf
 
     private array $options;
 
+    /**
+     * @param array<string, mixed> $options
+     */
     public function __construct(
         WidgetConfigurationInterface $configuration,
         ListDataProviderInterface $dataProvider,
@@ -64,6 +67,9 @@ final class TransferReportWidget implements WidgetInterface, AdditionalCssInterf
         return $this->view->render();
     }
 
+    /**
+     * @return string[]
+     */
     public function getCssFiles(): array
     {
         return [
@@ -71,6 +77,9 @@ final class TransferReportWidget implements WidgetInterface, AdditionalCssInterf
         ];
     }
 
+    /**
+     * @return array<string, mixed>
+     */
     public function getOptions(): array
     {
         return $this->options;

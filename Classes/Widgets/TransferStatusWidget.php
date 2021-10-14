@@ -40,6 +40,9 @@ class TransferStatusWidget implements WidgetInterface, AdditionalCssInterface
 
     private array $options;
 
+    /**
+     * @param array<string, mixed> $options
+     */
     public function __construct(
         WidgetConfigurationInterface $configuration,
         TransferStatusDataProviderInterface $dataProvider,
@@ -63,6 +66,9 @@ class TransferStatusWidget implements WidgetInterface, AdditionalCssInterface
         return $this->view->render();
     }
 
+    /**
+     * @return string[]
+     */
     public function getCssFiles(): array
     {
         return [
@@ -70,6 +76,9 @@ class TransferStatusWidget implements WidgetInterface, AdditionalCssInterface
         ];
     }
 
+    /**
+     * @return array<string, mixed>
+     */
     public function getOptions(): array
     {
         return $this->options;

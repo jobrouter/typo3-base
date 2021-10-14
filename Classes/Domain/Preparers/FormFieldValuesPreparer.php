@@ -16,6 +16,9 @@ namespace Brotkrueml\JobRouterBase\Domain\Preparers;
  */
 final class FormFieldValuesPreparer
 {
+    /**
+     * @return array<string, mixed>
+     */
     public function prepareForSubstitution(array $fieldElements, array $fieldsWithValues): array
     {
         \array_walk($fieldElements, static function (&$element): void {

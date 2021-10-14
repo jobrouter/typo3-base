@@ -51,7 +51,7 @@ class JobRouterLanguageVariableResolverTest extends TestCase
      * @dataProvider dataProvider
      * @param $isoCode
      */
-    public function jobRouterLanguageVariableIsResolvedCorrectly(string $value, $isoCode, string $expected): void
+    public function jobRouterLanguageVariableIsResolvedCorrectly(string $value, string $isoCode, string $expected): void
     {
         $siteLanguage = new SiteLanguage(
             1,
@@ -80,7 +80,7 @@ class JobRouterLanguageVariableResolverTest extends TestCase
         self::assertSame($expected, $event->getValue());
     }
 
-    public function dataProvider(): \Generator
+    public function dataProvider(): iterable
     {
         yield 'jobRouterLanguage for Arabic is resolved' => [
             '{__jobRouterLanguage}',

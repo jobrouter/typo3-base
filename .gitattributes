@@ -6,10 +6,11 @@
 /.gitignore export-ignore
 /.readthedocs.yml export-ignore
 /captainhook.json export-ignore
-/ecs.php export-ignore
 /CHANGELOG.md export-ignore
 /Documentation export-ignore
+/ecs.php export-ignore
 /Makefile export-ignore
 /README.md export-ignore
+/rector.php export-ignore
 /Tests export-ignore
 *.xsd export-ignore
