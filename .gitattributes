@@ -10,6 +10,8 @@
 /Documentation export-ignore
 /ecs.php export-ignore
 /Makefile export-ignore
+/phpstan.neon export-ignore
+/phpstan.baseline.neon export-ignore
 /README.md export-ignore
 /rector.php export-ignore
 /Tests export-ignore
