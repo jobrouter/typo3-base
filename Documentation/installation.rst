@@ -21,6 +21,20 @@ Requirements
 The extension has no PHP requirements in addition to TYPO3.
 
 
+.. _version-matrix:
+
+Version matrix
+==============
+
+============== ========== ===========
+JobRouter Base PHP        TYPO3
+============== ========== ===========
+1.0            7.2 - 7.4  10.4
+-------------- ---------- -----------
+1.1            7.3 - 8.0  10.4 / 11.5
+============== ========== ===========
+
+
 .. _installation-composer:
 
 Installation via composer
