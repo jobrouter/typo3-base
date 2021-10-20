@@ -191,5 +191,6 @@ epub_exclude_files = ['search.html']
 intersphinx_mapping = {
     'typo3-jobrouter-data': ('https://typo3-jobrouter.readthedocs.io/projects/data/en/stable/', None),
     'typo3-jobrouter-process': ('https://typo3-jobrouter.readthedocs.io/projects/process/en/stable/', None),
-    't3api': ('https://docs.typo3.org/m/typo3/reference-coreapi/10.4/en-us/', None),
+    't3api': ('https://docs.typo3.org/m/typo3/reference-coreapi/11.5/en-us/', None),
+    't3gettingstarted': ('https://docs.typo3.org/m/typo3/tutorial-getting-started/11.5/en-us/', None),
 }

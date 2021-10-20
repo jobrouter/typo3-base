@@ -6,10 +6,9 @@
 Introduction
 ============
 
-`JobRouter® <https://www.jobrouter.com/>`_ is a scalable digitisation platform
-which links processes, data and documents. The TYPO3 extension `JobRouter
-Base <https://github.com/brotkrueml/typo3-jobrouter-base>`_ acts as a base
-library for the TYPO3 JobRouter extensions:
+`JobRouter®`_ is a scalable digitisation platform which links processes, data
+and documents. The TYPO3 extension `JobRouter Base`_ acts as a base library
+for the TYPO3 JobRouter extensions:
 
 * :doc:`JobRouter Data <typo3-jobrouter-data:introduction>`
 * :doc:`JobRouter Process <typo3-jobrouter-process:introduction>`
@@ -30,8 +29,7 @@ TYPO3 JobRouter Base is a TYPO3 extension and provides
 Release management
 ==================
 
-This extension uses `semantic versioning <https://semver.org/>`_ which
-basically means for you, that
+This extension uses `semantic versioning`_ which basically means for you, that
 
 * Bugfix updates (e.g. 1.0.0 => 1.0.1) just includes small bug fixes or security
   relevant stuff without breaking changes.
@@ -42,3 +40,8 @@ basically means for you, that
 
 The changes between the different versions can be found in the
 :ref:`changelog <changelog>`.
+
+
+.. _JobRouter®: https://www.jobrouter.com/
+.. _JobRouter Base: https://github.com/brotkrueml/typo3-jobrouter-base
+.. _semantic versioning: https://semver.org/
