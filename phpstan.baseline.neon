@@ -149,14 +149,3 @@ parameters:
 			message: "#^Property Brotkrueml\\\\JobRouterBase\\\\Widgets\\\\TransferStatusWidget\\:\\:\\$options type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: Classes/Widgets/TransferStatusWidget.php
-
-		-
-			message: "#^Array with keys is not allowed\\. Use value object to pass data instead$#"
-			count: 4
-			path: Configuration/Icons.php
-
-		-
-			message: "#^Use value object over return of values$#"
-			count: 1
-			path: Configuration/Icons.php
-
