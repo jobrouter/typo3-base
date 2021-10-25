@@ -36,17 +36,17 @@ abstract class AbstractTransferFinisher extends AbstractFinisher
      */
     protected $correlationId = '';
 
-    public function injectVariableResolver(VariableResolver $variableResolver)
+    public function injectVariableResolver(VariableResolver $variableResolver): void
     {
         $this->variableResolver = $variableResolver;
     }
 
-    public function injectIdGenerator(IdGenerator $correlationIdGenerator)
+    public function injectIdGenerator(IdGenerator $correlationIdGenerator): void
     {
         $this->correlationIdGenerator = $correlationIdGenerator;
     }
 
-    protected function executeInternal()
+    protected function executeInternal(): ?string
     {
         $this->buildCorrelationId();
         $this->initialiseVariableResolver();
@@ -57,6 +57,8 @@ abstract class AbstractTransferFinisher extends AbstractFinisher
             $this->options = $option;
             $this->process();
         }
+
+        return null;
     }
 
     protected function buildCorrelationId(): void
@@ -82,7 +84,10 @@ abstract class AbstractTransferFinisher extends AbstractFinisher
             ->getIdentifier();
     }
 
-    protected function resolveFormFields(array $formValues, $value): string
+    /**
+     * @param array<string, string> $formValues
+     */
+    protected function resolveFormFields(array $formValues, string $value): string
     {
         return \str_replace(
             \array_keys($formValues),
