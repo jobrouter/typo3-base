@@ -21,6 +21,11 @@ use Brotkrueml\JobRouterBase\Exception\VariableResolverException;
 final class LanguageVariableResolver
 {
     /**
+     * @see https://regex101.com/r/9HJ3lr/1
+     */
+    private const LANGUAGE_VARIABLE_REGEX = '/{__language\.(\w+)}/';
+
+    /**
      * @var string[]
      */
     private $validLanguageVariables = [
@@ -38,7 +43,7 @@ final class LanguageVariableResolver
 
     public function __invoke(ResolveFinisherVariableEvent $event): void
     {
-        $value = $event->getValue();
+        $value = (string)$event->getValue();
 
         if (! \str_contains($value, '{__language.')) {
             return;
@@ -51,7 +56,7 @@ final class LanguageVariableResolver
             return;
         }
 
-        if (! \preg_match_all('/{__language\.(\w+)}/', $value, $matches)) {
+        if (! \preg_match_all(self::LANGUAGE_VARIABLE_REGEX, $value, $matches)) {
             return;
         }
 
