@@ -94,23 +94,3 @@ parameters:
 			message: "#^Use local named constant instead of inline string for regex to explain meaning by constant name$#"
 			count: 1
 			path: Classes/Domain/VariableResolvers/LanguageVariableResolver.php
-
-		-
-			message: "#^Parameter \\#1 \\$haystack of function str_contains expects string\\|null, int\\|string given\\.$#"
-			count: 1
-			path: Classes/Domain/VariableResolvers/LocalisedLabelVariableResolver.php
-
-		-
-			message: "#^Parameter \\#2 \\$subject of function preg_match_all expects string, int\\|string given\\.$#"
-			count: 1
-			path: Classes/Domain/VariableResolvers/LocalisedLabelVariableResolver.php
-
-		-
-			message: "#^Parameter \\#3 \\$subject of function str_replace expects array\\|string, int\\|string given\\.$#"
-			count: 1
-			path: Classes/Domain/VariableResolvers/LocalisedLabelVariableResolver.php
-
-		-
-			message: "#^Use local named constant instead of inline string for regex to explain meaning by constant name$#"
-			count: 1
-			path: Classes/Domain/VariableResolvers/LocalisedLabelVariableResolver.php

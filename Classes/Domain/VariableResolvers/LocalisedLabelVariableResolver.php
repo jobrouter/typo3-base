@@ -22,6 +22,11 @@ use Brotkrueml\JobRouterBase\Language\TranslationService;
 final class LocalisedLabelVariableResolver
 {
     /**
+     * @see https://regex101.com/r/C8VekG/1/
+     */
+    private const LOCALISED_STRING_REGEX = '/{__(LLL:.+?)}/';
+
+    /**
      * @var TranslationService
      */
     private $translationService;
@@ -33,7 +38,7 @@ final class LocalisedLabelVariableResolver
 
     public function __invoke(ResolveFinisherVariableEvent $event): void
     {
-        $value = $event->getValue();
+        $value = (string)$event->getValue();
 
         if (! \str_contains($value, '{__LLL:')) {
             return;
@@ -41,7 +46,7 @@ final class LocalisedLabelVariableResolver
 
         $this->checkValidFieldTypes($event);
 
-        if (! \preg_match_all('/{__(LLL:.+?)}/', $value, $matches)) {
+        if (! \preg_match_all(self::LOCALISED_STRING_REGEX, $value, $matches)) {
             return;
         }
 
