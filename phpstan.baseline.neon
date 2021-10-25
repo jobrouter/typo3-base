@@ -59,8 +59,3 @@ parameters:
 			message: "#^Parameter \\#1 \\$str of function trim expects string, string\\|false given\\.$#"
 			count: 1
 			path: Classes/Domain/Preparers/FormFieldValuesPreparer.php
-
-		-
-			message: "#^Parameter \\#3 \\$subject of function str_replace expects array\\|string, int\\|string given\\.$#"
-			count: 1
-			path: Classes/Domain/VariableResolvers/CorrelationIdVariableResolver.php
