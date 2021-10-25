@@ -24,38 +24,3 @@ parameters:
 			message: "#^Method Brotkrueml\\\\JobRouterBase\\\\Domain\\\\Finishers\\\\AbstractTransferFinisher\\:\\:resolveFormFields\\(\\) has parameter \\$value with no typehint specified\\.$#"
 			count: 1
 			path: Classes/Domain/Finishers/AbstractTransferFinisher.php
-
-		-
-			message: "#^Method Brotkrueml\\\\JobRouterBase\\\\Domain\\\\Preparers\\\\FormFieldValuesPreparer\\:\\:convertArrayToCsv\\(\\) has parameter \\$values with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: Classes/Domain/Preparers/FormFieldValuesPreparer.php
-
-		-
-			message: "#^Method Brotkrueml\\\\JobRouterBase\\\\Domain\\\\Preparers\\\\FormFieldValuesPreparer\\:\\:prepareForSubstitution\\(\\) has parameter \\$fieldElements with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: Classes/Domain/Preparers/FormFieldValuesPreparer.php
-
-		-
-			message: "#^Method Brotkrueml\\\\JobRouterBase\\\\Domain\\\\Preparers\\\\FormFieldValuesPreparer\\:\\:prepareForSubstitution\\(\\) has parameter \\$fieldsWithValues with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: Classes/Domain/Preparers/FormFieldValuesPreparer.php
-
-		-
-			message: "#^Parameter \\#1 \\$fp of function fputcsv expects resource, resource\\|false given\\.$#"
-			count: 1
-			path: Classes/Domain/Preparers/FormFieldValuesPreparer.php
-
-		-
-			message: "#^Parameter \\#1 \\$fp of function rewind expects resource, resource\\|false given\\.$#"
-			count: 1
-			path: Classes/Domain/Preparers/FormFieldValuesPreparer.php
-
-		-
-			message: "#^Parameter \\#1 \\$source of function stream_get_contents expects resource, resource\\|false given\\.$#"
-			count: 1
-			path: Classes/Domain/Preparers/FormFieldValuesPreparer.php
-
-		-
-			message: "#^Parameter \\#1 \\$str of function trim expects string, string\\|false given\\.$#"
-			count: 1
-			path: Classes/Domain/Preparers/FormFieldValuesPreparer.php
