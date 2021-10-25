@@ -46,7 +46,7 @@ final class JobRouterLanguageVariableResolver
 
     public function __invoke(ResolveFinisherVariableEvent $event): void
     {
-        $value = $event->getValue();
+        $value = (string)$event->getValue();
 
         if (! \str_contains($value, self::VARIABLE_TO_RESOLVE)) {
             return;

@@ -64,13 +64,3 @@ parameters:
 			message: "#^Parameter \\#3 \\$subject of function str_replace expects array\\|string, int\\|string given\\.$#"
 			count: 1
 			path: Classes/Domain/VariableResolvers/CorrelationIdVariableResolver.php
-
-		-
-			message: "#^Parameter \\#1 \\$haystack of function str_contains expects string\\|null, int\\|string given\\.$#"
-			count: 1
-			path: Classes/Domain/VariableResolvers/JobRouterLanguageVariableResolver.php
-
-		-
-			message: "#^Parameter \\#3 \\$subject of function str_replace expects array\\|string, int\\|string given\\.$#"
-			count: 1
-			path: Classes/Domain/VariableResolvers/JobRouterLanguageVariableResolver.php
