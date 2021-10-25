@@ -41,6 +41,7 @@ final class ResolveFinisherVariableEvent
     private $request;
 
     /**
+     * @param int|string $value
      * @param array<string, string> $formValues
      */
     public function __construct(
@@ -70,6 +71,9 @@ final class ResolveFinisherVariableEvent
         return $this->value;
     }
 
+    /**
+     * @param int|string $value
+     */
     public function setValue($value): void
     {
         $this->value = $value;
