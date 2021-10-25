@@ -38,7 +38,10 @@ class TransferStatusWidget implements WidgetInterface, AdditionalCssInterface
      */
     private $dataProvider;
 
-    private array $options;
+    /**
+     * @var array<string, mixed>
+     */
+    private $options;
 
     /**
      * @param array<string, mixed> $options

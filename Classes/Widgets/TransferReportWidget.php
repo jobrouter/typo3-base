@@ -38,7 +38,10 @@ final class TransferReportWidget implements WidgetInterface, AdditionalCssInterf
      */
     private $view;
 
-    private array $options;
+    /**
+     * @var array<string, mixed>
+     */
+    private $options;
 
     /**
      * @param array<string, mixed> $options

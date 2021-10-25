@@ -139,13 +139,3 @@ parameters:
 			message: "#^Method Brotkrueml\\\\JobRouterBase\\\\Event\\\\ResolveFinisherVariableEvent\\:\\:setValue\\(\\) has parameter \\$value with no typehint specified\\.$#"
 			count: 1
 			path: Classes/Event/ResolveFinisherVariableEvent.php
-
-		-
-			message: "#^Property Brotkrueml\\\\JobRouterBase\\\\Widgets\\\\TransferReportWidget\\:\\:\\$options type has no value type specified in iterable type array\\.$#"
-			count: 1
-			path: Classes/Widgets/TransferReportWidget.php
-
-		-
-			message: "#^Property Brotkrueml\\\\JobRouterBase\\\\Widgets\\\\TransferStatusWidget\\:\\:\\$options type has no value type specified in iterable type array\\.$#"
-			count: 1
-			path: Classes/Widgets/TransferStatusWidget.php
