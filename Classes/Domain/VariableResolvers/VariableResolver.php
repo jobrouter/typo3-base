@@ -31,7 +31,7 @@ class VariableResolver
     private $correlationId;
 
     /**
-     * @var array
+     * @var array<string, string>
      */
     private $formValues;
 
@@ -63,7 +63,10 @@ class VariableResolver
         $this->request = $request;
     }
 
-    public function resolve(int $fieldType, $value): string
+    /**
+     * @return int|string
+     */
+    public function resolve(int $fieldType, string $value)
     {
         if (! \str_contains($value, '{__')) {
             return $value;
@@ -76,6 +79,7 @@ class VariableResolver
             $this->formValues,
             $this->request
         );
+        /** @var ResolveFinisherVariableEvent $event */
         $event = $this->eventDispatcher->dispatch($event);
 
         return $event->getValue();

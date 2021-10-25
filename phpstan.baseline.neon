@@ -114,18 +114,3 @@ parameters:
 			message: "#^Use local named constant instead of inline string for regex to explain meaning by constant name$#"
 			count: 1
 			path: Classes/Domain/VariableResolvers/LocalisedLabelVariableResolver.php
-
-		-
-			message: "#^Call to an undefined method object\\:\\:getValue\\(\\)\\.$#"
-			count: 1
-			path: Classes/Domain/VariableResolvers/VariableResolver.php
-
-		-
-			message: "#^Method Brotkrueml\\\\JobRouterBase\\\\Domain\\\\VariableResolvers\\\\VariableResolver\\:\\:resolve\\(\\) has parameter \\$value with no typehint specified\\.$#"
-			count: 1
-			path: Classes/Domain/VariableResolvers/VariableResolver.php
-
-		-
-			message: "#^Property Brotkrueml\\\\JobRouterBase\\\\Domain\\\\VariableResolvers\\\\VariableResolver\\:\\:\\$formValues type has no value type specified in iterable type array\\.$#"
-			count: 1
-			path: Classes/Domain/VariableResolvers/VariableResolver.php
