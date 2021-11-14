@@ -36,7 +36,7 @@
 	},
 	"suggest": {
 		"brotkrueml/typo3-jobrouter-data": "Synchronise and transmit to JobData tables",
-		"brotkrueml/typo3-jobrouter-process": "Start incidents in JobRouter®"
+		"brotkrueml/typo3-jobrouter-process": "Start instances in JobRouter®"
 	},
 	"config": {
 		"bin-dir": ".Build/bin",

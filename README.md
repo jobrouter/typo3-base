@@ -5,7 +5,7 @@
 [![Documentation Status](https://readthedocs.org/projects/typo3-jobrouter-base/badge/?version=latest)](https://typo3-jobrouter.readthedocs.io/projects/base/)
 [![Latest Stable Version](https://img.shields.io/packagist/v/brotkrueml/typo3-jobrouter-base.svg?label=stable)](https://packagist.org/packages/brotkrueml/typo3-jobrouter-base)
 
-[JobRouter®](https://www.jobrouter.com/) is a scalable digitization
+[JobRouter®](https://www.jobrouter.com/) is a scalable digitalisation
 platform which links processes, data and documents.
 
 This TYPO3 extension acts as a base library for:
