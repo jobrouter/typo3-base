@@ -16,6 +16,7 @@ Added
 
 
 * Compatibility with TYPO3 v11 LTS
+* Variable resolver for page properties
 
 Removed
 ^^^^^^^

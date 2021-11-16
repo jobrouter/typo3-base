@@ -30,3 +30,9 @@ services:
       - name: event.listener
         identifier: 'jobrouter-base/correlation-id-variable-resolver'
         event: Brotkrueml\JobRouterBase\Event\ResolveFinisherVariableEvent
+
+  Brotkrueml\JobRouterBase\Domain\VariableResolvers\PageVariableResolver:
+    tags:
+      - name: event.listener
+        identifier: 'jobrouter-base/page-variable-resolver'
+        event: Brotkrueml\JobRouterBase\Event\ResolveFinisherVariableEvent

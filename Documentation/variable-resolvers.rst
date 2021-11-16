@@ -184,3 +184,13 @@ are supported by JobRouter® by now:
 
 If the language is not available, an empty string is returned by the variable
 resolver.
+
+
+Page properties
+---------------
+
+The properties of the page where the form is located can be retrieved. The
+variable starts with `__page.`. Any existing page property, such as uid or
+title, can be used, for example: `{__page.title}`.
+
+If a page property is not present, the variable is used unchanged.
