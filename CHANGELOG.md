@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- Common translations for depending extensions
+
 ## [1.1.0] - 2021-11-21
 
 ### Added
