@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - Common translations for depending extensions
+- Support for Croatian in JobRouterLanguageResolver
 
 ## [1.1.0] - 2021-11-21
 

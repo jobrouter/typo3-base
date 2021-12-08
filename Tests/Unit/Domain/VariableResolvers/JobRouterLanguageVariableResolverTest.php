@@ -94,6 +94,12 @@ class JobRouterLanguageVariableResolverTest extends TestCase
             'chinese',
         ];
 
+        yield 'jobRouterLanguage for Croatian is resolved' => [
+            '{__jobRouterLanguage}',
+            'hr',
+            'croatian',
+        ];
+
         yield 'jobRouterLanguage for Czech is resolved' => [
             '{__jobRouterLanguage}',
             'cs',

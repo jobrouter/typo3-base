@@ -31,6 +31,7 @@ final class JobRouterLanguageVariableResolver
         'es' => 'spanish',
         'fi' => 'finnish',
         'fr' => 'french',
+        'hr' => 'croatian',
         'hu' => 'hungarian',
         'it' => 'italian',
         'ja' => 'japanese',
