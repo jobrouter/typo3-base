@@ -1,19 +1,24 @@
 {
 	"name": "brotkrueml/typo3-jobrouter-base",
-	"type": "typo3-cms-extension",
 	"description": "Base extension for the TYPO3 JobRouter® extensions",
+	"license": "GPL-2.0-or-later",
+	"type": "typo3-cms-extension",
 	"keywords": [
 		"TYPO3 CMS",
 		"TYPO3 extension",
 		"JobRouter"
 	],
-	"license": "GPL-2.0-or-later",
 	"authors": [
 		{
 			"name": "Chris Müller",
 			"role": "Developer"
 		}
 	],
+	"support": {
+		"issues": "https://github.com/brotkrueml/typo3-jobrouter-base/issues",
+		"source": "https://github.com/brotkrueml/typo3-jobrouter-base",
+		"docs": "https://typo3-jobrouter.readthedocs.io/projects/base/"
+	},
 	"require": {
 		"php": ">=7.3",
 		"symfony/polyfill-php80": "^1.15",
@@ -22,7 +27,7 @@
 	"require-dev": {
 		"brotkrueml/coding-standards": "~1.1.0",
 		"captainhook/captainhook": "^5.10",
-		"ergebnis/composer-normalize": "^2.15",
+		"ergebnis/composer-normalize": "^2.18",
 		"php-coveralls/php-coveralls": "^2.4",
 		"phpstan/extension-installer": "^1.1",
 		"phpstan/phpstan": "^0.12.99",
@@ -37,6 +42,16 @@
 	"suggest": {
 		"brotkrueml/typo3-jobrouter-data": "Synchronise and transmit to JobData tables",
 		"brotkrueml/typo3-jobrouter-process": "Start instances in JobRouter®"
+	},
+	"autoload": {
+		"psr-4": {
+			"Brotkrueml\\JobRouterBase\\": "Classes"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"Brotkrueml\\JobRouterBase\\Tests\\": "Tests"
+		}
 	},
 	"config": {
 		"bin-dir": ".Build/bin",
@@ -53,22 +68,7 @@
 			"web-dir": ".Build/web"
 		}
 	},
-	"autoload": {
-		"psr-4": {
-			"Brotkrueml\\JobRouterBase\\": "Classes"
-		}
-	},
-	"autoload-dev": {
-		"psr-4": {
-			"Brotkrueml\\JobRouterBase\\Tests\\": "Tests"
-		}
-	},
 	"scripts": {
 		"post-autoload-dump": ".Build/bin/captainhook install -f -s"
-	},
-	"support": {
-		"issues": "https://github.com/brotkrueml/typo3-jobrouter-base/issues",
-		"source": "https://github.com/brotkrueml/typo3-jobrouter-base",
-		"docs": "https://typo3-jobrouter.readthedocs.io/projects/base/"
 	}
 }
