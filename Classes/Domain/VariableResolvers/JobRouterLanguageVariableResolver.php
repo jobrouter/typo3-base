@@ -14,6 +14,7 @@ namespace Brotkrueml\JobRouterBase\Domain\VariableResolvers;
 use Brotkrueml\JobRouterBase\Enumeration\FieldTypeEnumeration;
 use Brotkrueml\JobRouterBase\Event\ResolveFinisherVariableEvent;
 use Brotkrueml\JobRouterBase\Exception\VariableResolverException;
+use TYPO3\CMS\Core\Site\Entity\SiteLanguage;
 
 /**
  * @internal
@@ -55,8 +56,9 @@ final class JobRouterLanguageVariableResolver
 
         $this->checkValidFieldTypes($event);
 
-        $language = $event->getRequest()->getAttribute('language', null);
-        $languageIsoCode = $language ? $language->getTwoLetterIsoCode() : '';
+        /** @var SiteLanguage|null $language */
+        $language = $event->getRequest()->getAttribute('language');
+        $languageIsoCode = $language !== null ? $language->getTwoLetterIsoCode() : '';
         $jobRouterLanguage = self::LANGUAGE_MAPPINGS[$languageIsoCode] ?? '';
         $value = \str_replace(self::VARIABLE_TO_RESOLVE, $jobRouterLanguage, $value);
 

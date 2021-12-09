@@ -51,7 +51,7 @@ class VariableResolver
     }
 
     /**
-     * @param mixed[] $formValues
+     * @param array<string, string> $formValues
      */
     public function setFormValues(array $formValues): void
     {
