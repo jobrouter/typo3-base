@@ -6,6 +6,7 @@ services:
 
   Brotkrueml\JobRouterBase\:
     resource: '../Classes/*'
+    exclude: '../Classes/{Domain/Model,Enumeration,Exception,Extension.php}'
 
   Brotkrueml\JobRouterBase\Domain\VariableResolvers\JobRouterLanguageVariableResolver:
     tags:
