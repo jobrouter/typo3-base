@@ -9,7 +9,7 @@ declare(strict_types=1);
  * LICENSE.txt file that was distributed with this source code.
  */
 
-namespace Domain\VariableResolvers;
+namespace Brotkrueml\JobRouterBase\Tests\Unit\Domain\VariableResolvers;
 
 use Brotkrueml\JobRouterBase\Domain\VariableResolvers\PageVariableResolver;
 use Brotkrueml\JobRouterBase\Enumeration\FieldTypeEnumeration;

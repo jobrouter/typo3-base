@@ -9,7 +9,7 @@ declare(strict_types=1);
  * LICENSE.txt file that was distributed with this source code.
  */
 
-namespace Brotkrueml\JobRouterBase\Test\Unit\Domain\Correlation;
+namespace Brotkrueml\JobRouterBase\Tests\Unit\Domain\Correlation;
 
 use Brotkrueml\JobRouterBase\Domain\Correlation\IdGenerator;
 use PHPUnit\Framework\TestCase;

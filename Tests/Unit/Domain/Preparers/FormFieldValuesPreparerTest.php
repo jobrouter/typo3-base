@@ -9,7 +9,7 @@ declare(strict_types=1);
  * LICENSE.txt file that was distributed with this source code.
  */
 
-namespace Domain\Preparers;
+namespace Brotkrueml\JobRouterBase\Tests\Unit\Domain\Preparers;
 
 use Brotkrueml\JobRouterBase\Domain\Preparers\FormFieldValuesPreparer;
 use PHPUnit\Framework\TestCase;
