@@ -20,20 +20,13 @@ use Psr\Http\Message\ServerRequestInterface;
  */
 class VariableResolver
 {
-    /**
-     * @var EventDispatcherInterface
-     */
-    private $eventDispatcher;
-
-    /**
-     * @var string
-     */
-    private $correlationId = '';
+    private EventDispatcherInterface $eventDispatcher;
+    private string $correlationId = '';
 
     /**
      * @var array<string, string>
      */
-    private $formValues = [];
+    private array $formValues = [];
 
     /**
      * @var ServerRequestInterface

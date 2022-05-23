@@ -21,7 +21,7 @@ class IdGenerator implements SingletonInterface
     /**
      * @var string[]
      */
-    private $correlationIds = [];
+    private array $correlationIds = [];
 
     public function build(string $key): string
     {

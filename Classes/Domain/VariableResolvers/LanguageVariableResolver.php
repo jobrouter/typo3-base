@@ -28,7 +28,7 @@ final class LanguageVariableResolver
     /**
      * @var string[]
      */
-    private $validLanguageVariables = [
+    private array $validLanguageVariables = [
         'base',
         'direction',
         'flagIdentifier',

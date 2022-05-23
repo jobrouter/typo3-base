@@ -23,11 +23,7 @@ use TYPO3\CMS\Core\Site\Entity\SiteLanguage;
 
 class LanguageVariableResolverTest extends TestCase
 {
-    /**
-     * @var LanguageVariableResolver
-     */
-    private $subject;
-
+    private LanguageVariableResolver $subject;
     /**
      * @var Stub&ServerRequestInterface
      */

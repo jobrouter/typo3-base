@@ -21,11 +21,7 @@ use Psr\Http\Message\ServerRequestInterface;
 
 class CorrelationIdVariableResolverTest extends TestCase
 {
-    /**
-     * @var CorrelationIdVariableResolver
-     */
-    private $subject;
-
+    private CorrelationIdVariableResolver $subject;
     /**
      * @var Stub&ServerRequestInterface
      */

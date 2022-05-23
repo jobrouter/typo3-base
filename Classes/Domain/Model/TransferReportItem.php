@@ -16,20 +16,9 @@ namespace Brotkrueml\JobRouterBase\Domain\Model;
  */
 final class TransferReportItem
 {
-    /**
-     * @var int
-     */
-    private $creationDate;
-
-    /**
-     * @var string
-     */
-    private $message;
-
-    /**
-     * @var string
-     */
-    private $correlationId;
+    private int $creationDate;
+    private string $message;
+    private string $correlationId;
 
     public function __construct(int $creationDate, string $message, string $correlationId)
     {

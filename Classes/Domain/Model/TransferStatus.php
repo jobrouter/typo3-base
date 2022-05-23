@@ -16,30 +16,11 @@ namespace Brotkrueml\JobRouterBase\Domain\Model;
  */
 final class TransferStatus
 {
-    /**
-     * @var int
-     */
-    private $failedCount = 0;
-
-    /**
-     * @var int
-     */
-    private $pendingCount = 0;
-
-    /**
-     * @var int
-     */
-    private $successfulCount = 0;
-
-    /**
-     * @var int
-     */
-    private $numberOfDays = 0;
-
-    /**
-     * @var \DateTimeInterface|null
-     */
-    private $lastRun;
+    private int $failedCount = 0;
+    private int $pendingCount = 0;
+    private int $successfulCount = 0;
+    private int $numberOfDays = 0;
+    private ?\DateTimeInterface $lastRun = null;
 
     public function setFailedCount(int $count): void
     {

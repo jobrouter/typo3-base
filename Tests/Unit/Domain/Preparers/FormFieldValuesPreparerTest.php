@@ -17,10 +17,7 @@ use TYPO3\CMS\Form\Domain\Model\FormElements\GenericFormElement;
 
 class FormFieldValuesPreparerTest extends TestCase
 {
-    /**
-     * @var FormFieldValuesPreparer
-     */
-    private $subject;
+    private FormFieldValuesPreparer $subject;
 
     protected function setUp(): void
     {

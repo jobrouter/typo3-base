@@ -23,11 +23,7 @@ use TYPO3\CMS\Core\Site\Entity\SiteLanguage;
 
 class JobRouterLanguageVariableResolverTest extends TestCase
 {
-    /**
-     * @var JobRouterLanguageVariableResolver
-     */
-    private $subject;
-
+    private JobRouterLanguageVariableResolver $subject;
     /**
      * @var Stub&ServerRequestInterface
      */

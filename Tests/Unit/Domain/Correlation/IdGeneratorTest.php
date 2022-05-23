@@ -16,10 +16,7 @@ use PHPUnit\Framework\TestCase;
 
 class IdGeneratorTest extends TestCase
 {
-    /**
-     * @var IdGenerator
-     */
-    private $subject;
+    private IdGenerator $subject;
 
     protected function setUp(): void
     {

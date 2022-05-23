@@ -16,10 +16,7 @@ use PHPUnit\Framework\TestCase;
 
 class TransferStatusTest extends TestCase
 {
-    /**
-     * @var TransferStatus
-     */
-    private $subject;
+    private TransferStatus $subject;
 
     protected function setUp(): void
     {

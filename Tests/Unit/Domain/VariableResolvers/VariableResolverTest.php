@@ -26,16 +26,11 @@ class VariableResolverTest extends TestCase
      * @var Stub&ServerRequestInterface
      */
     private $requestStub;
-
     /**
      * @var MockObject&EventDispatcherInterface
      */
     private $eventDispatcherMock;
-
-    /**
-     * @var VariableResolver
-     */
-    private $subject;
+    private VariableResolver $subject;
 
     protected function setUp(): void
     {

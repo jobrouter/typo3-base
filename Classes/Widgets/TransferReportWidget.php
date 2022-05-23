@@ -23,25 +23,13 @@ use TYPO3\CMS\Fluid\View\StandaloneView;
  */
 final class TransferReportWidget implements WidgetInterface, AdditionalCssInterface
 {
-    /**
-     * @var WidgetConfigurationInterface
-     */
-    private $configuration;
-
-    /**
-     * @var ListDataProviderInterface
-     */
-    private $dataProvider;
-
-    /**
-     * @var StandaloneView
-     */
-    private $view;
-
+    private WidgetConfigurationInterface $configuration;
+    private ListDataProviderInterface $dataProvider;
+    private StandaloneView $view;
     /**
      * @var array<string, mixed>
      */
-    private $options;
+    private array $options;
 
     /**
      * @param array<string, mixed> $options
