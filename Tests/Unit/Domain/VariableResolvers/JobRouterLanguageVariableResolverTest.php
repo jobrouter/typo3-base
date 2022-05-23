@@ -29,7 +29,7 @@ class JobRouterLanguageVariableResolverTest extends TestCase
     private $subject;
 
     /**
-     * @var Stub|ServerRequestInterface
+     * @var Stub&ServerRequestInterface
      */
     private $serverRequestStub;
 

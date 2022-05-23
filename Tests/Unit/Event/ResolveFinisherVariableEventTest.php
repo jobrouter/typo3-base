@@ -19,7 +19,7 @@ use Psr\Http\Message\ServerRequestInterface;
 class ResolveFinisherVariableEventTest extends TestCase
 {
     /**
-     * @var Stub|ServerRequestInterface
+     * @var Stub&ServerRequestInterface
      */
     private $serverRequestStub;
 

@@ -29,12 +29,12 @@ class LocalisedLabelVariableResolverTest extends TestCase
     private $subject;
 
     /**
-     * @var MockObject|TranslationService
+     * @var MockObject&TranslationService
      */
     private $translationServiceMock;
 
     /**
-     * @var Stub|ServerRequestInterface
+     * @var Stub&ServerRequestInterface
      */
     private $serverRequestStub;
 

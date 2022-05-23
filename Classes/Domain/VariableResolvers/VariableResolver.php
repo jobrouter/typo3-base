@@ -28,15 +28,16 @@ class VariableResolver
     /**
      * @var string
      */
-    private $correlationId;
+    private $correlationId = '';
 
     /**
      * @var array<string, string>
      */
-    private $formValues;
+    private $formValues = [];
 
     /**
      * @var ServerRequestInterface
+     * @noRector Must be set after construction, so should be null
      */
     private $request;
 

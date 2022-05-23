@@ -28,6 +28,7 @@ abstract class AbstractTransferFinisher extends AbstractFinisher
 
     /**
      * @var IdGenerator
+     * @noRector Injected at construction, so cannot be null
      */
     private $correlationIdGenerator;
 
