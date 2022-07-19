@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- Support Lithuanian, Portuguese and Serbian in JobRouterLanguageResolver
+
 ### Removed
 - Compatibility with PHP 7.3
 
@@ -13,7 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - Common translations for dependent extensions
-- Support for Croatian in JobRouterLanguageResolver
+- Support Croatian in JobRouterLanguageResolver
 
 ## [1.1.0] - 2021-11-21
 

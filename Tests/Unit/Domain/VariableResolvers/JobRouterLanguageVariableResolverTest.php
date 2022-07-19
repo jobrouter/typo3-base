@@ -156,10 +156,22 @@ class JobRouterLanguageVariableResolverTest extends TestCase
             'japanese',
         ];
 
+        yield 'jobRouterLanguage for Lithuanian is resolved' => [
+            '{__jobRouterLanguage}',
+            'lt',
+            'lithuanian',
+        ];
+
         yield 'jobRouterLanguage for Polish is resolved' => [
             '{__jobRouterLanguage}',
             'pl',
             'polish',
+        ];
+
+        yield 'jobRouterLanguage for Portuguese is resolved' => [
+            '{__jobRouterLanguage}',
+            'pt',
+            'portuguese',
         ];
 
         yield 'jobRouterLanguage for Romanian is resolved' => [
@@ -172,6 +184,12 @@ class JobRouterLanguageVariableResolverTest extends TestCase
             '{__jobRouterLanguage}',
             'ru',
             'russian',
+        ];
+
+        yield 'jobRouterLanguage for Serbian is resolved' => [
+            '{__jobRouterLanguage}',
+            'sr',
+            'serbian',
         ];
 
         yield 'jobRouterLanguage for Slovak is resolved' => [

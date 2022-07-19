@@ -11,6 +11,12 @@ and this project adheres to `Semantic Versioning <https://semver.org/spec/v2.0.0
 `Unreleased <https://github.com/brotkrueml/typo3-jobrouter-base/compare/v1.2.0...HEAD>`_
 --------------------------------------------------------------------------------------------
 
+Added
+^^^^^
+
+
+* Support Lithuanian, Portuguese and Serbian in JobRouterLanguageResolver
+
 Removed
 ^^^^^^^
 
@@ -25,7 +31,7 @@ Added
 
 
 * Common translations for dependent extensions
-* Support for Croatian in JobRouterLanguageResolver
+* Support Croatian in JobRouterLanguageResolver
 
 `1.1.0 <https://github.com/brotkrueml/typo3-jobrouter-base/compare/v1.0.0...v1.1.0>`_ - 2021-11-21
 ------------------------------------------------------------------------------------------------------

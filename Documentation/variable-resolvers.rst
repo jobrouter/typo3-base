@@ -132,13 +132,13 @@ Multiple language variables can be used in one form value.
 JobRouter language information
 ------------------------------
 
-Sometimes it is necessary to send not the language code of the page in your form
+Sometimes it is necessary to use not the language code of the page in your form
 but instead the language string JobRouter® uses (e.g. ``german`` instead of
 ``de``). This can be useful for sending localised emails from the process in the
 relevant language.
 
 Use the :yaml:`{__jobRouterLanguage}` variable for that. The following languages
-are supported by JobRouter® by now:
+are supported by JobRouter® in recent version:
 
 +----------------+---------------------+
 | ISO 639-1 code | JobRouter® language |
@@ -159,15 +159,21 @@ are supported by JobRouter® by now:
 +----------------+---------------------+
 | fr             | french              |
 +----------------+---------------------+
+| hr             | croatian            |
++----------------+---------------------+
 | hu             | hungarian           |
 +----------------+---------------------+
 | it             | italian             |
 +----------------+---------------------+
 | ja             | japanese            |
 +----------------+---------------------+
+| lt             | lithuanian          |
++----------------+---------------------+
 | nl             | dutch               |
 +----------------+---------------------+
 | pl             | polish              |
++----------------+---------------------+
+| pt             | portuguese          |
 +----------------+---------------------+
 | ro             | romanian            |
 +----------------+---------------------+
@@ -176,6 +182,8 @@ are supported by JobRouter® by now:
 | sk             | slovak              |
 +----------------+---------------------+
 | sl             | slovenian           |
++----------------+---------------------+
+| sr             | serbian             |
 +----------------+---------------------+
 | tr             | turkish             |
 +----------------+---------------------+
