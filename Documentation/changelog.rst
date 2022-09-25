@@ -15,7 +15,7 @@ Added
 ^^^^^
 
 
-* Attachment as field type
+* Processing of an attachment as field type
 
 `1.3.0 <https://github.com/brotkrueml/typo3-jobrouter-base/compare/v1.2.0...v1.3.0>`_ - 2022-07-19
 ------------------------------------------------------------------------------------------------------

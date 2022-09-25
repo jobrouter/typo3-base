@@ -11,6 +11,7 @@ declare(strict_types=1);
 
 namespace Brotkrueml\JobRouterBase\Domain\Preparers;
 
+use TYPO3\CMS\Extbase\Domain\Model\FileReference;
 use TYPO3\CMS\Form\Domain\Model\FormElements\FormElementInterface;
 
 /**
@@ -20,20 +21,24 @@ final class FormFieldValuesPreparer
 {
     /**
      * @param array<string, FormElementInterface> $fieldElements
-     * @param array<string, string|list<string>> $fieldsWithValues
+     * @param array<string, string|list<string>|FileReference> $fieldsWithValues
      * @return array<string, mixed>
      */
     public function prepareForSubstitution(array $fieldElements, array $fieldsWithValues): array
     {
-        \array_walk($fieldElements, static function (&$element): void {
-            $element = '';
-        });
-        $fieldsWithValues = \array_merge($fieldElements, $fieldsWithValues);
+        $initialisedFields = \array_fill_keys(\array_keys($fieldElements), '');
+        $fieldsWithValues = \array_merge($initialisedFields, $fieldsWithValues);
 
         $preparedFieldValues = [];
         foreach ($fieldsWithValues as $name => $value) {
-            $preparedFieldValues[\sprintf('{%s}', $name)]
-                = \is_array($value) ? $this->convertArrayToCsv($value) : $value;
+            if (\is_array($value)) {
+                $value = $this->convertArrayToCsv($value);
+            }
+            if ($value instanceof FileReference) {
+                $value = $value->getOriginalResource()->getCombinedIdentifier();
+            }
+
+            $preparedFieldValues[\sprintf('{%s}', $name)] = $value;
         }
 
         return $preparedFieldValues;
