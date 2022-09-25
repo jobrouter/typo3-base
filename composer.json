@@ -68,7 +68,7 @@
 			"dev-main": "1.4.x-dev"
 		},
 		"typo3/cms": {
-			"cms-package-dir": "{$vendor-dir}/typo3/cms",
+			"app-dir": ".Build",
 			"extension-key": "jobrouter_base",
 			"web-dir": ".Build/web"
 		}
