@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-	<file source-language="en" datatype="plaintext" original="EXT:jobrouter_base/Resources/Private/Language/General.xlf" date="2021-12-02T19:05:22Z" product-name="jobrouter_base">
+	<file source-language="en" datatype="plaintext" original="EXT:jobrouter_base/Resources/Private/Language/General.xlf" date="2022-09-25T11:21:36Z" product-name="jobrouter_base">
 		<body>
 			<trans-unit id="dateFormat" resname="dateFormat">
 				<source><![CDATA[Y-m-d]]></source>
@@ -19,6 +19,9 @@
 			</trans-unit>
 			<trans-unit id="fieldType.5" resname="fieldType.5">
 				<source><![CDATA[Date/Time]]></source>
+			</trans-unit>
+			<trans-unit id="fieldType.6" resname="fieldType.6">
+				<source><![CDATA[Attachment]]></source>
 			</trans-unit>
 			<trans-unit id="timeFormat" resname="timeFormat">
 				<source><![CDATA[H:i]]></source>

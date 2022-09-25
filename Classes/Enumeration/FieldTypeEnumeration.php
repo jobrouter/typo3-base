@@ -18,4 +18,5 @@ final class FieldTypeEnumeration
     public const DECIMAL = 3;
     public const DATE = 4;
     public const DATETIME = 5;
+    public const ATTACHMENT = 6;
 }
