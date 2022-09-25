@@ -29,7 +29,7 @@ class VariableResolverTest extends TestCase
     /**
      * @var MockObject&EventDispatcherInterface
      */
-    private $eventDispatcherMock;
+    private MockObject $eventDispatcherMock;
     private VariableResolver $subject;
 
     protected function setUp(): void
