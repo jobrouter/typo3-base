@@ -12,8 +12,6 @@ This TYPO3 extension acts as a base library for:
   * [JobRouter Data](https://github.com/brotkrueml/typo3-jobrouter-data)
   * [JobRouter Process](https://github.com/brotkrueml/typo3-jobrouter-process)
 
-The extension supports TYPO3 v10 LTS and TYPO3 v11 LTS.
-
 [Documentation](https://typo3-jobrouter.readthedocs.io/projects/base/) |
 [Translation](https://crowdin.com/project/typo3-extension-jobrouterbase) |
 [Changelog](https://github.com/brotkrueml/typo3-jobrouter-base/blob/main/CHANGELOG.md) |
