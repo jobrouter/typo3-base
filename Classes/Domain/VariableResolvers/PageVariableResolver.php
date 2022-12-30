@@ -12,6 +12,7 @@ declare(strict_types=1);
 namespace Brotkrueml\JobRouterBase\Domain\VariableResolvers;
 
 use Brotkrueml\JobRouterBase\Event\ResolveFinisherVariableEvent;
+use TYPO3\CMS\Frontend\Controller\TypoScriptFrontendController;
 
 /**
  * @internal
@@ -35,23 +36,16 @@ final class PageVariableResolver
             return;
         }
 
-        $pageProperties = $this->getPageProperties();
+        /** @var TypoScriptFrontendController $frontendController */
+        $frontendController = $event->getRequest()->getAttribute('frontend.controller');
         foreach ($matches[1] as $index => $propertyName) {
-            if (! \array_key_exists($propertyName, $pageProperties)) {
+            if (! \array_key_exists($propertyName, $frontendController->page)) {
                 continue;
             }
 
-            $value = \str_replace($matches[0][$index], (string)$pageProperties[$propertyName], $value);
+            $value = \str_replace($matches[0][$index], (string)$frontendController->page[$propertyName], $value);
         }
 
         $event->setValue($value);
-    }
-
-    /**
-     * @return array<string, int|string|null>
-     */
-    private function getPageProperties(): array
-    {
-        return $GLOBALS['TSFE']->page;
     }
 }

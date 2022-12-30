@@ -21,19 +21,23 @@ use Psr\Http\Message\ServerRequestInterface;
 final class PageVariableResolverTest extends TestCase
 {
     private PageVariableResolver $subject;
-    private ServerRequestInterface & Stub $serverRequestStub;
+    private ServerRequestInterface & Stub $requestStub;
 
     protected function setUp(): void
     {
-        $this->subject = new PageVariableResolver();
-        $this->serverRequestStub = $this->createStub(ServerRequestInterface::class);
-
-        $GLOBALS['TSFE'] = new \stdClass();
-        $GLOBALS['TSFE']->page = [
+        $tsfeStub = new \stdClass();
+        $tsfeStub->page = [
             'uid' => 42,
             'title' => 'some title',
             'description' => null,
         ];
+
+        $this->subject = new PageVariableResolver();
+        $this->requestStub = $this->createStub(ServerRequestInterface::class);
+        $this->requestStub
+            ->method('getAttribute')
+            ->with('frontend.controller')
+            ->willReturn($tsfeStub);
     }
 
     protected function tearDown(): void
@@ -52,7 +56,7 @@ final class PageVariableResolverTest extends TestCase
             $value,
             '',
             [],
-            $this->serverRequestStub
+            $this->requestStub
         );
 
         $this->subject->__invoke($event);
