@@ -21,17 +21,11 @@ use Psr\Http\Message\ServerRequestInterface;
 class VariableResolver
 {
     private string $correlationId = '';
-
     /**
      * @var array<string, string>
      */
     private array $formValues = [];
-
-    /**
-     * @var ServerRequestInterface
-     * @noRector Must be set after construction, so should be null
-     */
-    private $request;
+    private ServerRequestInterface $request;
 
     public function __construct(
         private readonly EventDispatcherInterface $eventDispatcher

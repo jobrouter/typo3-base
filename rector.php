@@ -9,8 +9,7 @@ use Rector\Php74\Rector\LNumber\AddLiteralSeparatorToNumberRector;
 use Rector\PHPUnit\Set\PHPUnitSetList;
 use Rector\Set\ValueObject\LevelSetList;
 use Rector\Set\ValueObject\SetList;
-use Rector\TypeDeclaration\Rector\ClassMethod\AddArrayParamDocTypeRector;
-use Rector\TypeDeclaration\Rector\ClassMethod\AddArrayReturnDocTypeRector;
+use Rector\TypeDeclaration\Rector\FunctionLike\AddReturnTypeDeclarationFromYieldsRector;
 
 return static function (RectorConfig $config): void {
     $config->phpVersion(PhpVersion::PHP_81);
@@ -39,12 +38,9 @@ return static function (RectorConfig $config): void {
         ''
     ]);
     $config->skip([
-        AddArrayParamDocTypeRector::class => [
-            __DIR__ . '/Tests/*',
-        ],
-        AddArrayReturnDocTypeRector::class => [
-            __DIR__ . '/Tests/*',
-        ],
         AddLiteralSeparatorToNumberRector::class,
+        AddReturnTypeDeclarationFromYieldsRector::class => [
+            __DIR__ . '/Tests',
+        ]
     ]);
 };

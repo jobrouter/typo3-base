@@ -21,16 +21,8 @@ use TYPO3\CMS\Form\Domain\Finishers\AbstractFinisher;
  */
 abstract class AbstractTransferFinisher extends AbstractFinisher
 {
-    /**
-     * @var VariableResolver
-     */
-    protected $variableResolver;
-
-    /**
-     * @var IdGenerator
-     * @noRector Injected at construction, so cannot be null
-     */
-    private $correlationIdGenerator;
+    protected VariableResolver $variableResolver;
+    private IdGenerator $correlationIdGenerator;
 
     /**
      * @var string
