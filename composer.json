@@ -32,7 +32,7 @@
 		"phpunit/phpunit": "^9.5.23",
 		"rector/rector": "0.15.2",
 		"symfony/yaml": "^5.4 || ^6.0",
-		"symplify/phpstan-rules": "^10.0",
+		"symplify/phpstan-rules": "^11.1",
 		"typo3/cms-dashboard": "^11.5.3",
 		"typo3/cms-extbase": "^11.5.3",
 		"typo3/cms-form": "^11.5.3"
