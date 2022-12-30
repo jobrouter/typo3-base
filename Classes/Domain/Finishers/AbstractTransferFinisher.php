@@ -13,7 +13,6 @@ namespace Brotkrueml\JobRouterBase\Domain\Finishers;
 
 use Brotkrueml\JobRouterBase\Domain\Correlation\IdGenerator;
 use Brotkrueml\JobRouterBase\Domain\VariableResolvers\VariableResolver;
-use Psr\Http\Message\ServerRequestInterface;
 use TYPO3\CMS\Form\Domain\Finishers\AbstractFinisher;
 
 /**
@@ -63,7 +62,7 @@ abstract class AbstractTransferFinisher extends AbstractFinisher
     {
         $this->variableResolver->setCorrelationId($this->correlationId);
         $this->variableResolver->setFormValues($this->finisherContext->getFormValues());
-        $this->variableResolver->setRequest($this->getServerRequest());
+        $this->variableResolver->setRequest($this->finisherContext->getRequest());
     }
 
     abstract protected function process(): void;
@@ -87,10 +86,5 @@ abstract class AbstractTransferFinisher extends AbstractFinisher
             \array_values($formValues),
             $value
         );
-    }
-
-    protected function getServerRequest(): ServerRequestInterface
-    {
-        return $GLOBALS['TYPO3_REQUEST'];
     }
 }
