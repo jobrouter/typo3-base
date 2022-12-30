@@ -12,6 +12,7 @@ declare(strict_types=1);
 namespace Brotkrueml\JobRouterBase\Domain\VariableResolvers;
 
 use Brotkrueml\JobRouterBase\Enumeration\FieldType;
+use Brotkrueml\JobRouterBase\Enumeration\JobRouterLanguages;
 use Brotkrueml\JobRouterBase\Event\ResolveFinisherVariableEvent;
 use Brotkrueml\JobRouterBase\Exception\VariableResolverException;
 use TYPO3\CMS\Core\Site\Entity\SiteLanguage;
@@ -22,32 +23,6 @@ use TYPO3\CMS\Core\Site\Entity\SiteLanguage;
 final class JobRouterLanguageVariableResolver
 {
     private const VARIABLE_TO_RESOLVE = '{__jobRouterLanguage}';
-
-    private const LANGUAGE_MAPPINGS = [
-        'ar' => 'arabic',
-        'cs' => 'czech',
-        'da' => 'danish',
-        'de' => 'german',
-        'en' => 'english',
-        'es' => 'spanish',
-        'fi' => 'finnish',
-        'fr' => 'french',
-        'hr' => 'croatian',
-        'hu' => 'hungarian',
-        'it' => 'italian',
-        'ja' => 'japanese',
-        'lt' => 'lithuanian',
-        'nl' => 'dutch',
-        'pl' => 'polish',
-        'pt' => 'portuguese',
-        'ro' => 'romanian',
-        'ru' => 'russian',
-        'sk' => 'slovak',
-        'sl' => 'slovenian',
-        'sr' => 'serbian',
-        'tr' => 'turkish',
-        'zh' => 'chinese',
-    ];
 
     public function __invoke(ResolveFinisherVariableEvent $event): void
     {
@@ -62,7 +37,7 @@ final class JobRouterLanguageVariableResolver
         /** @var SiteLanguage|null $language */
         $language = $event->getRequest()->getAttribute('language');
         $languageIsoCode = $language !== null ? $language->getTwoLetterIsoCode() : '';
-        $jobRouterLanguage = self::LANGUAGE_MAPPINGS[$languageIsoCode] ?? '';
+        $jobRouterLanguage = JobRouterLanguages::tryFrom($languageIsoCode)->name ?? '';
         $value = \str_replace(self::VARIABLE_TO_RESOLVE, $jobRouterLanguage, $value);
 
         $event->setValue($value);
