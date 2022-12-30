@@ -20,8 +20,7 @@
 		"docs": "https://typo3-jobrouter.readthedocs.io/projects/base/"
 	},
 	"require": {
-		"php": ">=7.4",
-		"symfony/polyfill-php80": "^1.15",
+		"php": ">=8.1",
 		"typo3/cms-core": "^11.5.3"
 	},
 	"require-dev": {

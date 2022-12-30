@@ -27,7 +27,7 @@ final class FormFieldValuesPreparer
     public function prepareForSubstitution(array $fieldElements, array $fieldsWithValues): array
     {
         $initialisedFields = \array_fill_keys(\array_keys($fieldElements), '');
-        $fieldsWithValues = \array_merge($initialisedFields, $fieldsWithValues);
+        $fieldsWithValues = [...$initialisedFields, ...$fieldsWithValues];
 
         $preparedFieldValues = [];
         foreach ($fieldsWithValues as $name => $value) {

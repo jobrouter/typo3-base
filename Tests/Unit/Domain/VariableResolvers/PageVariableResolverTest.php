@@ -21,10 +21,7 @@ use Psr\Http\Message\ServerRequestInterface;
 final class PageVariableResolverTest extends TestCase
 {
     private PageVariableResolver $subject;
-    /**
-     * @var Stub&ServerRequestInterface
-     */
-    private $serverRequestStub;
+    private ServerRequestInterface & Stub $serverRequestStub;
 
     protected function setUp(): void
     {

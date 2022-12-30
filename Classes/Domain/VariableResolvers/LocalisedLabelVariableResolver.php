@@ -26,11 +26,9 @@ final class LocalisedLabelVariableResolver
      */
     private const LOCALISED_STRING_REGEX = '/{__(LLL:.+?)}/';
 
-    private TranslationService $translationService;
-
-    public function __construct(TranslationService $translationService)
-    {
-        $this->translationService = $translationService;
+    public function __construct(
+        private readonly TranslationService $translationService
+    ) {
     }
 
     public function __invoke(ResolveFinisherVariableEvent $event): void

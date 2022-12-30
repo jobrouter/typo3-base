@@ -4,7 +4,7 @@ includes:
     - .Build/vendor/symplify/phpstan-rules/config/regex-rules.neon
 
 parameters:
-    phpVersion: 80000
+    phpVersion: 80100
     level: 9
     paths:
         - Classes

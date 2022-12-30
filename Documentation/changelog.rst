@@ -16,6 +16,7 @@ Removed
 
 
 * Compatibility with TYPO3 v10
+* Compatibility with PHP 7.4 and 8.0
 
 [1.4.0] - tbd.
 --------------

@@ -20,7 +20,6 @@ use Psr\Http\Message\ServerRequestInterface;
  */
 class VariableResolver
 {
-    private EventDispatcherInterface $eventDispatcher;
     private string $correlationId = '';
 
     /**
@@ -34,9 +33,9 @@ class VariableResolver
      */
     private $request;
 
-    public function __construct(EventDispatcherInterface $eventDispatcher)
-    {
-        $this->eventDispatcher = $eventDispatcher;
+    public function __construct(
+        private readonly EventDispatcherInterface $eventDispatcher
+    ) {
     }
 
     public function setCorrelationId(string $correlationId): void
@@ -57,10 +56,7 @@ class VariableResolver
         $this->request = $request;
     }
 
-    /**
-     * @return int|string
-     */
-    public function resolve(int $fieldType, string $value)
+    public function resolve(int $fieldType, string $value): int|string
     {
         if (! \str_contains($value, '{__')) {
             return $value;

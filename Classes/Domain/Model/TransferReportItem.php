@@ -16,15 +16,11 @@ namespace Brotkrueml\JobRouterBase\Domain\Model;
  */
 final class TransferReportItem
 {
-    private int $creationDate;
-    private string $message;
-    private string $correlationId;
-
-    public function __construct(int $creationDate, string $message, string $correlationId)
-    {
-        $this->creationDate = $creationDate;
-        $this->message = $message;
-        $this->correlationId = $correlationId;
+    public function __construct(
+        private readonly int $creationDate,
+        private readonly string $message,
+        private readonly string $correlationId
+    ) {
     }
 
     public function getCreationDate(): int

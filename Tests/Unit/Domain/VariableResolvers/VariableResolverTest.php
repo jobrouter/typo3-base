@@ -22,10 +22,7 @@ use Psr\Http\Message\ServerRequestInterface;
 
 class VariableResolverTest extends TestCase
 {
-    /**
-     * @var Stub&ServerRequestInterface
-     */
-    private $requestStub;
+    private ServerRequestInterface & Stub $requestStub;
     /**
      * @var MockObject&EventDispatcherInterface
      */

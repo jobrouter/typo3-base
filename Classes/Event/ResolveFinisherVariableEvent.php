@@ -15,34 +15,17 @@ use Psr\Http\Message\ServerRequestInterface;
 
 final class ResolveFinisherVariableEvent
 {
-    private int $fieldType;
-    /**
-     * @var string|int
-     */
-    private $value;
-    private string $correlationId;
-    /**
-     * @var array<string,string>
-     */
-    private array $formValues;
-    private ServerRequestInterface $request;
-
     /**
      * @param int|string $value
      * @param array<string, string> $formValues
      */
     public function __construct(
-        int $fieldType,
-        $value,
-        string $correlationId,
-        array $formValues,
-        ServerRequestInterface $request
+        private readonly int $fieldType,
+        private $value,
+        private readonly string $correlationId,
+        private readonly array $formValues,
+        private readonly ServerRequestInterface $request
     ) {
-        $this->fieldType = $fieldType;
-        $this->value = $value;
-        $this->correlationId = $correlationId;
-        $this->formValues = $formValues;
-        $this->request = $request;
     }
 
     public function getFieldType(): int
@@ -50,18 +33,12 @@ final class ResolveFinisherVariableEvent
         return $this->fieldType;
     }
 
-    /**
-     * @return int|string
-     */
-    public function getValue()
+    public function getValue(): int|string
     {
         return $this->value;
     }
 
-    /**
-     * @param int|string $value
-     */
-    public function setValue($value): void
+    public function setValue(int|string $value): void
     {
         $this->value = $value;
     }

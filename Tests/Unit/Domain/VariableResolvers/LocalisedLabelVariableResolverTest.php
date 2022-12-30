@@ -24,14 +24,8 @@ use Psr\Http\Message\ServerRequestInterface;
 class LocalisedLabelVariableResolverTest extends TestCase
 {
     private LocalisedLabelVariableResolver $subject;
-    /**
-     * @var MockObject&TranslationService
-     */
-    private MockObject $translationServiceMock;
-    /**
-     * @var Stub&ServerRequestInterface
-     */
-    private $serverRequestStub;
+    private TranslationService & MockObject $translationServiceMock;
+    private ServerRequestInterface & Stub $serverRequestStub;
 
     protected function setUp(): void
     {
