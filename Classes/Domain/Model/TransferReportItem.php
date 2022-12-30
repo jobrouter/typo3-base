@@ -17,24 +17,9 @@ namespace Brotkrueml\JobRouterBase\Domain\Model;
 final class TransferReportItem
 {
     public function __construct(
-        private readonly int $creationDate,
-        private readonly string $message,
-        private readonly string $correlationId
+        public readonly int $creationDate,
+        public readonly string $message,
+        public readonly string $correlationId
     ) {
-    }
-
-    public function getCreationDate(): int
-    {
-        return $this->creationDate;
-    }
-
-    public function getMessage(): string
-    {
-        return $this->message;
-    }
-
-    public function getCorrelationId(): string
-    {
-        return $this->correlationId;
     }
 }
