@@ -42,7 +42,6 @@ class JobRouterLanguageVariableResolverTest extends TestCase
     /**
      * @test
      * @dataProvider dataProvider
-     * @param $isoCode
      */
     public function jobRouterLanguageVariableIsResolvedCorrectly(string $value, string $isoCode, string $expected): void
     {
