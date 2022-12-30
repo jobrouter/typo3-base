@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+- FieldTypeEnumeration is now an enum named FieldType
+
 ### Removed
 - Compatibility with TYPO3 v10
 - Compatibility with PHP 7.4 and 8.0

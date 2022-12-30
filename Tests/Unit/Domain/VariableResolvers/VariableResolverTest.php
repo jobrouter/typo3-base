@@ -12,7 +12,7 @@ declare(strict_types=1);
 namespace Brotkrueml\JobRouterBase\Tests\Unit\Domain\VariableResolvers;
 
 use Brotkrueml\JobRouterBase\Domain\VariableResolvers\VariableResolver;
-use Brotkrueml\JobRouterBase\Enumeration\FieldTypeEnumeration;
+use Brotkrueml\JobRouterBase\Enumeration\FieldType;
 use Brotkrueml\JobRouterBase\Event\ResolveFinisherVariableEvent;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\MockObject\Stub;
@@ -50,7 +50,7 @@ class VariableResolverTest extends TestCase
             ->expects(self::never())
             ->method('dispatch');
 
-        $actual = $this->subject->resolve(FieldTypeEnumeration::TEXT, 'value without variable');
+        $actual = $this->subject->resolve(FieldType::Text, 'value without variable');
 
         self::assertSame('value without variable', $actual);
     }
@@ -61,7 +61,7 @@ class VariableResolverTest extends TestCase
     public function resolveCallsEventDispatcherIfVariableIsAvailable(): void
     {
         $returnedEvent = new ResolveFinisherVariableEvent(
-            FieldTypeEnumeration::TEXT,
+            FieldType::Text,
             'resolved value',
             'some identifier',
             [
@@ -75,7 +75,7 @@ class VariableResolverTest extends TestCase
             ->method('dispatch')
             ->willReturn($returnedEvent);
 
-        $actual = $this->subject->resolve(FieldTypeEnumeration::TEXT, '{__variable} value');
+        $actual = $this->subject->resolve(FieldType::Text, '{__variable} value');
 
         self::assertSame('resolved value', $actual);
     }

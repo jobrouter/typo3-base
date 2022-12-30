@@ -31,11 +31,14 @@ The event listener receives the event
 :php:`Brotkrueml\JobRouterBase\Event\ResolveFinisherVariableEvent`. It
 provides the following methods:
 
-.. option:: getFieldType(): int
+.. option:: getFieldType(): \Brotkrueml\JobRouterBase\Enumeration\FieldType
 
-Get the field type, like ``1`` for text or ``2`` for int. Have a look in the
-class :php:`Brotkrueml\JobRouterBase\Enumeration\FieldTypeEnumeration`
-for the available field types.
+.. versionchanged:: 2.0.0
+
+Get the field type, like :php:`FieldType::Text` for text or
+:php:`FieldType::Integer` for int. Have a look in the class
+:php:`Brotkrueml\JobRouterBase\Enumeration\FieldType` for the available field
+types.
 
 .. option:: getValue(): string
 

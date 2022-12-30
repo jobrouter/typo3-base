@@ -12,7 +12,7 @@ declare(strict_types=1);
 namespace Brotkrueml\JobRouterBase\Tests\Unit\Domain\VariableResolvers;
 
 use Brotkrueml\JobRouterBase\Domain\VariableResolvers\JobRouterLanguageVariableResolver;
-use Brotkrueml\JobRouterBase\Enumeration\FieldTypeEnumeration;
+use Brotkrueml\JobRouterBase\Enumeration\FieldType;
 use Brotkrueml\JobRouterBase\Event\ResolveFinisherVariableEvent;
 use Brotkrueml\JobRouterBase\Exception\VariableResolverException;
 use PHPUnit\Framework\MockObject\Stub;
@@ -60,7 +60,7 @@ class JobRouterLanguageVariableResolverTest extends TestCase
             ->willReturn($siteLanguage);
 
         $event = new ResolveFinisherVariableEvent(
-            FieldTypeEnumeration::TEXT,
+            FieldType::Text,
             $value,
             '',
             [],
@@ -244,10 +244,10 @@ class JobRouterLanguageVariableResolverTest extends TestCase
     {
         $this->expectException(VariableResolverException::class);
         $this->expectExceptionCode(1594214444);
-        $this->expectExceptionMessage('The value "{__jobRouterLanguage}" contains a variable which can only be used in Text fields ("1"), type "2" used');
+        $this->expectExceptionMessage('The value "{__jobRouterLanguage}" contains a variable which can only be used in "Text" fields, type "Integer" used');
 
         $event = new ResolveFinisherVariableEvent(
-            FieldTypeEnumeration::INTEGER,
+            FieldType::Integer,
             '{__jobRouterLanguage}',
             '',
             [],
@@ -268,7 +268,7 @@ class JobRouterLanguageVariableResolverTest extends TestCase
             ->willReturn(null);
 
         $event = new ResolveFinisherVariableEvent(
-            FieldTypeEnumeration::TEXT,
+            FieldType::Text,
             '{__jobRouterLanguage}',
             '',
             [],

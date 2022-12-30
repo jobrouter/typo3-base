@@ -11,12 +11,12 @@ declare(strict_types=1);
 
 namespace Brotkrueml\JobRouterBase\Enumeration;
 
-final class FieldTypeEnumeration
+enum FieldType: int
 {
-    public const TEXT = 1;
-    public const INTEGER = 2;
-    public const DECIMAL = 3;
-    public const DATE = 4;
-    public const DATETIME = 5;
-    public const ATTACHMENT = 6;
+    case Text = 1;
+    case Integer = 2;
+    case Decimal = 3;
+    case Date = 4;
+    case DateTime = 5;
+    case Attachment = 6;
 }

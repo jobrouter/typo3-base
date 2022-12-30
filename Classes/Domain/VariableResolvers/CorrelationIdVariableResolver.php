@@ -11,7 +11,7 @@ declare(strict_types=1);
 
 namespace Brotkrueml\JobRouterBase\Domain\VariableResolvers;
 
-use Brotkrueml\JobRouterBase\Enumeration\FieldTypeEnumeration;
+use Brotkrueml\JobRouterBase\Enumeration\FieldType;
 use Brotkrueml\JobRouterBase\Event\ResolveFinisherVariableEvent;
 use Brotkrueml\JobRouterBase\Exception\VariableResolverException;
 
@@ -31,18 +31,17 @@ final class CorrelationIdVariableResolver
         );
     }
 
-    private function checkValidFieldTypes(int $fieldType): void
+    private function checkValidFieldTypes(FieldType $fieldType): void
     {
-        if ($fieldType === FieldTypeEnumeration::TEXT) {
+        if ($fieldType === FieldType::Text) {
             return;
         }
 
         throw new VariableResolverException(
             \sprintf(
-                'The "%s" variable can only be used in Text fields ("%d"), type "%d" used',
+                'The "%s" variable can only be used in "Text" fields, type "%s" used',
                 self::VARIABLE_TO_RESOLVE,
-                FieldTypeEnumeration::TEXT,
-                $fieldType
+                $fieldType->name
             ),
             1582654966
         );

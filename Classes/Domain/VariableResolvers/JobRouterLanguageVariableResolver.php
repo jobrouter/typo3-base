@@ -11,7 +11,7 @@ declare(strict_types=1);
 
 namespace Brotkrueml\JobRouterBase\Domain\VariableResolvers;
 
-use Brotkrueml\JobRouterBase\Enumeration\FieldTypeEnumeration;
+use Brotkrueml\JobRouterBase\Enumeration\FieldType;
 use Brotkrueml\JobRouterBase\Event\ResolveFinisherVariableEvent;
 use Brotkrueml\JobRouterBase\Exception\VariableResolverException;
 use TYPO3\CMS\Core\Site\Entity\SiteLanguage;
@@ -70,16 +70,15 @@ final class JobRouterLanguageVariableResolver
 
     private function checkValidFieldTypes(ResolveFinisherVariableEvent $event): void
     {
-        if ($event->getFieldType() === FieldTypeEnumeration::TEXT) {
+        if ($event->getFieldType() === FieldType::Text) {
             return;
         }
 
         throw new VariableResolverException(
             \sprintf(
-                'The value "%s" contains a variable which can only be used in Text fields ("%d"), type "%d" used',
+                'The value "%s" contains a variable which can only be used in "Text" fields, type "%s" used',
                 $event->getValue(),
-                FieldTypeEnumeration::TEXT,
-                $event->getFieldType()
+                $event->getFieldType()->name
             ),
             1594214444
         );

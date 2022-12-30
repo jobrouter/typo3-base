@@ -11,6 +11,12 @@ and this project adheres to `Semantic Versioning <https://semver.org/spec/v2.0.0
 `Unreleased <https://github.com/brotkrueml/typo3-jobrouter-base/compare/v1.3.0...HEAD>`_
 --------------------------------------------------------------------------------------------
 
+Changed
+^^^^^^^
+
+
+* FieldTypeEnumeration is now an enum named FieldType
+
 Removed
 ^^^^^^^
 

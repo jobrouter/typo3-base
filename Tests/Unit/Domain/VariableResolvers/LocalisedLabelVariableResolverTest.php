@@ -12,7 +12,7 @@ declare(strict_types=1);
 namespace Brotkrueml\JobRouterBase\Tests\Unit\Domain\VariableResolvers;
 
 use Brotkrueml\JobRouterBase\Domain\VariableResolvers\LocalisedLabelVariableResolver;
-use Brotkrueml\JobRouterBase\Enumeration\FieldTypeEnumeration;
+use Brotkrueml\JobRouterBase\Enumeration\FieldType;
 use Brotkrueml\JobRouterBase\Event\ResolveFinisherVariableEvent;
 use Brotkrueml\JobRouterBase\Exception\VariableResolverException;
 use Brotkrueml\JobRouterBase\Language\TranslationService;
@@ -46,7 +46,7 @@ class LocalisedLabelVariableResolverTest extends TestCase
             ->willReturn('localised some label');
 
         $event = new ResolveFinisherVariableEvent(
-            FieldTypeEnumeration::TEXT,
+            FieldType::Text,
             'foo {__LLL:EXT:some_ext/Resources/Private/Language/locallang.xlf:some.label} bar',
             '',
             [],
@@ -80,7 +80,7 @@ class LocalisedLabelVariableResolverTest extends TestCase
             ->willReturnMap($translationMap);
 
         $event = new ResolveFinisherVariableEvent(
-            FieldTypeEnumeration::TEXT,
+            FieldType::Text,
             'foo {__LLL:EXT:some_ext/Resources/Private/Language/locallang.xlf:some.label} bar {__LLL:EXT:some_ext/Resources/Private/Language/locallang.xlf:another.label}',
             '',
             [],
@@ -98,7 +98,7 @@ class LocalisedLabelVariableResolverTest extends TestCase
     public function noLocalisedLabelFoundThenValueIsUntouched(): void
     {
         $event = new ResolveFinisherVariableEvent(
-            FieldTypeEnumeration::TEXT,
+            FieldType::Text,
             'foo bar',
             '',
             [],
@@ -124,7 +124,7 @@ class LocalisedLabelVariableResolverTest extends TestCase
             ->willReturn(null);
 
         $event = new ResolveFinisherVariableEvent(
-            FieldTypeEnumeration::TEXT,
+            FieldType::Text,
             'foo {__LLL:EXT:some_ext/Resources/Private/Language/locallang.xlf:not.existing} bar',
             '',
             [],
@@ -150,7 +150,7 @@ class LocalisedLabelVariableResolverTest extends TestCase
             ->willReturn('');
 
         $event = new ResolveFinisherVariableEvent(
-            FieldTypeEnumeration::TEXT,
+            FieldType::Text,
             'foo {__LLL:EXT:some_ext/Resources/Private/Language/locallang.xlf:empty} bar',
             '',
             [],
@@ -171,7 +171,7 @@ class LocalisedLabelVariableResolverTest extends TestCase
     public function wrongVariableDescriptionThenValueIsUntouched(): void
     {
         $event = new ResolveFinisherVariableEvent(
-            FieldTypeEnumeration::TEXT,
+            FieldType::Text,
             'foo {__LLL:EXT:some_ext/Resources/Private/Language/locallang.xlf:not.existing bar',
             '',
             [],
@@ -193,10 +193,10 @@ class LocalisedLabelVariableResolverTest extends TestCase
     {
         $this->expectException(VariableResolverException::class);
         $this->expectExceptionCode(1582907006);
-        $this->expectExceptionMessage('The value "{__LLL:EXT:some_ext/Resources/Private/Language/locallang.xlf:some.label}" contains a localised label which can only be used in Text fields ("1"), type "2" used');
+        $this->expectExceptionMessage('The value "{__LLL:EXT:some_ext/Resources/Private/Language/locallang.xlf:some.label}" contains a localised label which can only be used in "Text" fields, type "Integer" used');
 
         $event = new ResolveFinisherVariableEvent(
-            FieldTypeEnumeration::INTEGER,
+            FieldType::Integer,
             '{__LLL:EXT:some_ext/Resources/Private/Language/locallang.xlf:some.label}',
             '',
             [],

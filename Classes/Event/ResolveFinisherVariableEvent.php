@@ -11,6 +11,7 @@ declare(strict_types=1);
 
 namespace Brotkrueml\JobRouterBase\Event;
 
+use Brotkrueml\JobRouterBase\Enumeration\FieldType;
 use Psr\Http\Message\ServerRequestInterface;
 
 final class ResolveFinisherVariableEvent
@@ -20,7 +21,7 @@ final class ResolveFinisherVariableEvent
      * @param array<string, string> $formValues
      */
     public function __construct(
-        private readonly int $fieldType,
+        private readonly FieldType $fieldType,
         private $value,
         private readonly string $correlationId,
         private readonly array $formValues,
@@ -28,7 +29,7 @@ final class ResolveFinisherVariableEvent
     ) {
     }
 
-    public function getFieldType(): int
+    public function getFieldType(): FieldType
     {
         return $this->fieldType;
     }

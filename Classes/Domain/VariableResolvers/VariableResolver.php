@@ -11,6 +11,7 @@ declare(strict_types=1);
 
 namespace Brotkrueml\JobRouterBase\Domain\VariableResolvers;
 
+use Brotkrueml\JobRouterBase\Enumeration\FieldType;
 use Brotkrueml\JobRouterBase\Event\ResolveFinisherVariableEvent;
 use Psr\EventDispatcher\EventDispatcherInterface;
 use Psr\Http\Message\ServerRequestInterface;
@@ -50,7 +51,7 @@ class VariableResolver
         $this->request = $request;
     }
 
-    public function resolve(int $fieldType, string $value): int|string
+    public function resolve(FieldType $fieldType, string $value): int|string
     {
         if (! \str_contains($value, '{__')) {
             return $value;

@@ -12,7 +12,7 @@ declare(strict_types=1);
 namespace Brotkrueml\JobRouterBase\Tests\Unit\Domain\VariableResolvers;
 
 use Brotkrueml\JobRouterBase\Domain\VariableResolvers\PageVariableResolver;
-use Brotkrueml\JobRouterBase\Enumeration\FieldTypeEnumeration;
+use Brotkrueml\JobRouterBase\Enumeration\FieldType;
 use Brotkrueml\JobRouterBase\Event\ResolveFinisherVariableEvent;
 use PHPUnit\Framework\MockObject\Stub;
 use PHPUnit\Framework\TestCase;
@@ -48,7 +48,7 @@ final class PageVariableResolverTest extends TestCase
     public function pageVariablesAreResolvedCorrectly(string $value, string $expected): void
     {
         $event = new ResolveFinisherVariableEvent(
-            FieldTypeEnumeration::TEXT,
+            FieldType::Text,
             $value,
             '',
             [],

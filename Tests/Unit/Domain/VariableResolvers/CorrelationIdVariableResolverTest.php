@@ -12,7 +12,7 @@ declare(strict_types=1);
 namespace Brotkrueml\JobRouterBase\Tests\Unit\Domain\VariableResolvers;
 
 use Brotkrueml\JobRouterBase\Domain\VariableResolvers\CorrelationIdVariableResolver;
-use Brotkrueml\JobRouterBase\Enumeration\FieldTypeEnumeration;
+use Brotkrueml\JobRouterBase\Enumeration\FieldType;
 use Brotkrueml\JobRouterBase\Event\ResolveFinisherVariableEvent;
 use Brotkrueml\JobRouterBase\Exception\VariableResolverException;
 use PHPUnit\Framework\MockObject\Stub;
@@ -37,7 +37,7 @@ class CorrelationIdVariableResolverTest extends TestCase
     public function resolveVariableCorrectly(string $value, string $correlationId, string $expected): void
     {
         $event = new ResolveFinisherVariableEvent(
-            FieldTypeEnumeration::TEXT,
+            FieldType::Text,
             $value,
             $correlationId,
             [],
@@ -83,10 +83,10 @@ class CorrelationIdVariableResolverTest extends TestCase
     {
         $this->expectException(VariableResolverException::class);
         $this->expectExceptionCode(1582654966);
-        $this->expectExceptionMessage('The "{__correlationId}" variable can only be used in Text fields ("1"), type "2" used');
+        $this->expectExceptionMessage('The "{__correlationId}" variable can only be used in "Text" fields, type "Integer" used');
 
         $event = new ResolveFinisherVariableEvent(
-            FieldTypeEnumeration::INTEGER,
+            FieldType::Integer,
             '{__correlationId}',
             'some-identifier',
             [],
