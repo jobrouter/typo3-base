@@ -14,7 +14,8 @@ namespace Brotkrueml\JobRouterBase\Domain\VariableResolvers;
 use Brotkrueml\JobRouterBase\Enumeration\FieldType;
 use Brotkrueml\JobRouterBase\Event\ResolveFinisherVariableEvent;
 use Brotkrueml\JobRouterBase\Exception\VariableResolverException;
-use Brotkrueml\JobRouterBase\Language\TranslationService;
+use TYPO3\CMS\Core\Localization\LanguageServiceFactory;
+use TYPO3\CMS\Core\Site\Entity\SiteLanguage;
 
 /**
  * @internal
@@ -27,7 +28,7 @@ final class LocalisedLabelVariableResolver
     private const LOCALISED_STRING_REGEX = '/{__(LLL:.+?)}/';
 
     public function __construct(
-        private readonly TranslationService $translationService
+        private readonly LanguageServiceFactory $languageServiceFactory
     ) {
     }
 
@@ -45,10 +46,13 @@ final class LocalisedLabelVariableResolver
             return;
         }
 
+        /** @var SiteLanguage $siteLanguage */
+        $siteLanguage = $event->getRequest()->getAttribute('language');
+        $languageService = $this->languageServiceFactory->createFromSiteLanguage($siteLanguage);
         foreach ($matches[1] as $index => $match) {
-            $translation = $this->translationService->translate($match);
+            $translation = $languageService->sL($match);
 
-            if ($translation !== null) {
+            if ($translation !== '') {
                 $value = \str_replace($matches[0][$index], $translation, $value);
             }
         }
