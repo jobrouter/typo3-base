@@ -18,7 +18,8 @@ Target group: **Administrators**
 Requirements
 ============
 
-The extension is available for TYPO3 v10 LTS and TYPO3 v11 LTS.
+The extension in version |release| is available for TYPO3 v10 LTS and
+TYPO3 v11 LTS.
 
 
 .. _version-matrix:
@@ -29,6 +30,8 @@ Version matrix
 ============== ========== ===========
 JobRouter Base PHP        TYPO3
 ============== ========== ===========
+2.0            7.4 - 8.2  10.4 / 11.5
+-------------- ---------- -----------
 1.4            7.4 - 8.2  10.4 / 11.5
 -------------- ---------- -----------
 1.3            7.4 - 8.1  10.4 / 11.5
