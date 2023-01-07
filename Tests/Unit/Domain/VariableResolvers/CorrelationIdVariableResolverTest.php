@@ -41,7 +41,7 @@ class CorrelationIdVariableResolverTest extends TestCase
             $value,
             $correlationId,
             [],
-            $this->serverRequestStub
+            $this->serverRequestStub,
         );
 
         $this->subject->__invoke($event);
@@ -90,7 +90,7 @@ class CorrelationIdVariableResolverTest extends TestCase
             '{__correlationId}',
             'some-identifier',
             [],
-            $this->serverRequestStub
+            $this->serverRequestStub,
         );
 
         $this->subject->__invoke($event);

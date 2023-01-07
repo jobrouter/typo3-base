@@ -38,7 +38,7 @@ class ResolveFinisherVariableEventTest extends TestCase
             [
                 'formName' => 'formValue',
             ],
-            $this->serverRequestStub
+            $this->serverRequestStub,
         );
 
         self::assertSame(FieldType::Integer, $subject->getFieldType());
@@ -60,7 +60,7 @@ class ResolveFinisherVariableEventTest extends TestCase
             'some-value',
             'some-identifier',
             [],
-            $this->serverRequestStub
+            $this->serverRequestStub,
         );
 
         $subject->setValue('some-other-value');

@@ -28,7 +28,7 @@ final class LocalisedLabelVariableResolver
     private const LOCALISED_STRING_REGEX = '/{__(LLL:.+?)}/';
 
     public function __construct(
-        private readonly LanguageServiceFactory $languageServiceFactory
+        private readonly LanguageServiceFactory $languageServiceFactory,
     ) {
     }
 
@@ -70,9 +70,9 @@ final class LocalisedLabelVariableResolver
             \sprintf(
                 'The value "%s" contains a localised label which can only be used in "Text" fields, type "%s" used',
                 $event->getValue(),
-                $event->getFieldType()->name
+                $event->getFieldType()->name,
             ),
-            1582907006
+            1582907006,
         );
     }
 }

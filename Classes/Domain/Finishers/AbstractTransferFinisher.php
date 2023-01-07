@@ -84,7 +84,7 @@ abstract class AbstractTransferFinisher extends AbstractFinisher
         return \str_replace(
             \array_keys($formValues),
             \array_values($formValues),
-            $value
+            $value,
         );
     }
 }

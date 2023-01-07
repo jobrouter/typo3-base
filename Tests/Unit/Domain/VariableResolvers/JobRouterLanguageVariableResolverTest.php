@@ -51,7 +51,7 @@ class JobRouterLanguageVariableResolverTest extends TestCase
             $this->createStub(UriInterface::class),
             [
                 'iso-639-1' => $isoCode,
-            ]
+            ],
         );
 
         $this->serverRequestStub
@@ -64,7 +64,7 @@ class JobRouterLanguageVariableResolverTest extends TestCase
             $value,
             '',
             [],
-            $this->serverRequestStub
+            $this->serverRequestStub,
         );
 
         $this->subject->__invoke($event);
@@ -119,7 +119,7 @@ class JobRouterLanguageVariableResolverTest extends TestCase
             '{__jobRouterLanguage}',
             '',
             [],
-            $this->serverRequestStub
+            $this->serverRequestStub,
         );
 
         $this->subject->__invoke($event);
@@ -140,7 +140,7 @@ class JobRouterLanguageVariableResolverTest extends TestCase
             '{__jobRouterLanguage}',
             '',
             [],
-            $this->serverRequestStub
+            $this->serverRequestStub,
         );
 
         $this->subject->__invoke($event);

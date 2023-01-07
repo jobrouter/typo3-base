@@ -59,7 +59,7 @@ class LocalisedLabelVariableResolverTest extends TestCase
             'foo {__LLL:EXT:some_ext/Resources/Private/Language/locallang.xlf:some.label} bar',
             '',
             [],
-            $this->requestStub
+            $this->requestStub,
         );
 
         $this->subject->__invoke($event);
@@ -92,7 +92,7 @@ class LocalisedLabelVariableResolverTest extends TestCase
             'foo {__LLL:EXT:some_ext/Resources/Private/Language/locallang.xlf:some.label} bar {__LLL:EXT:some_ext/Resources/Private/Language/locallang.xlf:another.label}',
             '',
             [],
-            $this->requestStub
+            $this->requestStub,
         );
 
         $this->subject->__invoke($event);
@@ -110,14 +110,14 @@ class LocalisedLabelVariableResolverTest extends TestCase
             'foo bar',
             '',
             [],
-            $this->requestStub
+            $this->requestStub,
         );
 
         $this->subject->__invoke($event);
 
         self::assertSame(
             'foo bar',
-            $event->getValue()
+            $event->getValue(),
         );
     }
 
@@ -135,14 +135,14 @@ class LocalisedLabelVariableResolverTest extends TestCase
             'foo {__LLL:EXT:some_ext/Resources/Private/Language/locallang.xlf:not.existing} bar',
             '',
             [],
-            $this->requestStub
+            $this->requestStub,
         );
 
         $this->subject->__invoke($event);
 
         self::assertSame(
             'foo {__LLL:EXT:some_ext/Resources/Private/Language/locallang.xlf:not.existing} bar',
-            $event->getValue()
+            $event->getValue(),
         );
     }
 
@@ -156,14 +156,14 @@ class LocalisedLabelVariableResolverTest extends TestCase
             'foo {__LLL:EXT:some_ext/Resources/Private/Language/locallang.xlf:not.existing bar',
             '',
             [],
-            $this->requestStub
+            $this->requestStub,
         );
 
         $this->subject->__invoke($event);
 
         self::assertSame(
             'foo {__LLL:EXT:some_ext/Resources/Private/Language/locallang.xlf:not.existing bar',
-            $event->getValue()
+            $event->getValue(),
         );
     }
 
@@ -181,7 +181,7 @@ class LocalisedLabelVariableResolverTest extends TestCase
             '{__LLL:EXT:some_ext/Resources/Private/Language/locallang.xlf:some.label}',
             '',
             [],
-            $this->requestStub
+            $this->requestStub,
         );
 
         $this->subject->__invoke($event);

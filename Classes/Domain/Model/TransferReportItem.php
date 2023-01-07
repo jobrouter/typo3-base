@@ -19,7 +19,7 @@ final class TransferReportItem
     public function __construct(
         public readonly int $creationDate,
         public readonly string $message,
-        public readonly string $correlationId
+        public readonly string $correlationId,
     ) {
     }
 }

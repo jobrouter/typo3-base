@@ -27,7 +27,7 @@ final class CorrelationIdVariableResolver
         $this->checkValidFieldTypes($event->getFieldType());
 
         $event->setValue(
-            \str_replace(self::VARIABLE_TO_RESOLVE, $event->getCorrelationId(), (string)$event->getValue())
+            \str_replace(self::VARIABLE_TO_RESOLVE, $event->getCorrelationId(), (string)$event->getValue()),
         );
     }
 
@@ -41,9 +41,9 @@ final class CorrelationIdVariableResolver
             \sprintf(
                 'The "%s" variable can only be used in "Text" fields, type "%s" used',
                 self::VARIABLE_TO_RESOLVE,
-                $fieldType->name
+                $fieldType->name,
             ),
-            1582654966
+            1582654966,
         );
     }
 }

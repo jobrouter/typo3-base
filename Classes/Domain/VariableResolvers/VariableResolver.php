@@ -29,7 +29,7 @@ class VariableResolver
     private ServerRequestInterface $request;
 
     public function __construct(
-        private readonly EventDispatcherInterface $eventDispatcher
+        private readonly EventDispatcherInterface $eventDispatcher,
     ) {
     }
 
@@ -62,7 +62,7 @@ class VariableResolver
             $value,
             $this->correlationId,
             $this->formValues,
-            $this->request
+            $this->request,
         );
         /** @var ResolveFinisherVariableEvent $event */
         $event = $this->eventDispatcher->dispatch($event);

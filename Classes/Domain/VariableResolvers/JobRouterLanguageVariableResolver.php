@@ -53,9 +53,9 @@ final class JobRouterLanguageVariableResolver
             \sprintf(
                 'The value "%s" contains a variable which can only be used in "Text" fields, type "%s" used',
                 $event->getValue(),
-                $event->getFieldType()->name
+                $event->getFieldType()->name,
             ),
-            1594214444
+            1594214444,
         );
     }
 }

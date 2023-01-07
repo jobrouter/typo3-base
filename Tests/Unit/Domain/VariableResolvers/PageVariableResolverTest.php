@@ -56,7 +56,7 @@ final class PageVariableResolverTest extends TestCase
             $value,
             '',
             [],
-            $this->requestStub
+            $this->requestStub,
         );
 
         $this->subject->__invoke($event);

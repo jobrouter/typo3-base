@@ -25,7 +25,7 @@ final class ResolveFinisherVariableEvent
         private $value,
         private readonly string $correlationId,
         private readonly array $formValues,
-        private readonly ServerRequestInterface $request
+        private readonly ServerRequestInterface $request,
     ) {
     }
 

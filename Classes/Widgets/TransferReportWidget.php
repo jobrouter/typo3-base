@@ -30,7 +30,7 @@ final class TransferReportWidget implements WidgetInterface, AdditionalCssInterf
         private readonly WidgetConfigurationInterface $configuration,
         private readonly ListDataProviderInterface $dataProvider,
         private readonly StandaloneView $view,
-        private readonly array $options
+        private readonly array $options,
     ) {
     }
 

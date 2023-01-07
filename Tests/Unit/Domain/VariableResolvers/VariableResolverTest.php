@@ -67,7 +67,7 @@ class VariableResolverTest extends TestCase
             [
                 'foo' => 'bar',
             ],
-            $this->requestStub
+            $this->requestStub,
         );
 
         $this->eventDispatcherMock

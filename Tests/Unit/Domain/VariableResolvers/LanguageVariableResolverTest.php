@@ -48,7 +48,7 @@ class LanguageVariableResolverTest extends TestCase
                 'iso-639-1' => 'de',
                 'hreflang' => 'de-de',
                 'direction' => 'ltr',
-            ]
+            ],
         );
 
         $this->serverRequestStub = $this->createStub(ServerRequestInterface::class);
@@ -69,7 +69,7 @@ class LanguageVariableResolverTest extends TestCase
             $value,
             '',
             [],
-            $this->serverRequestStub
+            $this->serverRequestStub,
         );
 
         $this->subject->__invoke($event);
@@ -145,7 +145,7 @@ class LanguageVariableResolverTest extends TestCase
             '{__language.twoLetterIsoCode} {__language.direction}',
             '',
             [],
-            $this->serverRequestStub
+            $this->serverRequestStub,
         );
 
         $this->subject->__invoke($event);
@@ -163,7 +163,7 @@ class LanguageVariableResolverTest extends TestCase
             '{__language1.twoLetterIsoCode}',
             '',
             [],
-            $this->serverRequestStub
+            $this->serverRequestStub,
         );
 
         $this->subject->__invoke($event);
@@ -181,7 +181,7 @@ class LanguageVariableResolverTest extends TestCase
             '{__language.invalid key}',
             '',
             [],
-            $this->serverRequestStub
+            $this->serverRequestStub,
         );
 
         $this->subject->__invoke($event);
@@ -203,7 +203,7 @@ class LanguageVariableResolverTest extends TestCase
             '{__language.twoLetterIsoCode}',
             '',
             [],
-            $this->serverRequestStub
+            $this->serverRequestStub,
         );
 
         $this->subject->__invoke($event);
@@ -225,7 +225,7 @@ class LanguageVariableResolverTest extends TestCase
             '{__language.twoLetterIsoCode}',
             '',
             [],
-            $this->serverRequestStub
+            $this->serverRequestStub,
         );
 
         $this->subject->__invoke($event);
