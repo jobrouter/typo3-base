@@ -9,9 +9,9 @@ declare(strict_types=1);
  * LICENSE.txt file that was distributed with this source code.
  */
 
-namespace Brotkrueml\JobRouterBase\Tests\Unit\Domain\Model;
+namespace Brotkrueml\JobRouterBase\Tests\Unit\Domain\Dto;
 
-use Brotkrueml\JobRouterBase\Domain\Model\TransferStatus;
+use Brotkrueml\JobRouterBase\Domain\Dto\TransferStatus;
 use PHPUnit\Framework\TestCase;
 
 class TransferStatusTest extends TestCase

@@ -11,7 +11,7 @@ declare(strict_types=1);
 
 namespace Brotkrueml\JobRouterBase\Widgets\Provider;
 
-use Brotkrueml\JobRouterBase\Domain\Model\TransferStatus;
+use Brotkrueml\JobRouterBase\Domain\Dto\TransferStatus;
 
 /**
  * @internal Only for usage in the TYPO3 JobRouter extensions!

@@ -9,7 +9,7 @@ declare(strict_types=1);
  * LICENSE.txt file that was distributed with this source code.
  */
 
-namespace Brotkrueml\JobRouterBase\Domain\Model;
+namespace Brotkrueml\JobRouterBase\Domain\Dto;
 
 /**
  * @internal Only for usage in the TYPO3 JobRouter extensions!
