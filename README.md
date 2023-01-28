@@ -12,6 +12,13 @@ This TYPO3 extension acts as a base library for:
   * [JobRouter Data](https://github.com/brotkrueml/typo3-jobrouter-data)
   * [JobRouter Process](https://github.com/brotkrueml/typo3-jobrouter-process)
 
+## Versions and support
+
+| Latest release | TYPO3       | PHP   | Updates will contain |
+|----------------|-------------|-------|----------------------|
+| 2.x            | 11.5 - 12.4 | ≥ 8.1 | In development       |
+| 1.x            | 10.4 - 11.5 | ≥ 7.4 | Security fixes       |
+
 [Documentation](https://typo3-jobrouter.readthedocs.io/projects/base/) |
 [Translation](https://crowdin.com/project/typo3-extension-jobrouterbase) |
 [Changelog](https://github.com/brotkrueml/typo3-jobrouter-base/blob/main/CHANGELOG.md) |
