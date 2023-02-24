@@ -38,7 +38,7 @@ class LanguageVariableResolverTest extends TestCase
 
         $siteLanguage = new SiteLanguage(
             42,
-            'de_DE.UTF-8',
+            'de-DE',
             $baseStub,
             [
                 'title' => 'Some Title',
@@ -106,7 +106,7 @@ class LanguageVariableResolverTest extends TestCase
 
         yield 'language.locale is resolved' => [
             'foo {__language.locale} bar',
-            'foo de_DE.UTF-8 bar',
+            'foo de-DE bar',
         ];
 
         yield 'language.navigationTitle is resolved' => [
