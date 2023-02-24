@@ -15,6 +15,7 @@ Added
 ^^^^^
 
 
+* Processing of an attachment and date as field type
 * Compatibility with TYPO3 v12
 
 Changed
@@ -30,14 +31,8 @@ Removed
 * Compatibility with TYPO3 v10
 * Compatibility with PHP 7.4 and 8.0
 
-[1.4.0] - tbd.
---------------
-
 Added
 ^^^^^
-
-
-* Processing of an attachment as field type
 
 `1.3.0 <https://github.com/brotkrueml/typo3-jobrouter-base/compare/v1.2.0...v1.3.0>`_ - 2022-07-19
 ------------------------------------------------------------------------------------------------------

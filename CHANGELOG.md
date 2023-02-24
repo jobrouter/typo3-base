@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- Processing of an attachment and date as field type
 - Compatibility with TYPO3 v12
 
 ### Changed
@@ -16,10 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Compatibility with TYPO3 v10
 - Compatibility with PHP 7.4 and 8.0
 
-## [1.4.0] - tbd.
-
 ### Added
-- Processing of an attachment as field type
 
 ## [1.3.0] - 2022-07-19
 
