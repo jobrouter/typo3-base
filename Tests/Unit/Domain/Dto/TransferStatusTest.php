@@ -12,9 +12,10 @@ declare(strict_types=1);
 namespace Brotkrueml\JobRouterBase\Tests\Unit\Domain\Dto;
 
 use Brotkrueml\JobRouterBase\Domain\Dto\TransferStatus;
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
-class TransferStatusTest extends TestCase
+final class TransferStatusTest extends TestCase
 {
     private TransferStatus $subject;
 
@@ -23,9 +24,7 @@ class TransferStatusTest extends TestCase
         $this->subject = new TransferStatus();
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function statusIsInitialisedCorrectly(): void
     {
         self::assertSame(0, $this->subject->getFailedCount());
@@ -35,9 +34,7 @@ class TransferStatusTest extends TestCase
         self::assertNull($this->subject->getLastRun());
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function setAndGetFailedCount(): void
     {
         $this->subject->setFailedCount(42);
@@ -45,9 +42,7 @@ class TransferStatusTest extends TestCase
         self::assertSame(42, $this->subject->getFailedCount());
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function setAndGetPendingCount(): void
     {
         $this->subject->setPendingCount(23);
@@ -55,9 +50,7 @@ class TransferStatusTest extends TestCase
         self::assertSame(23, $this->subject->getPendingCount());
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function setAndGetSuccessfulCount(): void
     {
         $this->subject->setSuccessfulCount(12);
@@ -65,9 +58,7 @@ class TransferStatusTest extends TestCase
         self::assertSame(12, $this->subject->getSuccessfulCount());
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function setAndGetNumberOfDays(): void
     {
         $this->subject->setNumberOfDays(123);
@@ -75,9 +66,7 @@ class TransferStatusTest extends TestCase
         self::assertSame(123, $this->subject->getNumberOfDays());
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function setAndGetLastRun(): void
     {
         $date = new \DateTimeImmutable('2020-09-01 16:00:00');

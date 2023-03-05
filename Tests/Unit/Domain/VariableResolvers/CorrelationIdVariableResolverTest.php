@@ -15,11 +15,13 @@ use Brotkrueml\JobRouterBase\Domain\VariableResolvers\CorrelationIdVariableResol
 use Brotkrueml\JobRouterBase\Enumeration\FieldType;
 use Brotkrueml\JobRouterBase\Event\ResolveFinisherVariableEvent;
 use Brotkrueml\JobRouterBase\Exception\VariableResolverException;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\MockObject\Stub;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ServerRequestInterface;
 
-class CorrelationIdVariableResolverTest extends TestCase
+final class CorrelationIdVariableResolverTest extends TestCase
 {
     private CorrelationIdVariableResolver $subject;
     private ServerRequestInterface & Stub $serverRequestStub;
@@ -30,10 +32,8 @@ class CorrelationIdVariableResolverTest extends TestCase
         $this->subject = new CorrelationIdVariableResolver();
     }
 
-    /**
-     * @test
-     * @dataProvider dataProviderForResolveVariables
-     */
+    #[Test]
+    #[DataProvider('dataProviderForResolveVariables')]
     public function resolveVariableCorrectly(string $value, string $correlationId, string $expected): void
     {
         $event = new ResolveFinisherVariableEvent(
@@ -49,7 +49,7 @@ class CorrelationIdVariableResolverTest extends TestCase
         self::assertSame($expected, $event->getValue());
     }
 
-    public function dataProviderForResolveVariables(): \Generator
+    public static function dataProviderForResolveVariables(): \Generator
     {
         yield 'value with variable as only text' => [
             '{__correlationId}',
@@ -76,9 +76,7 @@ class CorrelationIdVariableResolverTest extends TestCase
         ];
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function resolveThrowsExceptionWithFieldTypeNotString(): void
     {
         $this->expectException(VariableResolverException::class);

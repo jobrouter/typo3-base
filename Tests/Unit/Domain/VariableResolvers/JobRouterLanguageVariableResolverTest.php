@@ -15,13 +15,15 @@ use Brotkrueml\JobRouterBase\Domain\VariableResolvers\JobRouterLanguageVariableR
 use Brotkrueml\JobRouterBase\Enumeration\FieldType;
 use Brotkrueml\JobRouterBase\Event\ResolveFinisherVariableEvent;
 use Brotkrueml\JobRouterBase\Exception\VariableResolverException;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\MockObject\Stub;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Message\UriInterface;
 use TYPO3\CMS\Core\Site\Entity\SiteLanguage;
 
-class JobRouterLanguageVariableResolverTest extends TestCase
+final class JobRouterLanguageVariableResolverTest extends TestCase
 {
     private JobRouterLanguageVariableResolver $subject;
     private ServerRequestInterface & Stub $serverRequestStub;
@@ -39,10 +41,8 @@ class JobRouterLanguageVariableResolverTest extends TestCase
         $this->serverRequestStub = $this->createStub(ServerRequestInterface::class);
     }
 
-    /**
-     * @test
-     * @dataProvider dataProvider
-     */
+    #[Test]
+    #[DataProvider('dataProvider')]
     public function jobRouterLanguageVariableIsResolvedCorrectly(string $value, string $isoCode, string $expected): void
     {
         $siteLanguage = new SiteLanguage(
@@ -72,7 +72,7 @@ class JobRouterLanguageVariableResolverTest extends TestCase
         self::assertSame($expected, $event->getValue());
     }
 
-    public function dataProvider(): iterable
+    public static function dataProvider(): iterable
     {
         yield 'jobRouterLanguage is resolved for a supported language' => [
             '{__jobRouterLanguage}',
@@ -105,9 +105,7 @@ class JobRouterLanguageVariableResolverTest extends TestCase
         ];
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function wrongFieldTypeThrowsException(): void
     {
         $this->expectException(VariableResolverException::class);
@@ -125,9 +123,7 @@ class JobRouterLanguageVariableResolverTest extends TestCase
         $this->subject->__invoke($event);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function languageCannotBeDeterminedThenVariableIsRemoved(): void
     {
         $this->serverRequestStub

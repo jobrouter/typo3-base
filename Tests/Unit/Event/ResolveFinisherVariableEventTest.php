@@ -13,11 +13,12 @@ namespace Brotkrueml\JobRouterBase\Tests\Unit\Event;
 
 use Brotkrueml\JobRouterBase\Enumeration\FieldType;
 use Brotkrueml\JobRouterBase\Event\ResolveFinisherVariableEvent;
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\MockObject\Stub;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ServerRequestInterface;
 
-class ResolveFinisherVariableEventTest extends TestCase
+final class ResolveFinisherVariableEventTest extends TestCase
 {
     private ServerRequestInterface & Stub $serverRequestStub;
 
@@ -26,9 +27,7 @@ class ResolveFinisherVariableEventTest extends TestCase
         $this->serverRequestStub = $this->createStub(ServerRequestInterface::class);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function gettersReturnValuesCorrectly(): void
     {
         $subject = new ResolveFinisherVariableEvent(
@@ -50,9 +49,7 @@ class ResolveFinisherVariableEventTest extends TestCase
         self::assertSame($this->serverRequestStub, $subject->getRequest());
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function setValueSetsTheValueCorrectly(): void
     {
         $subject = new ResolveFinisherVariableEvent(

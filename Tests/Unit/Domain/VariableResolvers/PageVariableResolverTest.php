@@ -14,6 +14,8 @@ namespace Brotkrueml\JobRouterBase\Tests\Unit\Domain\VariableResolvers;
 use Brotkrueml\JobRouterBase\Domain\VariableResolvers\PageVariableResolver;
 use Brotkrueml\JobRouterBase\Enumeration\FieldType;
 use Brotkrueml\JobRouterBase\Event\ResolveFinisherVariableEvent;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\MockObject\Stub;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ServerRequestInterface;
@@ -45,10 +47,8 @@ final class PageVariableResolverTest extends TestCase
         unset($GLOBALS['TSFE']);
     }
 
-    /**
-     * @test
-     * @dataProvider dataProvider
-     */
+    #[Test]
+    #[DataProvider('dataProvider')]
     public function pageVariablesAreResolvedCorrectly(string $value, string $expected): void
     {
         $event = new ResolveFinisherVariableEvent(
@@ -64,7 +64,7 @@ final class PageVariableResolverTest extends TestCase
         self::assertSame($expected, $event->getValue());
     }
 
-    public function dataProvider(): iterable
+    public static function dataProvider(): iterable
     {
         yield 'Value is untouched when no page variable is used' => [
             'value' => 'some value',

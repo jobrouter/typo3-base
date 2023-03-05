@@ -12,9 +12,10 @@ declare(strict_types=1);
 namespace Brotkrueml\JobRouterBase\Tests\Unit\Domain\Correlation;
 
 use Brotkrueml\JobRouterBase\Domain\Correlation\IdGenerator;
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
-class IdGeneratorTest extends TestCase
+final class IdGeneratorTest extends TestCase
 {
     private IdGenerator $subject;
 
@@ -23,9 +24,7 @@ class IdGeneratorTest extends TestCase
         $this->subject = new IdGenerator();
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function buildReturnsSameIdentifierWhenCalledTwice(): void
     {
         $actual1 = $this->subject->build('some-key');
@@ -35,9 +34,7 @@ class IdGeneratorTest extends TestCase
         self::assertSame($actual1, $actual2);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function buildReturnsDifferentIdentifierWhenCalledTwice(): void
     {
         $actual1 = $this->subject->build('some-key');

@@ -14,13 +14,14 @@ namespace Brotkrueml\JobRouterBase\Tests\Unit\Domain\VariableResolvers;
 use Brotkrueml\JobRouterBase\Domain\VariableResolvers\VariableResolver;
 use Brotkrueml\JobRouterBase\Enumeration\FieldType;
 use Brotkrueml\JobRouterBase\Event\ResolveFinisherVariableEvent;
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\MockObject\Stub;
 use PHPUnit\Framework\TestCase;
 use Psr\EventDispatcher\EventDispatcherInterface;
 use Psr\Http\Message\ServerRequestInterface;
 
-class VariableResolverTest extends TestCase
+final class VariableResolverTest extends TestCase
 {
     private ServerRequestInterface & Stub $requestStub;
     /**
@@ -41,9 +42,7 @@ class VariableResolverTest extends TestCase
         $this->subject->setRequest($this->requestStub);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function resolveReturnsValueUntouchedIfNotContainingVariable(): void
     {
         $this->eventDispatcherMock
@@ -55,9 +54,7 @@ class VariableResolverTest extends TestCase
         self::assertSame('value without variable', $actual);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function resolveCallsEventDispatcherIfVariableIsAvailable(): void
     {
         $returnedEvent = new ResolveFinisherVariableEvent(

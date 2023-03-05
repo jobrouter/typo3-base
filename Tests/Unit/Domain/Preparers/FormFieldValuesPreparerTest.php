@@ -12,10 +12,12 @@ declare(strict_types=1);
 namespace Brotkrueml\JobRouterBase\Tests\Unit\Domain\Preparers;
 
 use Brotkrueml\JobRouterBase\Domain\Preparers\FormFieldValuesPreparer;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use TYPO3\CMS\Form\Domain\Model\FormElements\GenericFormElement;
 
-class FormFieldValuesPreparerTest extends TestCase
+final class FormFieldValuesPreparerTest extends TestCase
 {
     private FormFieldValuesPreparer $subject;
 
@@ -24,10 +26,8 @@ class FormFieldValuesPreparerTest extends TestCase
         $this->subject = new FormFieldValuesPreparer();
     }
 
-    /**
-     * @test
-     * @dataProvider dataProviderForPrepare
-     */
+    #[Test]
+    #[DataProvider('dataProviderForPrepare')]
     public function prepareForSubstitution(array $fieldElements, array $fieldsWithValues, array $expected): void
     {
         $actual = $this->subject->prepareForSubstitution($fieldElements, $fieldsWithValues);
@@ -35,7 +35,7 @@ class FormFieldValuesPreparerTest extends TestCase
         self::assertSame($expected, $actual);
     }
 
-    public function dataProviderForPrepare(): \Generator
+    public static function dataProviderForPrepare(): \Generator
     {
         yield 'No form values given returns form fields with empty strings' => [
             'fieldElements' => [

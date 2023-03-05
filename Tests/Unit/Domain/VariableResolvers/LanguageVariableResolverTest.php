@@ -15,13 +15,15 @@ use Brotkrueml\JobRouterBase\Domain\VariableResolvers\LanguageVariableResolver;
 use Brotkrueml\JobRouterBase\Enumeration\FieldType;
 use Brotkrueml\JobRouterBase\Event\ResolveFinisherVariableEvent;
 use Brotkrueml\JobRouterBase\Exception\VariableResolverException;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\MockObject\Stub;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Message\UriInterface;
 use TYPO3\CMS\Core\Site\Entity\SiteLanguage;
 
-class LanguageVariableResolverTest extends TestCase
+final class LanguageVariableResolverTest extends TestCase
 {
     private LanguageVariableResolver $subject;
     private ServerRequestInterface & Stub  $serverRequestStub;
@@ -58,10 +60,8 @@ class LanguageVariableResolverTest extends TestCase
             ->willReturn($siteLanguage);
     }
 
-    /**
-     * @test
-     * @dataProvider dataProvider
-     */
+    #[Test]
+    #[DataProvider('dataProvider')]
     public function languageVariablesAreResolvedCorrectly(string $value, string $expected): void
     {
         $event = new ResolveFinisherVariableEvent(
@@ -77,7 +77,7 @@ class LanguageVariableResolverTest extends TestCase
         self::assertSame($expected, $event->getValue());
     }
 
-    public function dataProvider(): \Generator
+    public static function dataProvider(): \Generator
     {
         yield 'language.twoLetterIsoCode is resolved' => [
             'foo {__language.twoLetterIsoCode} bar',
@@ -135,9 +135,7 @@ class LanguageVariableResolverTest extends TestCase
         ];
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function multipleLanguageVariablesAreResolved(): void
     {
         $event = new ResolveFinisherVariableEvent(
@@ -153,9 +151,7 @@ class LanguageVariableResolverTest extends TestCase
         self::assertSame('de ltr', $event->getValue());
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function onlyLanguageVariablesAreResolved(): void
     {
         $event = new ResolveFinisherVariableEvent(
@@ -171,9 +167,7 @@ class LanguageVariableResolverTest extends TestCase
         self::assertSame('{__language1.twoLetterIsoCode}', $event->getValue());
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function languageKeyThatCannotMatchedIsIgnored(): void
     {
         $event = new ResolveFinisherVariableEvent(
@@ -189,9 +183,7 @@ class LanguageVariableResolverTest extends TestCase
         self::assertSame('{__language.invalid key}', $event->getValue());
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function wrongFieldTypeThrowsException(): void
     {
         $this->expectException(VariableResolverException::class);
@@ -209,9 +201,7 @@ class LanguageVariableResolverTest extends TestCase
         $this->subject->__invoke($event);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function languageCannotBeDeterminedLeavesVariablesUntouched(): void
     {
         $this->serverRequestStub = $this->createStub(ServerRequestInterface::class);

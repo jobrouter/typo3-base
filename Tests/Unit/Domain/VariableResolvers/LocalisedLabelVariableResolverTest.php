@@ -15,6 +15,7 @@ use Brotkrueml\JobRouterBase\Domain\VariableResolvers\LocalisedLabelVariableReso
 use Brotkrueml\JobRouterBase\Enumeration\FieldType;
 use Brotkrueml\JobRouterBase\Event\ResolveFinisherVariableEvent;
 use Brotkrueml\JobRouterBase\Exception\VariableResolverException;
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\MockObject\Stub;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ServerRequestInterface;
@@ -22,7 +23,7 @@ use TYPO3\CMS\Core\Localization\LanguageService;
 use TYPO3\CMS\Core\Localization\LanguageServiceFactory;
 use TYPO3\CMS\Core\Site\Entity\SiteLanguage;
 
-class LocalisedLabelVariableResolverTest extends TestCase
+final class LocalisedLabelVariableResolverTest extends TestCase
 {
     private LocalisedLabelVariableResolver $subject;
     private ServerRequestInterface & Stub $requestStub;
@@ -44,9 +45,7 @@ class LocalisedLabelVariableResolverTest extends TestCase
             ->willReturn($this->createStub(SiteLanguage::class));
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function oneLocalisedLabelIsResolved(): void
     {
         $this->languageServiceStub
@@ -67,9 +66,7 @@ class LocalisedLabelVariableResolverTest extends TestCase
         self::assertSame('foo localised some label bar', $event->getValue());
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function twoLocalisedLabelAreResolved(): void
     {
         $translationMap = [
@@ -100,9 +97,7 @@ class LocalisedLabelVariableResolverTest extends TestCase
         self::assertSame('foo localised some label bar localised another label', $event->getValue());
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function noLocalisedLabelFoundThenValueIsUntouched(): void
     {
         $event = new ResolveFinisherVariableEvent(
@@ -121,9 +116,7 @@ class LocalisedLabelVariableResolverTest extends TestCase
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function localisedLabelIsNotFoundThenValueIsUntouched(): void
     {
         $this->languageServiceStub
@@ -146,9 +139,7 @@ class LocalisedLabelVariableResolverTest extends TestCase
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function wrongVariableDescriptionThenValueIsUntouched(): void
     {
         $event = new ResolveFinisherVariableEvent(
@@ -167,9 +158,7 @@ class LocalisedLabelVariableResolverTest extends TestCase
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function resolveThrowsExceptionWithFieldTypeNotString(): void
     {
         $this->expectException(VariableResolverException::class);
