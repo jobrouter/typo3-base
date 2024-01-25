@@ -1,5 +1,5 @@
 {
-	"name": "brotkrueml/typo3-jobrouter-base",
+	"name": "jobrouter/typo3-base",
 	"description": "Base extension for the TYPO3 JobRouter® extensions",
 	"license": "GPL-2.0-or-later",
 	"type": "typo3-cms-extension",
@@ -15,8 +15,8 @@
 		}
 	],
 	"support": {
-		"issues": "https://github.com/brotkrueml/typo3-jobrouter-base/issues",
-		"source": "https://github.com/brotkrueml/typo3-jobrouter-base",
+		"issues": "https://github.com/jobrouter/typo3-base/issues",
+		"source": "https://github.com/jobrouter/typo3-base",
 		"docs": "https://typo3-jobrouter.readthedocs.io/projects/base/"
 	},
 	"require": {
@@ -39,8 +39,8 @@
 		"typo3/cms-form": "^11.5.3 || ^12.4"
 	},
 	"suggest": {
-		"brotkrueml/typo3-jobrouter-data": "Synchronise and transmit to JobData tables",
-		"brotkrueml/typo3-jobrouter-process": "Start instances in JobRouter®"
+		"jobrouter/typo3-data": "Synchronise and transmit to JobData tables",
+		"jobrouter/typo3-process": "Start instances in JobRouter®"
 	},
 	"autoload": {
 		"psr-4": {
