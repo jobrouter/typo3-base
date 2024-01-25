@@ -1,7 +1,6 @@
 # Base library for the TYPO3 JobRouter® extensions
 
 [![CI Status](https://github.com/jobrouter/typo3--base/workflows/CI/badge.svg?branch=main)](https://github.com/jobrouter/typo3-base/actions?query=workflow%3ACI)
-[![Coverage Status](https://coveralls.io/repos/github/brotkrueml/typo3-jobrouter-base/badge.svg?branch=main)](https://coveralls.io/github/brotkrueml/typo3-jobrouter-base?branch=main)
 [![Latest Stable Version](https://img.shields.io/packagist/v/brotkrueml/typo3-jobrouter-base.svg?label=stable)](https://packagist.org/packages/brotkrueml/typo3-jobrouter-base)
 
 [JobRouter®](https://www.jobrouter.com/) is a scalable digitalisation
