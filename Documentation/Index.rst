@@ -1,4 +1,4 @@
-.. include:: _includes.rst.txt
+.. include:: /Includes.rst.txt
 
 ====================
 TYPO3 JobRouter Base
@@ -8,7 +8,7 @@ TYPO3 JobRouter Base
    `jobrouter_base`_
 
 :Package name:
-   `brotkrueml/typo3-jobrouter-base`_
+   `jobrouter/typo3-base`_
 
 :Version:
    |release|
@@ -17,7 +17,7 @@ TYPO3 JobRouter Base
    en
 
 :Author:
-   `Chris Müller`_
+   Chris Müller, JobRouter AG
 
 :License:
    This document is published under the `Creative Commons BY 4.0`_ license.
@@ -35,18 +35,15 @@ Base library for the TYPO3 JobRouter® extensions
 
 .. toctree::
    :maxdepth: 2
-   :numbered: 1
 
-   introduction
-   installation
-   variable-resolvers
-   developer
-   changelog
-   upgrade
-   copyright
+   Introduction/Index
+   Installation/Index
+   VariableResolvers/Index
+   Developer/Index
+   Changelog/Index
+   Upgrade/Index
 
 
-.. _brotkrueml/typo3-jobrouter-base: https://packagist.org/packages/brotkrueml/typo3-jobrouter-base
-.. _Chris Müller: https://github.com/brotkrueml
+.. _jobrouter/typo3-base: https://packagist.org/packages/jobrouter/typo3-base
 .. _Creative Commons BY 4.0: https://creativecommons.org/licenses/by/4.0/
 .. _jobrouter_base:  https://extensions.typo3.org/extension/jobrouter_base

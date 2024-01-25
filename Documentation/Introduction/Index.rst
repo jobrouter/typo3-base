@@ -1,4 +1,4 @@
-.. include:: _includes.rst.txt
+.. include:: /Includes.rst.txt
 
 .. _introduction:
 
@@ -43,5 +43,5 @@ The changes between the different versions can be found in the
 
 
 .. _JobRouter®: https://www.jobrouter.com/
-.. _JobRouter Base: https://github.com/brotkrueml/typo3-jobrouter-base
+.. _JobRouter Base: https://github.com/jobrouter/typo3-base
 .. _semantic versioning: https://semver.org/

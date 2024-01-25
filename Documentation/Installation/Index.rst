@@ -1,4 +1,4 @@
-.. include:: _includes.rst.txt
+.. include:: /Includes.rst.txt
 
 .. _installation:
 
@@ -30,7 +30,9 @@ Version matrix
 ============== ========== ===========
 JobRouter Base PHP        TYPO3
 ============== ========== ===========
-2.0            8.1 - 8.2  11.5 / 12.4
+3.0            8.1 - 8.3  11.5 / 12.4
+-------------- ---------- -----------
+2.0            8.1 - 8.3  11.5 / 12.4
 -------------- ---------- -----------
 1.4            7.4 - 8.2  10.4 / 11.5
 -------------- ---------- -----------
@@ -44,7 +46,7 @@ JobRouter Base PHP        TYPO3
 
 .. _installation-composer:
 
-Installation via composer
+Installation via Composer
 =========================
 
 .. note::
@@ -56,9 +58,9 @@ Installation via composer
 The recommended way to install this extension is by using Composer. In your
 Composer-based TYPO3 project root, just type:
 
-.. code-block:: shell
+.. code-block:: bash
 
-   composer req brotkrueml/typo3-jobrouter-base
+   composer req jobrouter/typo3-base
 
 and the recent version will be installed.
 
@@ -69,7 +71,7 @@ Installation in Extension Manager
 =================================
 
 You can also install the extension from the `TYPO3 Extension Repository (TER)`_.
-See :ref:`t3start:extensions_legacy_management` for a manual how to
+See :ref:`t3start:extensions-legacy-management` for a manual how to
 install an extension.
 
 

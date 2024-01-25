@@ -1,4 +1,4 @@
-.. include:: _includes.rst.txt
+.. include:: /Includes.rst.txt
 
 .. _variable-resolvers:
 
@@ -42,12 +42,11 @@ Example:
                from_website: '{__language.base}'
 
 .. hint::
-
    You can build own variable resolvers. Have a look in the section
    :ref:`developer-variable-resolvers`.
 
 
-Correlation id
+Correlation ID
 --------------
 
 The correlation ID is generated from the form identifier and a unique key
