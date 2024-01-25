@@ -26,8 +26,7 @@ final class ResolveFinisherVariableEvent
         private readonly string $correlationId,
         private readonly array $formValues,
         private readonly ServerRequestInterface $request,
-    ) {
-    }
+    ) {}
 
     public function getFieldType(): FieldType
     {

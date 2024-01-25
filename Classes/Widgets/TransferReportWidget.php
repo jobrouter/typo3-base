@@ -31,8 +31,7 @@ final class TransferReportWidget implements WidgetInterface, AdditionalCssInterf
         private readonly ListDataProviderInterface $dataProvider,
         private readonly StandaloneView $view,
         private readonly array $options,
-    ) {
-    }
+    ) {}
 
     public function renderWidgetContent(): string
     {

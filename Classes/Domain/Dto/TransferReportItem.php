@@ -20,6 +20,5 @@ final class TransferReportItem
         public readonly int $creationDate,
         public readonly string $message,
         public readonly string $correlationId,
-    ) {
-    }
+    ) {}
 }

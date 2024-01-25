@@ -29,8 +29,7 @@ final class LocalisedLabelVariableResolver
 
     public function __construct(
         private readonly LanguageServiceFactory $languageServiceFactory,
-    ) {
-    }
+    ) {}
 
     public function __invoke(ResolveFinisherVariableEvent $event): void
     {

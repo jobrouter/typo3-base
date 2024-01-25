@@ -30,8 +30,7 @@ class VariableResolver
 
     public function __construct(
         private readonly EventDispatcherInterface $eventDispatcher,
-    ) {
-    }
+    ) {}
 
     public function setCorrelationId(string $correlationId): void
     {

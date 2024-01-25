@@ -31,8 +31,7 @@ class TransferStatusWidget implements WidgetInterface, AdditionalCssInterface
         private readonly TransferStatusDataProviderInterface $dataProvider,
         private readonly StandaloneView $view,
         private readonly array $options = [],
-    ) {
-    }
+    ) {}
 
     public function renderWidgetContent(): string
     {
