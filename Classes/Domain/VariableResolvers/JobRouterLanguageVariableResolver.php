@@ -9,12 +9,12 @@ declare(strict_types=1);
  * LICENSE.txt file that was distributed with this source code.
  */
 
-namespace Brotkrueml\JobRouterBase\Domain\VariableResolvers;
+namespace JobRouter\AddOn\Typo3Base\Domain\VariableResolvers;
 
-use Brotkrueml\JobRouterBase\Enumeration\FieldType;
-use Brotkrueml\JobRouterBase\Enumeration\JobRouterLanguages;
-use Brotkrueml\JobRouterBase\Event\ResolveFinisherVariableEvent;
-use Brotkrueml\JobRouterBase\Exception\VariableResolverException;
+use JobRouter\AddOn\Typo3Base\Enumeration\FieldType;
+use JobRouter\AddOn\Typo3Base\Enumeration\JobRouterLanguages;
+use JobRouter\AddOn\Typo3Base\Event\ResolveFinisherVariableEvent;
+use JobRouter\AddOn\Typo3Base\Exception\VariableResolverException;
 use TYPO3\CMS\Core\Site\Entity\SiteLanguage;
 
 /**

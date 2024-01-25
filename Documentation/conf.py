@@ -21,7 +21,7 @@ import sphinx_rtd_theme
 # -- Project information -----------------------------------------------------
 
 project = u'TYPO3 JobRouter Base'
-copyright = u'since 2020, Chris Müller'
+copyright = u'since 2020, Chris Müller, since 2024 JobRouter AG'
 author = u'Chris Müller'
 
 # The short X.Y version

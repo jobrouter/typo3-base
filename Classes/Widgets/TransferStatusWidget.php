@@ -9,10 +9,10 @@ declare(strict_types=1);
  * LICENSE.txt file that was distributed with this source code.
  */
 
-namespace Brotkrueml\JobRouterBase\Widgets;
+namespace JobRouter\AddOn\Typo3Base\Widgets;
 
-use Brotkrueml\JobRouterBase\Extension;
-use Brotkrueml\JobRouterBase\Widgets\Provider\TransferStatusDataProviderInterface;
+use JobRouter\AddOn\Typo3Base\Extension;
+use JobRouter\AddOn\Typo3Base\Widgets\Provider\TransferStatusDataProviderInterface;
 use TYPO3\CMS\Dashboard\Widgets\AdditionalCssInterface;
 use TYPO3\CMS\Dashboard\Widgets\WidgetConfigurationInterface;
 use TYPO3\CMS\Dashboard\Widgets\WidgetInterface;

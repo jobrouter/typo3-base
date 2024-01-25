@@ -9,9 +9,9 @@ declare(strict_types=1);
  * LICENSE.txt file that was distributed with this source code.
  */
 
-namespace Brotkrueml\JobRouterBase\Tests\Unit\Domain\Correlation;
+namespace JobRouter\AddOn\Typo3Base\Tests\Unit\Domain\Correlation;
 
-use Brotkrueml\JobRouterBase\Domain\Correlation\IdGenerator;
+use JobRouter\AddOn\Typo3Base\Domain\Correlation\IdGenerator;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 

@@ -9,9 +9,9 @@ declare(strict_types=1);
  * LICENSE.txt file that was distributed with this source code.
  */
 
-namespace Brotkrueml\JobRouterBase\Tests\Unit\Domain\Preparers;
+namespace JobRouter\AddOn\Typo3Base\Tests\Unit\Domain\Preparers;
 
-use Brotkrueml\JobRouterBase\Domain\Preparers\FormFieldValuesPreparer;
+use JobRouter\AddOn\Typo3Base\Domain\Preparers\FormFieldValuesPreparer;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;

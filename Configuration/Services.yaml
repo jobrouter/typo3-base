@@ -4,36 +4,36 @@ services:
     autoconfigure: true
     public: false
 
-  Brotkrueml\JobRouterBase\:
+  JobRouter\AddOn\Typo3Base\:
     resource: '../Classes/*'
     exclude: '../Classes/{Domain/Model,Enumeration,Exception,Extension.php}'
 
-  Brotkrueml\JobRouterBase\Domain\VariableResolvers\JobRouterLanguageVariableResolver:
+  JobRouter\AddOn\Typo3Base\Domain\VariableResolvers\JobRouterLanguageVariableResolver:
     tags:
       - name: event.listener
         identifier: 'jobrouter-base/jobrouter-language-variable-resolver'
-        event: Brotkrueml\JobRouterBase\Event\ResolveFinisherVariableEvent
+        event: JobRouter\AddOn\Typo3Base\Event\ResolveFinisherVariableEvent
 
-  Brotkrueml\JobRouterBase\Domain\VariableResolvers\LanguageVariableResolver:
+  JobRouter\AddOn\Typo3Base\Domain\VariableResolvers\LanguageVariableResolver:
     tags:
       - name: event.listener
         identifier: 'jobrouter-base/language-variable-resolver'
-        event: Brotkrueml\JobRouterBase\Event\ResolveFinisherVariableEvent
+        event: JobRouter\AddOn\Typo3Base\Event\ResolveFinisherVariableEvent
 
-  Brotkrueml\JobRouterBase\Domain\VariableResolvers\LocalisedLabelVariableResolver:
+  JobRouter\AddOn\Typo3Base\Domain\VariableResolvers\LocalisedLabelVariableResolver:
     tags:
       - name: event.listener
         identifier: 'jobrouter-base/localised-label-variable-resolver'
-        event: Brotkrueml\JobRouterBase\Event\ResolveFinisherVariableEvent
+        event: JobRouter\AddOn\Typo3Base\Event\ResolveFinisherVariableEvent
 
-  Brotkrueml\JobRouterBase\Domain\VariableResolvers\CorrelationIdVariableResolver:
+  JobRouter\AddOn\Typo3Base\Domain\VariableResolvers\CorrelationIdVariableResolver:
     tags:
       - name: event.listener
         identifier: 'jobrouter-base/correlation-id-variable-resolver'
-        event: Brotkrueml\JobRouterBase\Event\ResolveFinisherVariableEvent
+        event: JobRouter\AddOn\Typo3Base\Event\ResolveFinisherVariableEvent
 
-  Brotkrueml\JobRouterBase\Domain\VariableResolvers\PageVariableResolver:
+  JobRouter\AddOn\Typo3Base\Domain\VariableResolvers\PageVariableResolver:
     tags:
       - name: event.listener
         identifier: 'jobrouter-base/page-variable-resolver'
-        event: Brotkrueml\JobRouterBase\Event\ResolveFinisherVariableEvent
+        event: JobRouter\AddOn\Typo3Base\Event\ResolveFinisherVariableEvent

@@ -28,16 +28,16 @@ resolvers are implemented as :ref:`PSR-14 event listeners
 <t3api:EventDispatcher>`.
 
 The event listener receives the event
-:php:`Brotkrueml\JobRouterBase\Event\ResolveFinisherVariableEvent`. It
+:php:`JobRouter\AddOn\Typo3Base\Event\ResolveFinisherVariableEvent`. It
 provides the following methods:
 
-.. option:: getFieldType(): \Brotkrueml\JobRouterBase\Enumeration\FieldType
+.. option:: getFieldType(): \JobRouter\AddOn\Typo3Base\Enumeration\FieldType
 
 .. versionchanged:: 2.0.0
 
 Get the field type, like :php:`FieldType::Text` for text or
 :php:`FieldType::Integer` for int. Have a look in the class
-:php:`Brotkrueml\JobRouterBase\Enumeration\FieldType` for the available field
+:php:`JobRouter\AddOn\Typo3Base\Enumeration\FieldType` for the available field
 types.
 
 .. option:: getValue(): string
@@ -82,7 +82,7 @@ As an example we want to resolve a variable to a cookie value.
 
       namespace YourVender\YourExtension\EventListener;
 
-      use Brotkrueml\JobRouterBase\Event\ResolveFinisherVariableEvent;
+      use JobRouter\AddOn\Typo3Base\Event\ResolveFinisherVariableEvent;
       use Psr\Http\Message\ServerRequestInterface;
 
       final class TheCookieVariableResolver
@@ -123,5 +123,5 @@ As an example we want to resolve a variable to a cookie value.
             tags:
                - name: event.listener
                  identifier: 'your-extension/cookie-variable-resolver'
-                 event: Brotkrueml\JobRouterBase\Event\ResolveFinisherVariableEvent
+                 event: JobRouter\AddOn\Typo3Base\Event\ResolveFinisherVariableEvent
 

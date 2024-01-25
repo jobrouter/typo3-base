@@ -42,6 +42,7 @@ Base library for the TYPO3 JobRouter® extensions
    variable-resolvers
    developer
    changelog
+   upgrade
    copyright
 
 

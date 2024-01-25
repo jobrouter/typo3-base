@@ -9,10 +9,10 @@ declare(strict_types=1);
  * LICENSE.txt file that was distributed with this source code.
  */
 
-namespace Brotkrueml\JobRouterBase\Domain\Finishers;
+namespace JobRouter\AddOn\Typo3Base\Domain\Finishers;
 
-use Brotkrueml\JobRouterBase\Domain\Correlation\IdGenerator;
-use Brotkrueml\JobRouterBase\Domain\VariableResolvers\VariableResolver;
+use JobRouter\AddOn\Typo3Base\Domain\Correlation\IdGenerator;
+use JobRouter\AddOn\Typo3Base\Domain\VariableResolvers\VariableResolver;
 use TYPO3\CMS\Form\Domain\Finishers\AbstractFinisher;
 
 /**

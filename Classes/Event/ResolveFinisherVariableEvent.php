@@ -9,9 +9,9 @@ declare(strict_types=1);
  * LICENSE.txt file that was distributed with this source code.
  */
 
-namespace Brotkrueml\JobRouterBase\Event;
+namespace JobRouter\AddOn\Typo3Base\Event;
 
-use Brotkrueml\JobRouterBase\Enumeration\FieldType;
+use JobRouter\AddOn\Typo3Base\Enumeration\FieldType;
 use Psr\Http\Message\ServerRequestInterface;
 
 final class ResolveFinisherVariableEvent

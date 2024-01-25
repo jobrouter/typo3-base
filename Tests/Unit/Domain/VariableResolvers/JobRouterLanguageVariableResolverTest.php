@@ -9,12 +9,12 @@ declare(strict_types=1);
  * LICENSE.txt file that was distributed with this source code.
  */
 
-namespace Brotkrueml\JobRouterBase\Tests\Unit\Domain\VariableResolvers;
+namespace JobRouter\AddOn\Typo3Base\Tests\Unit\Domain\VariableResolvers;
 
-use Brotkrueml\JobRouterBase\Domain\VariableResolvers\JobRouterLanguageVariableResolver;
-use Brotkrueml\JobRouterBase\Enumeration\FieldType;
-use Brotkrueml\JobRouterBase\Event\ResolveFinisherVariableEvent;
-use Brotkrueml\JobRouterBase\Exception\VariableResolverException;
+use JobRouter\AddOn\Typo3Base\Domain\VariableResolvers\JobRouterLanguageVariableResolver;
+use JobRouter\AddOn\Typo3Base\Enumeration\FieldType;
+use JobRouter\AddOn\Typo3Base\Event\ResolveFinisherVariableEvent;
+use JobRouter\AddOn\Typo3Base\Exception\VariableResolverException;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\MockObject\Stub;

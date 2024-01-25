@@ -19,6 +19,6 @@ $EM_CONF[$_EXTKEY] = [
         ],
     ],
     'autoload' => [
-        'psr-4' => ['Brotkrueml\\JobRouterBase\\' => 'Classes']
+        'psr-4' => ['JobRouter\AddOn\Typo3Base\\' => 'Classes']
     ],
 ];

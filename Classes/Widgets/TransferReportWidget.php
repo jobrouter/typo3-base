@@ -9,9 +9,9 @@ declare(strict_types=1);
  * LICENSE.txt file that was distributed with this source code.
  */
 
-namespace Brotkrueml\JobRouterBase\Widgets;
+namespace JobRouter\AddOn\Typo3Base\Widgets;
 
-use Brotkrueml\JobRouterBase\Extension;
+use JobRouter\AddOn\Typo3Base\Extension;
 use TYPO3\CMS\Dashboard\Widgets\AdditionalCssInterface;
 use TYPO3\CMS\Dashboard\Widgets\ListDataProviderInterface;
 use TYPO3\CMS\Dashboard\Widgets\WidgetConfigurationInterface;

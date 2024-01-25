@@ -9,7 +9,7 @@ declare(strict_types=1);
  * LICENSE.txt file that was distributed with this source code.
  */
 
-namespace Brotkrueml\JobRouterBase\Domain\Correlation;
+namespace JobRouter\AddOn\Typo3Base\Domain\Correlation;
 
 use TYPO3\CMS\Core\SingletonInterface;
 

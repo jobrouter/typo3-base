@@ -9,9 +9,9 @@ declare(strict_types=1);
  * LICENSE.txt file that was distributed with this source code.
  */
 
-namespace Brotkrueml\JobRouterBase\Domain\VariableResolvers;
+namespace JobRouter\AddOn\Typo3Base\Domain\VariableResolvers;
 
-use Brotkrueml\JobRouterBase\Event\ResolveFinisherVariableEvent;
+use JobRouter\AddOn\Typo3Base\Event\ResolveFinisherVariableEvent;
 use TYPO3\CMS\Frontend\Controller\TypoScriptFrontendController;
 
 /**
