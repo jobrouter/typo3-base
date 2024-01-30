@@ -8,8 +8,8 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <https://keepachangelog.com/en/1.0.0/>`_\ ,
 and this project adheres to `Semantic Versioning <https://semver.org/spec/v2.0.0.html>`_.
 
-`Unreleased <https://github.com/brotkrueml/typo3-jobrouter-base/compare/v2.0.0...HEAD>`_
---------------------------------------------------------------------------------------------
+`Unreleased <https://github.com/jobrouter/typo3-base/compare/v2.0.0...HEAD>`_
+---------------------------------------------------------------------------------
 
 Changed
 ^^^^^^^
@@ -17,8 +17,8 @@ Changed
 
 * Namespace from ``Brotkrueml\JobRouterBase`` to ``JobRouter\Addon\Typo3Base``
 
-`2.0.0 <https://github.com/brotkrueml/typo3-jobrouter-base/compare/v1.3.0...v2.0.0>`_ - 2023-05-31
-------------------------------------------------------------------------------------------------------
+`2.0.0 <https://github.com/jobrouter/typo3-base/compare/v1.3.0...v2.0.0>`_ - 2023-05-31
+-------------------------------------------------------------------------------------------
 
 Added
 ^^^^^
@@ -43,8 +43,8 @@ Removed
 Added
 ^^^^^
 
-`1.3.0 <https://github.com/brotkrueml/typo3-jobrouter-base/compare/v1.2.0...v1.3.0>`_ - 2022-07-19
-------------------------------------------------------------------------------------------------------
+`1.3.0 <https://github.com/jobrouter/typo3-base/compare/v1.2.0...v1.3.0>`_ - 2022-07-19
+-------------------------------------------------------------------------------------------
 
 Added
 ^^^^^
@@ -58,8 +58,8 @@ Removed
 
 * Compatibility with PHP 7.3
 
-`1.2.0 <https://github.com/brotkrueml/typo3-jobrouter-base/compare/v1.1.0...v1.2.0>`_ - 2022-01-18
-------------------------------------------------------------------------------------------------------
+`1.2.0 <https://github.com/jobrouter/typo3-base/compare/v1.1.0...v1.2.0>`_ - 2022-01-18
+-------------------------------------------------------------------------------------------
 
 Added
 ^^^^^
@@ -68,8 +68,8 @@ Added
 * Common translations for dependent extensions
 * Support Croatian in JobRouterLanguageResolver
 
-`1.1.0 <https://github.com/brotkrueml/typo3-jobrouter-base/compare/v1.0.0...v1.1.0>`_ - 2021-11-21
-------------------------------------------------------------------------------------------------------
+`1.1.0 <https://github.com/jobrouter/typo3-base/compare/v1.0.0...v1.1.0>`_ - 2021-11-21
+-------------------------------------------------------------------------------------------
 
 Added
 ^^^^^
@@ -84,8 +84,8 @@ Removed
 
 * Compatibility with PHP 7.2
 
-`1.0.0 <https://github.com/brotkrueml/typo3-jobrouter-base/compare/v0.1.2...v1.0.0>`_ - 2021-03-14
-------------------------------------------------------------------------------------------------------
+`1.0.0 <https://github.com/jobrouter/typo3-base/compare/v0.1.2...v1.0.0>`_ - 2021-03-14
+-------------------------------------------------------------------------------------------
 
 Added
 ^^^^^
@@ -93,8 +93,8 @@ Added
 
 * Show number of days for available transfers in status widget
 
-`0.1.2 <https://github.com/brotkrueml/typo3-jobrouter-base/compare/v0.1.1...v0.1.2>`_ - 2021-03-07
-------------------------------------------------------------------------------------------------------
+`0.1.2 <https://github.com/jobrouter/typo3-base/compare/v0.1.1...v0.1.2>`_ - 2021-03-07
+-------------------------------------------------------------------------------------------
 
 Changed
 ^^^^^^^
@@ -102,8 +102,8 @@ Changed
 
 * Text and icon in transfer report widget when no errors occur
 
-`0.1.1 <https://github.com/brotkrueml/typo3-jobrouter-base/compare/v0.1.0...v0.1.1>`_ - 2021-03-06
-------------------------------------------------------------------------------------------------------
+`0.1.1 <https://github.com/jobrouter/typo3-base/compare/v0.1.0...v0.1.1>`_ - 2021-03-06
+-------------------------------------------------------------------------------------------
 
 Added
 ^^^^^
@@ -117,7 +117,7 @@ Changed
 
 * Raise minimum required version to TYPO3 10.4.11
 
-`0.1.0 <https://github.com/brotkrueml/typo3-jobrouter-base/releases/tag/v0.1.0>`_ - 2020-10-19
---------------------------------------------------------------------------------------------------
+`0.1.0 <https://github.com/jobrouter/typo3-base/releases/tag/v0.1.0>`_ - 2020-10-19
+---------------------------------------------------------------------------------------
 
 Initial pre-release
