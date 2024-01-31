@@ -10,8 +10,8 @@ Introduction
 and documents. The TYPO3 extension `JobRouter Base`_ acts as a base library
 for the TYPO3 JobRouter extensions:
 
-* :doc:`JobRouter Data <typo3-jobrouter-data:introduction>`
-* :doc:`JobRouter Process <typo3-jobrouter-process:introduction>`
+* :ref:`JobRouter Data <ext_jobrouter_data:introduction>`
+* :ref:`JobRouter Process <ext_jobrouter_process:introduction>`
 
 
 .. _what-does-it-do:

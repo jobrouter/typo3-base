@@ -51,8 +51,8 @@ Installation via Composer
 
 .. note::
    Since this extension is a dependency in :ref:`TYPO3 JobRouter Data
-   <typo3-jobrouter-data:introduction>` and :ref:`TYPO3 JobRouter Process
-   <typo3-jobrouter-process:introduction>`, it does not need to be installed
+   <ext_jobrouter_data:introduction>` and :ref:`TYPO3 JobRouter Process
+   <ext_jobrouter_process:introduction>`, it does not need to be installed
    manually.
 
 The recommended way to install this extension is by using Composer. In your

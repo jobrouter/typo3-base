@@ -17,7 +17,7 @@
 	"support": {
 		"issues": "https://github.com/jobrouter/typo3-base/issues",
 		"source": "https://github.com/jobrouter/typo3-base",
-		"docs": "https://typo3-jobrouter.readthedocs.io/projects/base/"
+		"docs": "https://docs.typo3.org/p/jobrouter/typo3-base/main/en-us/"
 	},
 	"require": {
 		"php": ">=8.1",
