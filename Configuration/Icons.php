@@ -9,17 +9,20 @@ declare(strict_types=1);
  * LICENSE.txt file that was distributed with this source code.
  */
 
+use JobRouter\AddOn\Typo3Base\Extension;
+use TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider;
+
 return [
     'jobrouter-base-status-failed' => [
-        'provider' => TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-        'source' => 'EXT:' . JobRouter\AddOn\Typo3Base\Extension::KEY . '/Resources/Public/Icons/status-failed.svg',
+        'provider' => SvgIconProvider::class,
+        'source' => 'EXT:' . Extension::KEY . '/Resources/Public/Icons/status-failed.svg',
     ],
     'jobrouter-base-status-pending' => [
-        'provider' => TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-        'source' => 'EXT:' . JobRouter\AddOn\Typo3Base\Extension::KEY . '/Resources/Public/Icons/status-pending.svg',
+        'provider' => SvgIconProvider::class,
+        'source' => 'EXT:' . Extension::KEY . '/Resources/Public/Icons/status-pending.svg',
     ],
     'jobrouter-base-status-successful' => [
-        'provider' => TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-        'source' => 'EXT:' . JobRouter\AddOn\Typo3Base\Extension::KEY . '/Resources/Public/Icons/status-successful.svg',
+        'provider' => SvgIconProvider::class,
+        'source' => 'EXT:' . Extension::KEY . '/Resources/Public/Icons/status-successful.svg',
     ],
 ];
