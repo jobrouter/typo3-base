@@ -12,28 +12,23 @@ services:
     tags:
       - name: event.listener
         identifier: 'jobrouter-base/jobrouter-language-variable-resolver'
-        event: JobRouter\AddOn\Typo3Base\Event\ResolveFinisherVariableEvent
 
   JobRouter\AddOn\Typo3Base\Domain\VariableResolvers\LanguageVariableResolver:
     tags:
       - name: event.listener
         identifier: 'jobrouter-base/language-variable-resolver'
-        event: JobRouter\AddOn\Typo3Base\Event\ResolveFinisherVariableEvent
 
   JobRouter\AddOn\Typo3Base\Domain\VariableResolvers\LocalisedLabelVariableResolver:
     tags:
       - name: event.listener
         identifier: 'jobrouter-base/localised-label-variable-resolver'
-        event: JobRouter\AddOn\Typo3Base\Event\ResolveFinisherVariableEvent
 
   JobRouter\AddOn\Typo3Base\Domain\VariableResolvers\CorrelationIdVariableResolver:
     tags:
       - name: event.listener
         identifier: 'jobrouter-base/correlation-id-variable-resolver'
-        event: JobRouter\AddOn\Typo3Base\Event\ResolveFinisherVariableEvent
 
   JobRouter\AddOn\Typo3Base\Domain\VariableResolvers\PageVariableResolver:
     tags:
       - name: event.listener
         identifier: 'jobrouter-base/page-variable-resolver'
-        event: JobRouter\AddOn\Typo3Base\Event\ResolveFinisherVariableEvent
