@@ -76,7 +76,7 @@ Localisation labels
 
 Values can be localised with the help of the localisation labels known from
 various parts in TYPO3. The variable starts with :yaml:`{__LLL:` and holds
-the path to the translation file and the according key, e.g.
+the path to the translation file and the according key, for example,
 :yaml:`{__LLL:EXT:your_ext/Resources/Private/Language/locallang.xlf:your.label}`.
 
 If the label is not found and therefore cannot be translated the value is
@@ -90,35 +90,36 @@ Language information
 The language information defined in the Site Configuration can be used, namely:
 
 {__language.base}
-   The base URL for the language, e.g. `https://example.org/en/`.
+   The base URL for the language, for example, `https://example.org/en/`.
 
 {__language.direction}
    The language direction: `ltr` (left to right) or `rtl` (right to left).
 
 {__language.flagIdentifier}
-   The defined TYPO3 flag identifier used in TYPO3's backend, e.g. `flags-gb`.
+   The defined TYPO3 flag identifier used in TYPO3's backend, for example,
+   `flags-gb`.
 
 {__language.hreflang}
    Language tag for the language defined by RFC 1766 / 3066 for `lang`
-   `hreflang` attributes, e.g. `en-gb`.
+   `hreflang` attributes, for example, `en-gb`.
 
 {__language.languageId}
    The language ID defined in the TYPO3 installation. It is the uid in the
    `sys_language` table.
 
 {__language.locale}
-   The used locale, e.g. `en_GB.UTF-8`.
+   The used locale, for example, `en_GB.UTF-8`.
 
 {__language.navigationTitle}
    The navigation title defined in the site configuration, used as label
-   within language menus, e.g. `English`.
+   within language menus, for example, `English`.
 
 {__language.title}
-   The title defined in the site configuration, e.g. `English`.
+   The title defined in the site configuration, for example, `English`.
 
 {__language.twoLetterIsoCode}
    The `ISO-639-1 <https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes>`_
-   language ISO code, e.g. `en`.
+   language ISO code, for example, `en`.
 
 {__language.typo3Language}
    `default` for English, otherwise one of TYPO3's internal language keys.
@@ -130,9 +131,9 @@ JobRouter language information
 ------------------------------
 
 Sometimes it is necessary to use not the language code of the page in your form
-but instead the language string JobRouter® uses (e.g. ``german`` instead of
-``de``). This can be useful for sending localised emails from the process in the
-relevant language.
+but instead the language string JobRouter® uses (for example, ``german`` instead
+of ``de``). This can be useful for sending localised emails from the process in
+the relevant language.
 
 Use the :yaml:`{__jobRouterLanguage}` variable for that. The following languages
 are supported by JobRouter® in recent version:

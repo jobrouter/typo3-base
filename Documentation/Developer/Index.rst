@@ -18,7 +18,7 @@ Writing own variable resolvers
 
 With :ref:`variables <variable-resolvers>` it is possible to add
 information to a process start which is resolved when submitting a form. This
-extension ships some variable resolvers already, e.g. for translation or
+extension ships some variable resolvers already, for example, for translation or
 language information.
 
 You can write your own variable resolvers dependent on your needs. Variable
@@ -52,7 +52,8 @@ Get the current correlation ID.
 
 .. option:: getFormValues(): array
 
-Get the form values, e.g. :php:`['company' => 'Acme Ltd.', 'name' => 'John Smith']`.
+Get the form values, for example,
+:php:`['company' => 'Acme Ltd.', 'name' => 'John Smith']`.
 
 .. option:: getRequest(): \\Psr\\Http\\Message\\ServerRequestInterface
 
