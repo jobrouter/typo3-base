@@ -23,7 +23,7 @@ language information.
 
 You can write your own variable resolvers dependent on your needs. Variable
 resolvers are implemented as :ref:`PSR-14 event listeners
-<t3api:EventDispatcher>`.
+<t3coreapi:EventDispatcher>`.
 
 The event listener receives the event
 :php:`JobRouter\AddOn\Typo3Base\Event\ResolveFinisherVariableEvent`. It
