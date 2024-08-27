@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 - Compatibility with TYPO3 v11
+- Language variables `{__language.twoLetterIsoCode}` and `{__language.direction}`
 
 ## [3.0.0] - 2024-02-21
 

@@ -36,8 +36,8 @@ final class JobRouterLanguageVariableResolver
 
         /** @var SiteLanguage|null $language */
         $language = $event->getRequest()->getAttribute('language');
-        $languageIsoCode = $language instanceof SiteLanguage ? $language->getTwoLetterIsoCode() : '';
-        $jobRouterLanguage = JobRouterLanguages::tryFrom($languageIsoCode)->name ?? '';
+        $languageCode = $language?->getLocale()?->getLanguageCode() ?? '';
+        $jobRouterLanguage = JobRouterLanguages::tryFrom($languageCode)->name ?? '';
         $value = \str_replace(self::VARIABLE_TO_RESOLVE, $jobRouterLanguage, $value);
 
         $event->setValue($value);

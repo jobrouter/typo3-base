@@ -84,16 +84,21 @@ untouched.
 
 You can use multiple localisation labels in one form value.
 
+
+.. _variable-resolvers-language:
+
 Language information
 --------------------
+
+.. versionchanged:: 4.0
+   `{__language.twoLetterIsoCode}` has been removed, use
+   `{__language.locale.languageCode}` instead.
+   `{__language.direction}` has been removed without substitution.
 
 The language information defined in the Site Configuration can be used, namely:
 
 {__language.base}
    The base URL for the language, for example, `https://example.org/en/`.
-
-{__language.direction}
-   The language direction: `ltr` (left to right) or `rtl` (right to left).
 
 {__language.flagIdentifier}
    The defined TYPO3 flag identifier used in TYPO3's backend, for example,
@@ -104,11 +109,20 @@ The language information defined in the Site Configuration can be used, namely:
    `hreflang` attributes, for example, `en-gb`.
 
 {__language.languageId}
-   The language ID defined in the TYPO3 installation. It is the uid in the
-   `sys_language` table.
+   The language ID defined in the site configuration.
 
 {__language.locale}
    The used locale, for example, `en_GB.UTF-8`.
+
+{__language.locale.countryCode}
+   .. versionadded:: 4.0
+   The `ISO-3166-1 alpha-2 <https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes>`__
+   country code, for example `US`.
+
+{__language.locale.languageCode}
+   .. versionadded:: 4.0
+   The `ISO-639-1 <https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes>`__
+   language ISO code, for example, `en`.
 
 {__language.navigationTitle}
    The navigation title defined in the site configuration, used as label
@@ -116,10 +130,6 @@ The language information defined in the Site Configuration can be used, namely:
 
 {__language.title}
    The title defined in the site configuration, for example, `English`.
-
-{__language.twoLetterIsoCode}
-   The `ISO-639-1 <https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes>`_
-   language ISO code, for example, `en`.
 
 {__language.typo3Language}
    `default` for English, otherwise one of TYPO3's internal language keys.

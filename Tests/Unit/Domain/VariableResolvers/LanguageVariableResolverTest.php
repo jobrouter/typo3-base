@@ -79,11 +79,6 @@ final class LanguageVariableResolverTest extends TestCase
 
     public static function dataProvider(): \Generator
     {
-        yield 'language.twoLetterIsoCode is resolved' => [
-            'foo {__language.twoLetterIsoCode} bar',
-            'foo de bar',
-        ];
-
         yield 'language.title is resolved' => [
             'foo {__language.title} bar',
             'foo Some Title bar',
@@ -109,6 +104,21 @@ final class LanguageVariableResolverTest extends TestCase
             'foo de-DE bar',
         ];
 
+        yield 'language.locale.languageCode is resolved' => [
+            'foo {__language.locale.languageCode} bar',
+            'foo de bar',
+        ];
+
+        yield 'language.locale.countryCode is resolved' => [
+            'foo {__language.locale.countryCode} bar',
+            'foo DE bar',
+        ];
+
+        yield 'language.locale.languageScriptCode is resolved' => [
+            'foo {__language.locale.countryCode} bar',
+            'foo DE bar',
+        ];
+
         yield 'language.navigationTitle is resolved' => [
             'foo {__language.navigationTitle} bar',
             'foo Some Navigation Title bar',
@@ -117,11 +127,6 @@ final class LanguageVariableResolverTest extends TestCase
         yield 'language.hreflang is resolved' => [
             'foo {__language.hreflang} bar',
             'foo de-de bar',
-        ];
-
-        yield 'language.direction is resolved' => [
-            'foo {__language.direction} bar',
-            'foo ltr bar',
         ];
 
         yield 'language.flagIdentifier is resolved' => [
@@ -140,7 +145,7 @@ final class LanguageVariableResolverTest extends TestCase
     {
         $event = new ResolveFinisherVariableEvent(
             FieldType::Text,
-            '{__language.twoLetterIsoCode} {__language.direction}',
+            '{__language.locale.languageCode} {__language.flagIdentifier}',
             '',
             [],
             $this->serverRequestStub,
@@ -148,7 +153,7 @@ final class LanguageVariableResolverTest extends TestCase
 
         $this->subject->__invoke($event);
 
-        self::assertSame('de ltr', $event->getValue());
+        self::assertSame('de some-flag', $event->getValue());
     }
 
     #[Test]

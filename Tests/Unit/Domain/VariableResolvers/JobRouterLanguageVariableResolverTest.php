@@ -43,15 +43,13 @@ final class JobRouterLanguageVariableResolverTest extends TestCase
 
     #[Test]
     #[DataProvider('dataProvider')]
-    public function jobRouterLanguageVariableIsResolvedCorrectly(string $value, string $isoCode, string $expected): void
+    public function jobRouterLanguageVariableIsResolvedCorrectly(string $value, string $locale, string $expected): void
     {
         $siteLanguage = new SiteLanguage(
             1,
-            '',
+            $locale,
             $this->createStub(UriInterface::class),
-            [
-                'iso-639-1' => $isoCode,
-            ],
+            [],
         );
 
         $this->serverRequestStub
@@ -78,6 +76,12 @@ final class JobRouterLanguageVariableResolverTest extends TestCase
             '{__jobRouterLanguage}',
             'fi',
             'finnish',
+        ];
+
+        yield 'jobRouterLanguage is resolved for a supported language with full locale' => [
+            '{__jobRouterLanguage}',
+            'de_DE@utf-8',
+            'german',
         ];
 
         yield 'jobRouterLanguage is resolved to empty string on non-supported language' => [

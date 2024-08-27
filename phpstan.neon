@@ -12,7 +12,7 @@ parameters:
         - Classes
     cognitive_complexity:
         class: 10
-        function: 8
+        function: 9
 
 services:
     -

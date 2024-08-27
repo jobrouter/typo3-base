@@ -4,6 +4,17 @@
 Upgrade
 =======
 
+From version 3.0 to 4.0
+=======================
+
+The following :ref:`language variables <variable-resolvers-language>` have been
+removed:
+
+*  `{__language.twoLetterIsoCode}`, use `{__language.locale.languageCode}`
+   instead
+*  `{__language.direction}` (without substitution)
+
+
 From version 2.0 to 3.0
 =======================
 

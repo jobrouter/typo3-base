@@ -14,6 +14,7 @@ namespace JobRouter\AddOn\Typo3Base\Domain\VariableResolvers;
 use JobRouter\AddOn\Typo3Base\Enumeration\FieldType;
 use JobRouter\AddOn\Typo3Base\Event\ResolveFinisherVariableEvent;
 use JobRouter\AddOn\Typo3Base\Exception\VariableResolverException;
+use TYPO3\CMS\Core\Site\Entity\SiteLanguage;
 
 /**
  * @internal
@@ -21,23 +22,21 @@ use JobRouter\AddOn\Typo3Base\Exception\VariableResolverException;
 final class LanguageVariableResolver
 {
     /**
-     * @see https://regex101.com/r/9HJ3lr/1
+     * @see https://regex101.com/r/BKiLTa/1
      */
-    private const LANGUAGE_VARIABLE_REGEX = '/{__language\.(\w+)}/';
+    private const LANGUAGE_VARIABLE_REGEX = '/{__language\.(\w+)(\.(\w+))?}/';
 
     /**
      * @var string[]
      */
     private array $validLanguageVariables = [
         'base',
-        'direction',
         'flagIdentifier',
         'hreflang',
         'languageId',
         'locale',
         'navigationTitle',
         'title',
-        'twoLetterIsoCode',
         'typo3Language',
     ];
 
@@ -51,7 +50,8 @@ final class LanguageVariableResolver
 
         $this->checkValidFieldTypes($event);
 
-        $language = $event->getRequest()->getAttribute('language', null);
+        /** @var SiteLanguage|null $language */
+        $language = $event->getRequest()->getAttribute('language');
         if ($language === null) {
             return;
         }
@@ -65,8 +65,13 @@ final class LanguageVariableResolver
                 continue;
             }
 
-            $methodToCall = 'get' . \ucfirst($match);
-            $value = \str_replace($matches[0][$index], (string)$language->{$methodToCall}(), $value);
+            if ($match === 'locale' && ($matches[3][$index] ?? false) !== '') {
+                $methodToCall = 'get' . \ucfirst($matches[3][$index]);
+                $value = \str_replace($matches[0][$index], (string)$language->getLocale()->{$methodToCall}(), $value);
+            } else {
+                $methodToCall = 'get' . \ucfirst($match);
+                $value = \str_replace($matches[0][$index], (string)$language->{$methodToCall}(), $value);
+            }
         }
 
         $event->setValue($value);
