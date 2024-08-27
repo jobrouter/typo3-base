@@ -27,7 +27,7 @@ final class CorrelationIdVariableResolver
         $this->checkValidFieldTypes($event->getFieldType());
 
         $event->setValue(
-            \str_replace(self::VARIABLE_TO_RESOLVE, $event->getCorrelationId(), (string)$event->getValue()),
+            \str_replace(self::VARIABLE_TO_RESOLVE, $event->getCorrelationId(), (string) $event->getValue()),
         );
     }
 

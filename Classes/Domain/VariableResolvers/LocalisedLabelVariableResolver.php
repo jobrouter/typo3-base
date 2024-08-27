@@ -33,7 +33,7 @@ final class LocalisedLabelVariableResolver
 
     public function __invoke(ResolveFinisherVariableEvent $event): void
     {
-        $value = (string)$event->getValue();
+        $value = (string) $event->getValue();
 
         if (! \str_contains($value, '{__LLL:')) {
             return;

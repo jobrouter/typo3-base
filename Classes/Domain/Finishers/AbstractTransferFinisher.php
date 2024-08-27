@@ -82,7 +82,7 @@ abstract class AbstractTransferFinisher extends AbstractFinisher
     protected function resolveFormFields(array $formValues, string $value): string
     {
         $formValues = \array_map(
-            static fn(string|\DateTimeInterface|null $value): string|null => $value instanceof \DateTimeInterface ? $value->format('c') : $value,
+            static fn(string|\DateTimeInterface|null $value): ?string => $value instanceof \DateTimeInterface ? $value->format('c') : $value,
             $formValues,
         );
 

@@ -26,7 +26,7 @@ final class PageVariableResolver
 
     public function __invoke(ResolveFinisherVariableEvent $event): void
     {
-        $value = (string)$event->getValue();
+        $value = (string) $event->getValue();
 
         if (! \str_contains($value, '{__page.')) {
             return;
@@ -52,7 +52,7 @@ final class PageVariableResolver
                 continue;
             }
 
-            $value = \str_replace($matches[0][$index], (string)$frontendController->page[$propertyName], $value);
+            $value = \str_replace($matches[0][$index], (string) $frontendController->page[$propertyName], $value);
         }
 
         $event->setValue($value);

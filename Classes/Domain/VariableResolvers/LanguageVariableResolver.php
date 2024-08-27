@@ -42,7 +42,7 @@ final class LanguageVariableResolver
 
     public function __invoke(ResolveFinisherVariableEvent $event): void
     {
-        $value = (string)$event->getValue();
+        $value = (string) $event->getValue();
 
         if (! \str_contains($value, '{__language.')) {
             return;
@@ -67,10 +67,10 @@ final class LanguageVariableResolver
 
             if ($match === 'locale' && ($matches[3][$index] ?? false) !== '') {
                 $methodToCall = 'get' . \ucfirst($matches[3][$index]);
-                $value = \str_replace($matches[0][$index], (string)$language->getLocale()->{$methodToCall}(), $value);
+                $value = \str_replace($matches[0][$index], (string) $language->getLocale()->{$methodToCall}(), $value);
             } else {
                 $methodToCall = 'get' . \ucfirst($match);
-                $value = \str_replace($matches[0][$index], (string)$language->{$methodToCall}(), $value);
+                $value = \str_replace($matches[0][$index], (string) $language->{$methodToCall}(), $value);
             }
         }
 
