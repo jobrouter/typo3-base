@@ -36,8 +36,17 @@ final class PageVariableResolver
             return;
         }
 
-        /** @var TypoScriptFrontendController $frontendController */
+        /** @var TypoScriptFrontendController|null $frontendController */
+        // @todo use frontend.page.information attribute once compatibility with TYPO3 v12 is dropped
+        // @see https://docs.typo3.org/c/typo3/cms-core/main/en-us/Changelog/13.0/Feature-102715-NewFrontendpageinformationRequestAttribute.html
         $frontendController = $event->getRequest()->getAttribute('frontend.controller');
+        if ($frontendController === null) {
+            return;
+        }
+        if ($frontendController->page === null) {
+            return;
+        }
+
         foreach ($matches[1] as $index => $propertyName) {
             if (! \array_key_exists($propertyName, $frontendController->page)) {
                 continue;
