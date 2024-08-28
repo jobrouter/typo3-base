@@ -13,35 +13,44 @@ namespace JobRouter\AddOn\Typo3Base\Widgets;
 
 use JobRouter\AddOn\Typo3Base\Extension;
 use JobRouter\AddOn\Typo3Base\Widgets\Provider\TransferStatusDataProviderInterface;
+use Psr\Http\Message\ServerRequestInterface;
+use TYPO3\CMS\Backend\View\BackendViewFactory;
 use TYPO3\CMS\Dashboard\Widgets\AdditionalCssInterface;
+use TYPO3\CMS\Dashboard\Widgets\RequestAwareWidgetInterface;
 use TYPO3\CMS\Dashboard\Widgets\WidgetConfigurationInterface;
 use TYPO3\CMS\Dashboard\Widgets\WidgetInterface;
-use TYPO3\CMS\Fluid\View\StandaloneView;
 
 /**
  * @internal Only for usage in the TYPO3 JobRouter extensions!
  */
-class TransferStatusWidget implements WidgetInterface, AdditionalCssInterface
+class TransferStatusWidget implements WidgetInterface, AdditionalCssInterface, RequestAwareWidgetInterface
 {
+    private ServerRequestInterface $request;
+
     /**
      * @param array<string, mixed> $options
      */
     public function __construct(
         private readonly WidgetConfigurationInterface $configuration,
         private readonly TransferStatusDataProviderInterface $dataProvider,
-        private readonly StandaloneView $view,
+        private readonly BackendViewFactory $backendViewFactory,
         private readonly array $options = [],
     ) {}
 
+    public function setRequest(ServerRequestInterface $request): void
+    {
+        $this->request = $request;
+    }
+
     public function renderWidgetContent(): string
     {
-        $this->view->setTemplate('Widget/TransferStatusWidget');
-        $this->view->assignMultiple([
+        $view = $this->backendViewFactory->create($this->request);
+        $view->assignMultiple([
             'status' => $this->dataProvider->getStatus(),
             'configuration' => $this->configuration,
         ]);
 
-        return $this->view->render();
+        return $view->render('Widget/TransferStatusWidget');
     }
 
     /**
