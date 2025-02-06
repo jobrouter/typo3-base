@@ -12,12 +12,12 @@ This TYPO3 extension acts as a base library for:
 
 ## Versions and support
 
-| Latest release | TYPO3       | PHP   | Updates will contain                           |
-|----------------|-------------|-------|------------------------------------------------|
-| 4.x            | 12.4 - 13.4 | ≥ 8.1 | Features, bug and security fixes               |
-| 3.x            | 11.5 / 12.4 | ≥ 8.1 | Bug and security fixes                         |
-| 2.x            | 11.5 / 12.4 | ≥ 8.1 | Security fixes, end of life expected: Dec 2024 |
-| 1.x            | 10.4 / 11.5 | ≥ 7.4 | Security fixes, end of life expected: Dec 2024 |
+| Latest release | TYPO3       | PHP   | Updates will contain             |
+|----------------|-------------|-------|----------------------------------|
+| 4.x            | 12.4 - 13.4 | ≥ 8.1 | Features, bug and security fixes |
+| 3.x            | 11.5 / 12.4 | ≥ 8.1 | End of life (since Dec 2024)     |
+| 2.x            | 11.5 / 12.4 | ≥ 8.1 | End of life (since Dec 2024)     |
+| 1.x            | 10.4 / 11.5 | ≥ 7.4 | End of life (since Dec 2024)     |
 
 [Documentation](https://docs.typo3.org/p/jobrouter/typo3-base/main/en-us/) |
 [Translation](https://crowdin.com/project/typo3-extension-jobrouterbase) |
