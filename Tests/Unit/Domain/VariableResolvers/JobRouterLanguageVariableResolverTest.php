@@ -54,8 +54,9 @@ final class JobRouterLanguageVariableResolverTest extends TestCase
 
         $this->serverRequestStub
             ->method('getAttribute')
-            ->with('language')
-            ->willReturn($siteLanguage);
+            ->willReturnMap([
+                ['language', $siteLanguage],
+            ]);
 
         $event = new ResolveFinisherVariableEvent(
             FieldType::Text,
@@ -132,8 +133,9 @@ final class JobRouterLanguageVariableResolverTest extends TestCase
     {
         $this->serverRequestStub
             ->method('getAttribute')
-            ->with('language')
-            ->willReturn(null);
+            ->willReturnMap([
+                ['language', null],
+            ]);
 
         $event = new ResolveFinisherVariableEvent(
             FieldType::Text,

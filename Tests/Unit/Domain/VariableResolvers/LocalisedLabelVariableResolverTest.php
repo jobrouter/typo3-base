@@ -41,8 +41,9 @@ final class LocalisedLabelVariableResolverTest extends TestCase
         $this->requestStub = self::createStub(ServerRequestInterface::class);
         $this->requestStub
             ->method('getAttribute')
-            ->with('language')
-            ->willReturn(self::createStub(SiteLanguage::class));
+            ->willReturnMap([
+                ['language', self::createStub(SiteLanguage::class)],
+            ]);
     }
 
     #[Test]
@@ -50,8 +51,9 @@ final class LocalisedLabelVariableResolverTest extends TestCase
     {
         $this->languageServiceStub
             ->method('sL')
-            ->with('LLL:EXT:some_ext/Resources/Private/Language/locallang.xlf:some.label')
-            ->willReturn('localised some label');
+            ->willReturnMap([
+                ['LLL:EXT:some_ext/Resources/Private/Language/locallang.xlf:some.label', 'localised some label'],
+            ]);
 
         $event = new ResolveFinisherVariableEvent(
             FieldType::Text,

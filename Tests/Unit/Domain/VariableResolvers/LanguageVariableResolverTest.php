@@ -56,8 +56,9 @@ final class LanguageVariableResolverTest extends TestCase
         $this->serverRequestStub = self::createStub(ServerRequestInterface::class);
         $this->serverRequestStub
             ->method('getAttribute')
-            ->with('language')
-            ->willReturn($siteLanguage);
+            ->willReturnMap([
+                ['language', $siteLanguage],
+            ]);
     }
 
     #[Test]
@@ -212,8 +213,9 @@ final class LanguageVariableResolverTest extends TestCase
         $this->serverRequestStub = self::createStub(ServerRequestInterface::class);
         $this->serverRequestStub
             ->method('getAttribute')
-            ->with('language')
-            ->willReturn(null);
+            ->willReturnMap([
+                ['language', null],
+            ]);
 
         $event = new ResolveFinisherVariableEvent(
             FieldType::Text,
