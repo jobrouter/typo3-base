@@ -26,23 +26,23 @@ use TYPO3\CMS\Core\Site\Entity\SiteLanguage;
 final class LocalisedLabelVariableResolverTest extends TestCase
 {
     private LocalisedLabelVariableResolver $subject;
-    private ServerRequestInterface & Stub $requestStub;
-    private LanguageService & Stub $languageServiceStub;
+    private ServerRequestInterface&Stub $requestStub;
+    private LanguageService&Stub $languageServiceStub;
 
     protected function setUp(): void
     {
-        $this->languageServiceStub = $this->createStub(LanguageService::class);
-        $languageServiceFactoryStub = $this->createStub(LanguageServiceFactory::class);
+        $this->languageServiceStub = self::createStub(LanguageService::class);
+        $languageServiceFactoryStub = self::createStub(LanguageServiceFactory::class);
         $languageServiceFactoryStub
             ->method('createFromSiteLanguage')
             ->willReturn($this->languageServiceStub);
         $this->subject = new LocalisedLabelVariableResolver($languageServiceFactoryStub);
 
-        $this->requestStub = $this->createStub(ServerRequestInterface::class);
+        $this->requestStub = self::createStub(ServerRequestInterface::class);
         $this->requestStub
             ->method('getAttribute')
             ->with('language')
-            ->willReturn($this->createStub(SiteLanguage::class));
+            ->willReturn(self::createStub(SiteLanguage::class));
     }
 
     #[Test]

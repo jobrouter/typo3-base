@@ -26,14 +26,14 @@ use TYPO3\CMS\Core\Site\Entity\SiteLanguage;
 final class LanguageVariableResolverTest extends TestCase
 {
     private LanguageVariableResolver $subject;
-    private ServerRequestInterface & Stub $serverRequestStub;
+    private ServerRequestInterface&Stub $serverRequestStub;
 
     protected function setUp(): void
     {
         $this->subject = new LanguageVariableResolver();
 
         /** @var Stub|UriInterface $baseStub */
-        $baseStub = $this->createStub(UriInterface::class);
+        $baseStub = self::createStub(UriInterface::class);
         $baseStub
             ->method('__toString')
             ->willReturn('https://www.example.org/');
@@ -53,7 +53,7 @@ final class LanguageVariableResolverTest extends TestCase
             ],
         );
 
-        $this->serverRequestStub = $this->createStub(ServerRequestInterface::class);
+        $this->serverRequestStub = self::createStub(ServerRequestInterface::class);
         $this->serverRequestStub
             ->method('getAttribute')
             ->with('language')
@@ -209,7 +209,7 @@ final class LanguageVariableResolverTest extends TestCase
     #[Test]
     public function languageCannotBeDeterminedLeavesVariablesUntouched(): void
     {
-        $this->serverRequestStub = $this->createStub(ServerRequestInterface::class);
+        $this->serverRequestStub = self::createStub(ServerRequestInterface::class);
         $this->serverRequestStub
             ->method('getAttribute')
             ->with('language')

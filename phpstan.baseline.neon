@@ -1,6 +1,13 @@
 parameters:
 	ignoreErrors:
 		-
-			message: "#^Instanceof between string\\|null and DateTimeInterface will always evaluate to false\\.$#"
+			message: '#^Instanceof between string\|null and DateTimeInterface will always evaluate to false\.$#'
+			identifier: instanceof.alwaysFalse
+			count: 1
+			path: Classes/Domain/Finishers/AbstractTransferFinisher.php
+
+		-
+			message: '#^Parameter \#2 \$replace of function str_replace expects array\<string\>\|string, list\<string\|null\> given\.$#'
+			identifier: argument.type
 			count: 1
 			path: Classes/Domain/Finishers/AbstractTransferFinisher.php

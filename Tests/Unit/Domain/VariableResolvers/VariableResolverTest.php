@@ -23,7 +23,7 @@ use Psr\Http\Message\ServerRequestInterface;
 
 final class VariableResolverTest extends TestCase
 {
-    private ServerRequestInterface & Stub $requestStub;
+    private ServerRequestInterface&Stub $requestStub;
     /**
      * @var MockObject&EventDispatcherInterface
      */
@@ -32,7 +32,7 @@ final class VariableResolverTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->requestStub = $this->createStub(ServerRequestInterface::class);
+        $this->requestStub = self::createStub(ServerRequestInterface::class);
         $this->eventDispatcherMock = $this->createMock(EventDispatcherInterface::class);
         $this->subject = new VariableResolver($this->eventDispatcherMock);
         $this->subject->setCorrelationId('some identifier');

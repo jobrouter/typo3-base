@@ -20,11 +20,11 @@ use Psr\Http\Message\ServerRequestInterface;
 
 final class ResolveFinisherVariableEventTest extends TestCase
 {
-    private ServerRequestInterface & Stub $serverRequestStub;
+    private ServerRequestInterface&Stub $serverRequestStub;
 
     protected function setUp(): void
     {
-        $this->serverRequestStub = $this->createStub(ServerRequestInterface::class);
+        $this->serverRequestStub = self::createStub(ServerRequestInterface::class);
     }
 
     #[Test]

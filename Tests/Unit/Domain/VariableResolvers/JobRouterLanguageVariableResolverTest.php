@@ -26,19 +26,19 @@ use TYPO3\CMS\Core\Site\Entity\SiteLanguage;
 final class JobRouterLanguageVariableResolverTest extends TestCase
 {
     private JobRouterLanguageVariableResolver $subject;
-    private ServerRequestInterface & Stub $serverRequestStub;
+    private ServerRequestInterface&Stub $serverRequestStub;
 
     protected function setUp(): void
     {
         $this->subject = new JobRouterLanguageVariableResolver();
 
         /** @var Stub|UriInterface $baseStub */
-        $baseStub = $this->createStub(UriInterface::class);
+        $baseStub = self::createStub(UriInterface::class);
         $baseStub
             ->method('__toString')
             ->willReturn('https://www.example.org/');
 
-        $this->serverRequestStub = $this->createStub(ServerRequestInterface::class);
+        $this->serverRequestStub = self::createStub(ServerRequestInterface::class);
     }
 
     #[Test]
@@ -48,7 +48,7 @@ final class JobRouterLanguageVariableResolverTest extends TestCase
         $siteLanguage = new SiteLanguage(
             1,
             $locale,
-            $this->createStub(UriInterface::class),
+            self::createStub(UriInterface::class),
             [],
         );
 

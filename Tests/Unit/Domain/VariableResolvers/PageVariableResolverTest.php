@@ -23,7 +23,7 @@ use Psr\Http\Message\ServerRequestInterface;
 final class PageVariableResolverTest extends TestCase
 {
     private PageVariableResolver $subject;
-    private ServerRequestInterface & Stub $requestStub;
+    private ServerRequestInterface&Stub $requestStub;
 
     protected function setUp(): void
     {
@@ -35,7 +35,7 @@ final class PageVariableResolverTest extends TestCase
         ];
 
         $this->subject = new PageVariableResolver();
-        $this->requestStub = $this->createStub(ServerRequestInterface::class);
+        $this->requestStub = self::createStub(ServerRequestInterface::class);
         $this->requestStub
             ->method('getAttribute')
             ->with('frontend.controller')

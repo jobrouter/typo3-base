@@ -24,11 +24,11 @@ use Psr\Http\Message\ServerRequestInterface;
 final class CorrelationIdVariableResolverTest extends TestCase
 {
     private CorrelationIdVariableResolver $subject;
-    private ServerRequestInterface & Stub $serverRequestStub;
+    private ServerRequestInterface&Stub $serverRequestStub;
 
     protected function setUp(): void
     {
-        $this->serverRequestStub = $this->createStub(ServerRequestInterface::class);
+        $this->serverRequestStub = self::createStub(ServerRequestInterface::class);
         $this->subject = new CorrelationIdVariableResolver();
     }
 
