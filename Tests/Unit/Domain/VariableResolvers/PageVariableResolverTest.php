@@ -19,6 +19,7 @@ use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\MockObject\Stub;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ServerRequestInterface;
+use TYPO3\CMS\Frontend\Page\PageInformation;
 
 final class PageVariableResolverTest extends TestCase
 {
@@ -27,24 +28,20 @@ final class PageVariableResolverTest extends TestCase
 
     protected function setUp(): void
     {
-        $tsfeStub = new \stdClass();
-        $tsfeStub->page = [
+        $pageInformation = new PageInformation();
+        $pageInformation->setPageRecord([
             'uid' => 42,
             'title' => 'some title',
             'description' => null,
-        ];
+        ]);
 
         $this->subject = new PageVariableResolver();
         $this->requestStub = self::createStub(ServerRequestInterface::class);
         $this->requestStub
             ->method('getAttribute')
-            ->with('frontend.controller')
-            ->willReturn($tsfeStub);
-    }
-
-    protected function tearDown(): void
-    {
-        unset($GLOBALS['TSFE']);
+            ->willReturnMap([
+                ['frontend.page.information', $pageInformation],
+            ]);
     }
 
     #[Test]
