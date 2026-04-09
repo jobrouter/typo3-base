@@ -14,11 +14,11 @@ namespace JobRouter\AddOn\Typo3Base\Domain\Dto;
 /**
  * @internal Only for usage in the TYPO3 JobRouter extensions!
  */
-final class TransferReportItem
+final readonly class TransferReportItem
 {
     public function __construct(
-        public readonly int $creationDate,
-        public readonly string $message,
-        public readonly string $correlationId,
+        public int $creationDate,
+        public string $message,
+        public string $correlationId,
     ) {}
 }

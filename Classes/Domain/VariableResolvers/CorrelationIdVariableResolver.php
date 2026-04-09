@@ -22,7 +22,7 @@ use TYPO3\CMS\Core\Attribute\AsEventListener;
 #[AsEventListener(
     identifier: 'jobrouter-base/correlation-id-variable-resolver',
 )]
-final class CorrelationIdVariableResolver
+final readonly class CorrelationIdVariableResolver
 {
     private const VARIABLE_TO_RESOLVE = '{__correlationId}';
 

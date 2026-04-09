@@ -23,17 +23,14 @@ use TYPO3\CMS\Core\Site\Entity\SiteLanguage;
 #[AsEventListener(
     identifier: 'jobrouter-base/language-variable-resolver',
 )]
-final class LanguageVariableResolver
+final readonly class LanguageVariableResolver
 {
     /**
      * @see https://regex101.com/r/BKiLTa/1
      */
     private const LANGUAGE_VARIABLE_REGEX = '/{__language\.(\w+)(\.(\w+))?}/';
 
-    /**
-     * @var string[]
-     */
-    private array $validLanguageVariables = [
+    private const VALID_LANGUAGE_VARIABLES = [
         'base',
         'flagIdentifier',
         'hreflang',
@@ -65,7 +62,7 @@ final class LanguageVariableResolver
         }
 
         foreach ($matches[1] as $index => $match) {
-            if (! \in_array($match, $this->validLanguageVariables, true)) {
+            if (! \in_array($match, self::VALID_LANGUAGE_VARIABLES, true)) {
                 continue;
             }
 

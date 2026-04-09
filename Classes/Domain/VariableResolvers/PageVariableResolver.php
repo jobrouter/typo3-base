@@ -21,7 +21,7 @@ use TYPO3\CMS\Frontend\Page\PageInformation;
 #[AsEventListener(
     identifier: 'jobrouter-base/page-variable-resolver',
 )]
-final class PageVariableResolver
+final readonly class PageVariableResolver
 {
     /**
      * @see https://regex101.com/r/V7K9WB/1

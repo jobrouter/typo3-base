@@ -24,7 +24,7 @@ use TYPO3\CMS\Core\Site\Entity\SiteLanguage;
 #[AsEventListener(
     identifier: 'jobrouter-base/localised-label-variable-resolver',
 )]
-final class LocalisedLabelVariableResolver
+final readonly class LocalisedLabelVariableResolver
 {
     /**
      * @see https://regex101.com/r/C8VekG/1/
@@ -32,7 +32,7 @@ final class LocalisedLabelVariableResolver
     private const LOCALISED_STRING_REGEX = '/{__(LLL:.+?)}/';
 
     public function __construct(
-        private readonly LanguageServiceFactory $languageServiceFactory,
+        private LanguageServiceFactory $languageServiceFactory,
     ) {}
 
     public function __invoke(ResolveFinisherVariableEvent $event): void

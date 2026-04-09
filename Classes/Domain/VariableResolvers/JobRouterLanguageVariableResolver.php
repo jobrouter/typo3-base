@@ -24,7 +24,7 @@ use TYPO3\CMS\Core\Site\Entity\SiteLanguage;
 #[AsEventListener(
     identifier: 'jobrouter-base/jobrouter-language-variable-resolver',
 )]
-final class JobRouterLanguageVariableResolver
+final readonly class JobRouterLanguageVariableResolver
 {
     private const VARIABLE_TO_RESOLVE = '{__jobRouterLanguage}';
 

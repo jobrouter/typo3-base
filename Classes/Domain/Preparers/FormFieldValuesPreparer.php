@@ -17,7 +17,7 @@ use TYPO3\CMS\Form\Domain\Model\FormElements\FormElementInterface;
 /**
  * @internal Only for usage in the TYPO3 JobRouter extensions!
  */
-final class FormFieldValuesPreparer
+final readonly class FormFieldValuesPreparer
 {
     /**
      * @param array<string, FormElementInterface> $fieldElements
