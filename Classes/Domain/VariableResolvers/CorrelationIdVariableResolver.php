@@ -14,10 +14,14 @@ namespace JobRouter\AddOn\Typo3Base\Domain\VariableResolvers;
 use JobRouter\AddOn\Typo3Base\Enumeration\FieldType;
 use JobRouter\AddOn\Typo3Base\Event\ResolveFinisherVariableEvent;
 use JobRouter\AddOn\Typo3Base\Exception\VariableResolverException;
+use TYPO3\CMS\Core\Attribute\AsEventListener;
 
 /**
  * @internal
  */
+#[AsEventListener(
+    identifier: 'jobrouter-base/correlation-id-variable-resolver',
+)]
 final class CorrelationIdVariableResolver
 {
     private const VARIABLE_TO_RESOLVE = '{__correlationId}';

@@ -12,11 +12,15 @@ declare(strict_types=1);
 namespace JobRouter\AddOn\Typo3Base\Domain\VariableResolvers;
 
 use JobRouter\AddOn\Typo3Base\Event\ResolveFinisherVariableEvent;
+use TYPO3\CMS\Core\Attribute\AsEventListener;
 use TYPO3\CMS\Frontend\Controller\TypoScriptFrontendController;
 
 /**
  * @internal
  */
+#[AsEventListener(
+    identifier: 'jobrouter-base/page-variable-resolver',
+)]
 final class PageVariableResolver
 {
     /**

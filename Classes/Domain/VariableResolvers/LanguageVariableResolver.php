@@ -14,11 +14,15 @@ namespace JobRouter\AddOn\Typo3Base\Domain\VariableResolvers;
 use JobRouter\AddOn\Typo3Base\Enumeration\FieldType;
 use JobRouter\AddOn\Typo3Base\Event\ResolveFinisherVariableEvent;
 use JobRouter\AddOn\Typo3Base\Exception\VariableResolverException;
+use TYPO3\CMS\Core\Attribute\AsEventListener;
 use TYPO3\CMS\Core\Site\Entity\SiteLanguage;
 
 /**
  * @internal
  */
+#[AsEventListener(
+    identifier: 'jobrouter-base/language-variable-resolver',
+)]
 final class LanguageVariableResolver
 {
     /**
