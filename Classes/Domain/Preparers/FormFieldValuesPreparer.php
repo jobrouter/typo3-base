@@ -53,7 +53,7 @@ final class FormFieldValuesPreparer
         if ($fp === false) {
             throw new \RuntimeException('Error opening php://memory', 1635177287);
         }
-        if (\fputcsv($fp, $values) === false) {
+        if (\fputcsv($fp, $values, escape: '') === false) {
             return '';
         }
         \rewind($fp);
