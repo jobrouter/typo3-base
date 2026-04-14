@@ -72,7 +72,7 @@ and the recent version will be installed.
 Installation in Extension Manager
 =================================
 
-In a legacy installation, you can also install the extension from the
+In a classic installation, you can also install the extension from the
 `TYPO3 Extension Repository (TER)`_.
 
 
