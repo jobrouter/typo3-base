@@ -21,7 +21,7 @@
 	},
 	"require": {
 		"php": ">=8.2",
-		"typo3/cms-core": "^13.4"
+		"typo3/cms-core": "^13.4 || ^14.2"
 	},
 	"require-dev": {
 		"brotkrueml/coding-standards": "~6.3.1",
@@ -33,9 +33,9 @@
 		"symfony/yaml": "^7.4",
 		"symplify/phpstan-rules": "^14.9",
 		"tomasvotruba/cognitive-complexity": "^1.1",
-		"typo3/cms-dashboard": "^13.4",
-		"typo3/cms-extbase": "^13.4",
-		"typo3/cms-form": "^13.4"
+		"typo3/cms-dashboard": "^13.4 || ^14.2",
+		"typo3/cms-extbase": "^13.4 || ^14.2",
+		"typo3/cms-form": "^13.4 || ^14.2"
 	},
 	"suggest": {
 		"jobrouter/typo3-data": "Synchronise and transmit to JobData tables",
@@ -68,6 +68,7 @@
 		},
 		"typo3/cms": {
 			"extension-key": "jobrouter_base",
+			"version": "5.0.0-dev",
 			"web-dir": ".Build/web"
 		}
 	}
