@@ -1,39 +1,39 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-	<file source-language="en" datatype="plaintext" original="EXT:jobrouter_base/Resources/Private/Language/Dashboard.xlf" date="2024-10-01T08:00:32Z" product-name="jobrouter_base">
+	<file source-language="en" original="EXT:jobrouter_base/Resources/Private/Language/Dashboard.xlf" datatype="plaintext" product-name="jobrouter_base" date="2026-04-15T14:34:10+02:00">
 		<body>
-			<trans-unit id="correlationId" resname="correlationId">
-				<source><![CDATA[Correlation ID]]></source>
+			<trans-unit id="correlationId">
+				<source>Correlation ID</source>
 			</trans-unit>
-			<trans-unit id="creationDate" resname="creationDate">
-				<source><![CDATA[Creation date]]></source>
+			<trans-unit id="creationDate">
+				<source>Creation date</source>
 			</trans-unit>
-			<trans-unit id="lastXDay" resname="lastXDay">
-				<source><![CDATA[last %d day]]></source>
+			<trans-unit id="lastRun">
+				<source>Last run</source>
 			</trans-unit>
-			<trans-unit id="lastXDays" resname="lastXDays">
-				<source><![CDATA[last %d days]]></source>
+			<trans-unit id="lastRun.noInformation">
+				<source>No information available, perhaps never been run?</source>
 			</trans-unit>
-			<trans-unit id="lastRun" resname="lastRun">
-				<source><![CDATA[Last run]]></source>
+			<trans-unit id="lastXDay">
+				<source>last %d day</source>
 			</trans-unit>
-			<trans-unit id="lastRun.noInformation" resname="lastRun.noInformation">
-				<source><![CDATA[No information available, perhaps never been run?]]></source>
+			<trans-unit id="lastXDays">
+				<source>last %d days</source>
 			</trans-unit>
-			<trans-unit id="message" resname="message">
-				<source><![CDATA[Message]]></source>
+			<trans-unit id="message">
+				<source>Message</source>
 			</trans-unit>
-			<trans-unit id="noErrors" resname="noErrors">
-				<source><![CDATA[Good, no errors found.]]></source>
+			<trans-unit id="noErrors">
+				<source>Good, no errors found.</source>
 			</trans-unit>
-			<trans-unit id="status.failed" resname="status.failed">
-				<source><![CDATA[Failed]]></source>
+			<trans-unit id="status.failed">
+				<source>Failed</source>
 			</trans-unit>
-			<trans-unit id="status.pending" resname="status.pending">
-				<source><![CDATA[Pending]]></source>
+			<trans-unit id="status.pending">
+				<source>Pending</source>
 			</trans-unit>
-			<trans-unit id="status.successful" resname="status.successful">
-				<source><![CDATA[Successful]]></source>
+			<trans-unit id="status.successful">
+				<source>Successful</source>
 			</trans-unit>
 		</body>
 	</file>
