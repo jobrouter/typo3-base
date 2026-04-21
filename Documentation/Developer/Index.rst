@@ -29,33 +29,34 @@ The event listener receives the event
 :php:`JobRouter\AddOn\Typo3Base\Event\ResolveFinisherVariableEvent`. It
 provides the following methods:
 
-.. option:: getFieldType(): \JobRouter\AddOn\Typo3Base\Enumeration\FieldType
+.. confval:: getFieldType(): \JobRouter\AddOn\Typo3Base\Enumeration\FieldType
 
-Get the field type, like :php:`FieldType::Text` for text or
-:php:`FieldType::Integer` for int. Have a look in the class
-:php:`JobRouter\AddOn\Typo3Base\Enumeration\FieldType` for the available field
-types.
+   Get the field type, like :php:`FieldType::Text` for text or
+   :php:`FieldType::Integer` for int. Have a look in the class
+   :php:`JobRouter\AddOn\Typo3Base\Enumeration\FieldType` for the available
+   field types.
 
-.. option:: getValue(): string
+.. confval:: getValue(): string
 
-Get the current value of the field. One or more variables can be defined inside.
+   Get the current value of the field. One or more variables can be defined
+   inside.
 
-.. option:: setValue(string $value): void
+.. confval:: setValue(string $value): void
 
-Set the new value after resolving one or more variables.
+   Set the new value after resolving one or more variables.
 
-.. option:: getCorrelationId(): string
+.. confval:: getCorrelationId(): string
 
-Get the current correlation ID.
+   Get the current correlation ID.
 
-.. option:: getFormValues(): array
+.. confval:: getFormValues(): array
 
-Get the form values, for example,
-:php:`['company' => 'Acme Ltd.', 'name' => 'John Smith']`.
+   Get the form values, for example,
+   :php:`['company' => 'Acme Ltd.', 'name' => 'John Smith']`.
 
-.. option:: getRequest(): \\Psr\\Http\\Message\\ServerRequestInterface
+.. confval:: getRequest(): \Psr\Http\Message\ServerRequestInterface
 
-Get the current request.
+   Get the current request.
 
 .. hint::
 
