@@ -31,8 +31,6 @@ provides the following methods:
 
 .. option:: getFieldType(): \JobRouter\AddOn\Typo3Base\Enumeration\FieldType
 
-.. versionchanged:: 2.0.0
-
 Get the field type, like :php:`FieldType::Text` for text or
 :php:`FieldType::Integer` for int. Have a look in the class
 :php:`JobRouter\AddOn\Typo3Base\Enumeration\FieldType` for the available field

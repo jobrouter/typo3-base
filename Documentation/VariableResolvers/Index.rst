@@ -90,11 +90,6 @@ You can use multiple localisation labels in one form value.
 Language information
 --------------------
 
-.. versionchanged:: 4.0
-   `{__language.twoLetterIsoCode}` has been removed, use
-   `{__language.locale.languageCode}` instead.
-   `{__language.direction}` has been removed without substitution.
-
 The language information defined in the Site Configuration can be used, namely:
 
 {__language.base}
@@ -115,12 +110,10 @@ The language information defined in the Site Configuration can be used, namely:
    The used locale, for example, `en_GB.UTF-8`.
 
 {__language.locale.countryCode}
-   .. versionadded:: 4.0
    The `ISO-3166-1 alpha-2 <https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes>`__
    country code, for example `US`.
 
 {__language.locale.languageCode}
-   .. versionadded:: 4.0
    The `ISO-639-1 <https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes>`__
    language ISO code, for example, `en`.
 
