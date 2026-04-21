@@ -67,59 +67,47 @@ provides the following methods:
 Example
 -------
 
-As an example we want to resolve a variable to a cookie value.
+As an example we want to resolve a variable to a cookie value with an event
+listener:
 
-.. rst-class:: bignums-xxl
+.. code-block:: php
 
-#. Create the event listener
+   <?php
+   declare(strict_types=1);
 
-   ::
+   namespace YourVender\YourExtension\EventListener;
 
-      <?php
-      declare(strict_types=1);
+   use JobRouter\AddOn\Typo3Base\Event\ResolveFinisherVariableEvent;
+   use Psr\Http\Message\ServerRequestInterface;
+   use TYPO3\CMS\Core\Attribute\AsEventListener;
 
-      namespace YourVender\YourExtension\EventListener;
+   #[AsEventListener(
+      identifier: 'your-extension/cookie-variable-resolver',
+   )]
+   final readonly class TheCookieVariableResolver
+   {
+      private const COOKIE_NAME = 'the_cookie';
+      private const VARIABLE = '{__theCookieValue}';
 
-      use JobRouter\AddOn\Typo3Base\Event\ResolveFinisherVariableEvent;
-      use Psr\Http\Message\ServerRequestInterface;
-
-      final class TheCookieVariableResolver
+      public function __invoke(ResolveFinisherVariableEvent $event): void
       {
-         private const COOKIE_NAME = 'the_cookie';
-         private const VARIABLE = '{__theCookieValue}';
+         $value = $event->getValue();
 
-         public function __invoke(ResolveFinisherVariableEvent $event): void
-         {
-            $value = $event->getValue();
-
-            if (str_pos($value, self::VARIABLE) === false) {
-               // Variable is not available, do nothing
-               return;
-            }
-
-            $cookies = $event->getRequest()->getCookieParams();
-
-            $variableValue = $cookies[self::COOKIE_NAME] ?? '';
-            $value = str_replace(self::VARIABLE, $variableValue, $value);
-
-            $event->setValue($value);
+         if (str_contains($value, self::VARIABLE)) {
+            // Variable is not available, do nothing
+            return;
          }
+
+         $cookies = $event->getRequest()->getCookieParams();
+
+         $variableValue = $cookies[self::COOKIE_NAME] ?? '';
+         $value = str_replace(self::VARIABLE, $variableValue, $value);
+
+         $event->setValue($value);
       }
+   }
 
-   .. important::
+.. important::
 
-      Variables have to start with `{__`. Otherwise the variable resolver is not
-      called for a value.
-
-
-#. Register your event listener in :file:`Configuration/Services.yaml`
-
-   .. code-block:: yaml
-
-      services:
-         YourVendor\YourExtension\EventListener\TheCookieVariableResolver:
-            tags:
-               - name: event.listener
-                 identifier: 'your-extension/cookie-variable-resolver'
-                 event: JobRouter\AddOn\Typo3Base\Event\ResolveFinisherVariableEvent
-
+   Variables have to start with `{__`. Otherwise the variable resolver is not
+   called for a value.
