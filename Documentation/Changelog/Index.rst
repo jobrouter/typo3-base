@@ -16,6 +16,7 @@ Added
 
 
 * Compatibility with TYPO3 v14
+* Support Ukrainian in JobRouterLanguageResolver
 
 Removed
 ^^^^^^^

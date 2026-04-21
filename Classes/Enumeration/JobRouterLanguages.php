@@ -39,4 +39,5 @@ enum JobRouterLanguages: string
     case slovenian = 'sl';
     case spanish = 'es';
     case turkish = 'tr';
+    case ukrainian = 'uk';
 }
