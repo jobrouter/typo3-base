@@ -50,7 +50,8 @@ final readonly class LocalisedLabelVariableResolver
         }
 
         /** @var SiteLanguage $siteLanguage */
-        $siteLanguage = $event->getRequest()->getAttribute('language');
+        $siteLanguage = $event->getRequest()
+            ->getAttribute('language');
         $languageService = $this->languageServiceFactory->createFromSiteLanguage($siteLanguage);
         foreach ($matches[1] as $index => $match) {
             $translation = $languageService->sL($match);
@@ -73,7 +74,8 @@ final readonly class LocalisedLabelVariableResolver
             \sprintf(
                 'The value "%s" contains a localised label which can only be used in "Text" fields, type "%s" used',
                 $event->getValue(),
-                $event->getFieldType()->name,
+                $event->getFieldType()
+                    ->name,
             ),
             1582907006,
         );

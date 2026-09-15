@@ -39,7 +39,8 @@ final readonly class JobRouterLanguageVariableResolver
         $this->checkValidFieldTypes($event);
 
         /** @var SiteLanguage|null $language */
-        $language = $event->getRequest()->getAttribute('language');
+        $language = $event->getRequest()
+            ->getAttribute('language');
         $languageCode = $language?->getLocale()?->getLanguageCode() ?? '';
         $jobRouterLanguage = JobRouterLanguages::tryFrom($languageCode)->name ?? '';
         $value = \str_replace(self::VARIABLE_TO_RESOLVE, $jobRouterLanguage, $value);
@@ -57,7 +58,8 @@ final readonly class JobRouterLanguageVariableResolver
             \sprintf(
                 'The value "%s" contains a variable which can only be used in "Text" fields, type "%s" used',
                 $event->getValue(),
-                $event->getFieldType()->name,
+                $event->getFieldType()
+                    ->name,
             ),
             1594214444,
         );

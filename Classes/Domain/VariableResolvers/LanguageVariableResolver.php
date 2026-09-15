@@ -52,7 +52,8 @@ final readonly class LanguageVariableResolver
         $this->checkValidFieldTypes($event);
 
         /** @var SiteLanguage|null $language */
-        $language = $event->getRequest()->getAttribute('language');
+        $language = $event->getRequest()
+            ->getAttribute('language');
         if ($language === null) {
             return;
         }
@@ -88,7 +89,8 @@ final readonly class LanguageVariableResolver
             \sprintf(
                 'The value "%s" contains a variable which can only be used in "Text" fields, type "%s" used',
                 $event->getValue(),
-                $event->getFieldType()->name,
+                $event->getFieldType()
+                    ->name,
             ),
             1582654966,
         );

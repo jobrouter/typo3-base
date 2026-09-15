@@ -41,7 +41,8 @@ final readonly class PageVariableResolver
         }
 
         /** @var PageInformation|null $pageInformation */
-        $pageInformation = $event->getRequest()->getAttribute('frontend.page.information');
+        $pageInformation = $event->getRequest()
+            ->getAttribute('frontend.page.information');
         if ($pageInformation === null) {
             return;
         }

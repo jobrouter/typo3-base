@@ -35,7 +35,8 @@ final readonly class FormFieldValuesPreparer
                 $value = $this->convertArrayToCsv($value);
             }
             if ($value instanceof FileReference) {
-                $value = $value->getOriginalResource()->getCombinedIdentifier();
+                $value = $value->getOriginalResource()
+                    ->getCombinedIdentifier();
             }
 
             $preparedFieldValues[\sprintf('{%s}', $name)] = $value;
